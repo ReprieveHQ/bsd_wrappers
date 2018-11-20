@@ -69,7 +69,7 @@
     .progress-wrap,
     .progress-wrap-2 {
       background: #e35e14;
-      margin: 10px 0;
+      margin: 0;
       overflow: hidden;
       position: relative;
     }
@@ -117,12 +117,25 @@
       display: none;
     }
 
+    #goalText,
+    .percentage-text {
+      display: inline;
+    }
+
+    .goalText {
+      margin-bottom: 1rem;
+    }
+
     .amount,
     .goal,
     .percentage-number,
     .pound {
       font-weight: bold;
       color: #e35e14;
+    }
+
+    .progress {
+      border-radius: 0;
     }
 
     @media (min-width: 992px) {
@@ -381,8 +394,8 @@
 
     header {
       z-index: 999;
-      background: #e35e14;
-      padding: 10px 0;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
     }
 
     header:after,
@@ -682,7 +695,7 @@
     .fixed-background {
       position: fixed;
       top: 0;
-      z-index: 0;
+      z-index: -1;
       width: 100%;
       height: 100%;
       background-size: cover;
@@ -733,11 +746,7 @@
       outline: none;
     }
 
-    .donation-block {
-      margin-bottom: 2rem;
-      background: #efefef;
-      padding: 1rem;
-    }
+
 
     .donation-block h2 {
       margin-bottom: 1rem;
@@ -750,10 +759,6 @@
 
     .fullgift-wrap {
       margin-bottom: 1rem;
-    }
-
-    .content-wrap {
-      margin: 2rem 0;
     }
 
     .donate-nav-next {
@@ -794,9 +799,7 @@
       display: none;
     }
 
-    form#contribution {
-      min-height: 600px;
-    }
+
 
     #contribution .amountWraps label.labelSelect {
       background: #3c3b39;
@@ -817,9 +820,13 @@
 
     .content-wrap {
       margin: 0;
-      padding: 2rem 0;
-      background: #e5e5e4 !important;
-    }
+      color: white;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.25) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
 
     body {
       color: #3c3b39;
@@ -827,9 +834,13 @@
 
     .donation-block {
       margin-bottom: 1rem;
-      background: white;
-      padding: 1.5rem;
     }
+
+    .donation-block-wrap {
+    background: white;
+    box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
+    padding: 2rem;
+}
 
     #gift-aid-wrap .gift-aid-label {
       text-transform: none;
@@ -866,11 +877,6 @@
     }
 
     .donation-block h2 {
-      background: #3c3b39;
-      padding: 1rem 1.5rem;
-      margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-      display: block;
-      color: white;
       font-family: HelveticaNeueLTStd-BlkCn, Helvetica, sans-serif;
     }
 
@@ -880,27 +886,62 @@
       align-items: center;
     }
 
-    header #hamburger-1 {
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      opacity: 1;
-    }
-
-    #hamburger-1 {
+    .menu-wrapper {
+      cursor: pointer;
+      width: 35px;
+      height: 25px;
       float: right;
+      vertical-align: top;
     }
 
-    .hamburger .line {
-      width: 30px;
-      height: 3px;
-      background-color: white;
-      display: block;
-      margin: 5px auto;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
+    .hamburger-menu,
+    .hamburger-menu:after,
+    .hamburger-menu:before {
+      width: 35px;
+      height: 5px;
     }
+
+    .hamburger-menu {
+      position: relative;
+      transform: translateY(10px);
+      background: white;
+      transition: all 0ms 300ms;
+    }
+
+    .hamburger-menu.animate {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    .hamburger-menu:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background: white;
+      transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .hamburger-menu:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      background: white;
+      transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .hamburger-menu.animate:after {
+      top: 0;
+      transform: rotate(45deg);
+      transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .hamburger-menu.animate:before {
+      bottom: 0;
+      transform: rotate(-45deg);
+      transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
 
     .mobilemenu-wrapper {
       z-index: 999;
@@ -1075,9 +1116,7 @@
       border-radius: 0;
     }
 
-    .progress-wrap {
-      border-radius: 1rem;
-    }
+
 
     .amount {
       font-size: inherit;
@@ -1136,27 +1175,71 @@
       display: none;
     }
 
-    .matched-calc-container {
-      background: #eee;
-      background-image: url(https://act.reprieve.org.uk/page/-/SnowflakesBack.png);
-      background-size: contain;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .matched-calc-container p {
-      margin: 0;
-    }
-
     .matched-number {
       color: #e35e14;
       font-weight: bold;
     }
 
-    .match-text {
+    .goalText {
+      margin-bottom: 1rem;
+    }
+
+    #amounts {
+      display: block;
+    }
+
+    .donation-block,
+    #processbutton {
+      display: none;
+    }
+
+    .content-wrap {
+      min-height: calc(100vh);
+    }
+
+    form#contribution {
+      margin-bottom: 1rem;
+      color: #3c3b39;
+    }
+
+    #donate-options {
+      margin: 1rem 0;
+    }
+
+    a.btn.donateOp {
+      background-color: #555;
+      color: white;
+      width: 100%;
+      font-size: 1rem;
+      padding: 1rem;
       font-weight: bold;
-      font-size: 1.125rem;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    a.btn.donateOp:hover,
+    a.btn.donateOp:focus {
+      color: white;
+    }
+
+    #donate-options .col-4:first-child {
+      padding-left: 0;
+    }
+
+    #donate-options .col-4:last-child {
+      padding-right: 0;
+    }
+
+    .fixed-background {
+      background-color: black;
+      background-image: url(https://act.reprieve.org.uk/page/-/Yemi%20and%20Andy%20Flipped%20Compressed.png);
+    }
+
+    span.menuLabel {
+      color: white;
+      float: right;
+      line-height: 25px;
+      padding: 0 0.5rem;
+      font-size: 14px;
     }
   </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1177,27 +1260,26 @@
 <body>
 
   <div class="main-wrap">
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="clean-logo">
-              <a href="http://www.reprieve.org.uk" target="_blank"><img src="https://reprieve.org.uk/wp-content/themes/reprieve/assets/images/logo-white@2x.png"></a>
+    <div class="fixed-background"></div>
+    <div class="content-wrap">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="clean-logo">
+                <a href="http://www.reprieve.org.uk" target="_blank"><img src="https://reprieve.org.uk/wp-content/themes/reprieve/assets/images/logo-white@2x.png"></a>
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="hamburger" id="hamburger-1">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </div>
+            <div class="col">
+              <div class="menu-wrapper">
+                <div class="hamburger-menu"></div>
+              </div>
+              <span class="menuLabel">Menu</span>
 
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-
-    <div class="content-wrap">
+      </header>
       <div class="container">
 
         <!-- wrapper-top -->

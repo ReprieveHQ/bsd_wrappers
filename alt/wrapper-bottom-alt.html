@@ -3,33 +3,13 @@
   <label for='optin_1'><input id='optin_1' class='optinradio' name='optin' value='Yes' type='radio'>Yes</label> <label for='optin_0'><input id='optin_0' class='optinradio' name='optin' value='No' type='radio'>No</label>
   <p id='optin_warning'>Don't want to hear from us? If you're already on our mailing list, selecting this option may unsubscribe you from our alerts.</p>
 </fieldset>
-<div class="matched-calc-container">
-  <p><span class="match-text">Donations in December will be matched to double your impact.</span> <br><span class="match-you-container">
-      <span class="matched-center">
-        <span class="matched-number">£<span id="matched-you">15</span>
-        </span>
-        <span class="matched-sub">from you</span>
-      </span>
-    </span>
 
-    <span class="match-plus"> + </span>
-
-    <span class="match-us-container">
-      <span class="matched-center">
-        <span class="matched-number">£<span id="matched-us">15</span>
-        </span>
-        <span class="matched-sub">matched</span></span>
-    </span>
-
-    <span class="match-equals"> = </span>
-
-    <span class="match-total">
-      <span class="matched-center">
-        <span class="matched-number">£<span id="matched-calc">30</span>
-        </span> <span class="matched-sub">for Reprieve</span></span>
-    </span>
-  </p>
+<div id="donate-options" class="clearfix row">
+  <div class="col-4"><a class="btn donateOp donateCard">Donate by Card</a></div>
+  <div class="col-4"><a class="btn donateOp donatePaypal">Donate by PayPal</a></div>
+  <div class="col-4"><a class="btn donateOp donateDebit">Donate by Direct Debit</a></div>
 </div>
+
 </div>
 </div>
 
@@ -65,10 +45,8 @@
 </footer>
 <div class="mobilemenu-wrapper">
   <div class="mobilemenu-trigger">
-    <div class="hamburger" id="hamburger-1">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
+    <div class="menu-wrapper">
+      <div class="hamburger-menu"></div>
     </div>
   </div>
   <nav id="mobilemenu">
@@ -93,11 +71,15 @@
     $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
   });
 
-  $(".hamburger").click(function() {
-    $(".hamburger").toggleClass("is-active");
+  $(".menu-wrapper").click(function() {
+    $('.hamburger-menu').toggleClass('animate');
     $(".mobilemenu-wrapper").toggleClass("menu-active");
   });
 
+  $(".donateCard").click(function() {
+    $(".donation-block, #processbutton").show();
+    $("#donate-options").hide();
+  });
 
 
   // Functions
@@ -120,14 +102,18 @@
 
   $("#contribution").find("input").addClass("form-control");
   $("#contribution").find("select").addClass("form-control");
-  $("#contribution").prepend('<div id="gift-aid-wrap" class="donation-block clearfix"></div>');
-  $("#contribution").prepend('<div id="payment-details" class="donation-block clearfix"></div>');
-  $("#contribution").prepend('<div id="your-details" class="donation-block clearfix"></div>');
-  $("#contribution").prepend('<div id="amounts" class="donation-block showDonate clearfix"></div>');
+  $("#contribution").prepend('<div class="donation-block-wrap"></div>');
+  $(".donation-block-wrap").prepend('<div id="gift-aid-wrap" class="donation-block clearfix"></div>');
+  $(".donation-block-wrap").prepend('<div id="payment-details" class="donation-block clearfix"></div>');
+  $(".donation-block-wrap").prepend('<div id="your-details" class="donation-block clearfix"></div>');
+  $(".donation-block-wrap").prepend('<div id="amounts" class="donation-block showDonate clearfix"></div>');
   $(".bsd-contribForm-oneCol").addClass('row');
   $(".bsd-contribForm-aboveContent").addClass('col-md-4');
   $("#contribution").wrap('<div class="donateWrap col-md-8"></div>');
+  $("#donate-options").appendTo(".donateWrap");
   $(".bsd-contribForm-belowContent").appendTo('.donateWrap');
+  $(".goalText").prependTo("#amounts");
+  $(".goal-progress").prependTo("#contribution");
 
   // Payment Details
 
@@ -191,8 +177,6 @@
   $("#amounts").append($(".fullgift-wrap"))
   $("#full-gift-container").remove();
   $('.fullgift-wrap').attr('id', 'full-gift-container');
-  $(".matched-calc-container").prependTo("#amounts");
-  $("#amounts").prepend('<h2>Select an Amount</h2>');
 
   $(".amountWraps").addClass("col-md-4");
   $("#amt_other_wrap").removeClass("col-md-4");
