@@ -97,6 +97,9 @@
   $(".bsd-contribForm-gdpr-modal-content h3, .bsd-contribForm-gdpr-modal-content p").wrapAll("<div class='col-md-10'>");
   $(".bsd-contribForm-gdpr-modal-content div:nth-of-type(2), .bsd-contribForm-gdpr-modal-content div:nth-of-type(3)").wrap("<div class='col-md-2'>");
   $(".bsd-contribForm-gdpr-modal-content").addClass("row");
+  $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(2)").prepend(" ");
+  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("href","http://www.reprieve.org.uk/privacy/");
+  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("target","_blank");
   $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(3)").remove();
 
 
@@ -172,24 +175,26 @@
   $("#amounts").append($("#amt_preset_6_wrap"));
   $("#amounts").append($("#amt_preset_7_wrap"));
   $("#amounts").append($("#amt_other_wrap"));
+  $("#contribution #amt_other_wrap label span").text("£");
+  $("#amt_other_text").attr('placeholder', 'Other');
+
+
 
   $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
   $("#amounts").append($(".fullgift-wrap"))
   $("#full-gift-container").remove();
   $('.fullgift-wrap').attr('id', 'full-gift-container');
 
-  $(".amountWraps").addClass("col-md-4");
-  $("#amt_other_wrap").removeClass("col-md-4");
-  $("#amt_other_wrap").addClass("col-md-8");
+  $(".amountWraps").addClass("col-6 col-lg-3");
   $(".amountWraps").wrapAll("<div class='amountRow'></div>");
 
-  $("#amt_preset_1_wrap, #amt_preset_2_wrap, #amt_preset_3_wrap").wrapAll("<div class='row'></div>");
-  $("#amt_preset_4_wrap, #amt_preset_5_wrap, #amt_preset_6_wrap").wrapAll("<div class='row'></div>");
-  $("#amt_preset_7_wrap, #amt_other_wrap").wrapAll("<div class='row'></div>");
+  $("#amt_preset_1_wrap, #amt_preset_2_wrap, #amt_preset_3_wrap, #amt_preset_4_wrap").wrapAll("<div class='row'></div>");
+  $("#amt_preset_5_wrap, #amt_preset_6_wrap, #amt_preset_7_wrap, #amt_other_wrap").wrapAll("<div class='row'></div>");
 
   $("#full-gift-checkbox").removeClass("form-control");
   $("#full-gift-checkbox").addClass("form-check-input");
   $("label[for='full-gift-checkbox']").addClass("form-check-label");
+  $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
 
   // Your Details
 
@@ -276,6 +281,7 @@
     var matchedAmountDoubled = matchedAmount * 2;
     var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
     var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+
     $(".donatePaypal").attr("href",paypalLink);
     $(".donateDebit").attr("href",edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
