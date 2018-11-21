@@ -56,9 +56,7 @@
 
     /* Progress bar */
 
-    .goal-progress {
-      display: none;
-    }
+
 
     .progress-1,
     .progress-2 {
@@ -757,10 +755,6 @@
       margin-bottom: 1rem;
     }
 
-    .fullgift-wrap {
-      margin-bottom: 1rem;
-    }
-
     .donate-nav-next {
       float: right;
     }
@@ -821,10 +815,13 @@
     .content-wrap {
       margin: 0;
       color: white;
-      background: -moz-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.25) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
+      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
 
 
 
@@ -837,10 +834,10 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%)
     }
 
     .donation-block-wrap {
-    background: white;
-    box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
-    padding: 2rem;
-}
+      background: white;
+      box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
+      padding: 2rem;
+    }
 
     #gift-aid-wrap .gift-aid-label {
       text-transform: none;
@@ -1214,20 +1211,19 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%)
       padding: 1rem;
       font-weight: bold;
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+      white-space: normal;
+      margin: 0 0 1rem 0;
     }
+
+
 
     a.btn.donateOp:hover,
     a.btn.donateOp:focus {
       color: white;
     }
 
-    #donate-options .col-4:first-child {
-      padding-left: 0;
-    }
 
-    #donate-options .col-4:last-child {
-      padding-right: 0;
-    }
+
 
     .fixed-background {
       background-color: black;
@@ -1240,6 +1236,17 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.25) 100%)
       line-height: 25px;
       padding: 0 0.5rem;
       font-size: 14px;
+    }
+
+    #donate-options .col-md-4 {
+      padding: 0;
+    }
+
+
+    @media (min-width: 992px) {
+      #donate-options .col-md-4:nth-of-type(2) {
+        padding: 0 1rem;
+      }
     }
   </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->

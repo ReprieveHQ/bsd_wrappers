@@ -5,9 +5,9 @@
 </fieldset>
 
 <div id="donate-options" class="clearfix row">
-  <div class="col-4"><a class="btn donateOp donateCard">Donate by Card</a></div>
-  <div class="col-4"><a class="btn donateOp donatePaypal">Donate by PayPal</a></div>
-  <div class="col-4"><a class="btn donateOp donateDebit">Donate by Direct Debit</a></div>
+  <div class="col-md-4"><a class="btn donateOp donateCard">Donate by Card</a></div>
+  <div class="col-md-4"><a class="btn donateOp donatePaypal">Donate by PayPal</a></div>
+  <div class="col-md-4"><a class="btn donateOp donateDebit">Donate by Direct Debit</a></div>
 </div>
 
 </div>
@@ -274,6 +274,10 @@
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
+    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+    $(".donatePaypal").attr("href",paypalLink);
+    $(".donateDebit").attr("href",edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
@@ -301,6 +305,8 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
+    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
