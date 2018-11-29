@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reprieve</title>
 
-  <link href="/page/-/images/favicon.ico" rel="icon" type="image/x-icon" />
   <meta name="description" content="Reprieve delivers justice and saves lives, from death row to Guantanamo Bay." />
 
   <meta property="og:site_name" content="Reprieve">
@@ -20,10 +19,6 @@
   <meta name="twitter:description" content="Reprieve delivers justice and saves lives, from death row to Guantanamo Bay.">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic" rel="stylesheet" type="text/css">
-  <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon.png" rel="apple-touch-icon" />
-  <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
-  <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
 
   <style type="text/css">
     @font-face {
@@ -38,7 +33,7 @@
       font-style: normal;
     }
 
-    /* Basics */
+    /* Video Container to make YouTube Videos responsive */
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -57,39 +52,20 @@
       height: 100%;
     }
 
-    /* Progress bar */
-    .progress-1,
-    .progress-2 {
-      width: 100% !important;
-      height: 15px !important;
-    }
+    /* Simple progress bar */
 
-    .progress-wrap,
-    .progress-wrap-2 {
+    .progress-wrap {
       background: #e35e14;
       margin: 0;
       overflow: hidden;
       position: relative;
     }
 
-    .progress-wrap .progress-bar,
-    .progress-wrap .progress-bar-2,
-    .progress-wrap-2 .progress-bar,
-    .progress-wrap-2 .progress-bar-2 {
+    .progress-wrap .progress-bar {
       background: gray;
       left: 0;
       position: absolute;
       top: 0;
-    }
-
-    .goal-progress {
-      width: 100%;
-      text-align: center;
-      padding: 1rem;
-      margin: 0 auto;
-      color: black;
-      font-size: 18px;
-      font-family: 'Source Sans Pro', sans-serif;
     }
 
     .amount,
@@ -101,18 +77,16 @@
     }
 
     .goal-progress {
+      color: black;
       width: 100%;
-      text-align: center;
-      padding: 1rem;
       margin: 0 auto;
+      text-align: left;
+      padding: 0;
     }
 
-    .amount {
-      font-size: 32px;
-    }
-
-    #totaliser {
-      display: none;
+    .progress {
+      border-radius: 0;
+      width: 100%;
     }
 
     #goalText,
@@ -122,146 +96,6 @@
 
     .goalText {
       margin-bottom: 1rem;
-    }
-
-    .amount,
-    .goal,
-    .percentage-number,
-    .pound {
-      font-weight: bold;
-      color: #e35e14;
-    }
-
-    .progress {
-      border-radius: 0;
-    }
-
-    @media (min-width: 992px) {
-      .goal-progress {
-        display: block;
-      }
-    }
-
-    .progress-bar.progress {
-      width: 100%;
-      border-radius: 0;
-    }
-
-    .amount {
-      font-size: inherit;
-    }
-
-    .goal-progress {
-      text-align: left;
-      padding: 0;
-    }
-
-    /* Read more */
-    span#read-more {
-      font-size: 14px !important;
-    }
-
-    span#read-more-plus {
-      font-size: 14px !important;
-      color: #e35e14;
-      font-weight: 900;
-      display: inline;
-    }
-
-    span#read-more-plus.uncollapsed {
-      display: none;
-    }
-
-    span#read-more-minus {
-      font-size: 14px !important;
-      color: #e35e14;
-      font-weight: 900;
-      display: none;
-    }
-
-    span#read-more-minus.uncollapsed {
-      display: inline;
-    }
-
-    #read-more-collapse.uncollapsed {
-      display: block;
-    }
-
-    #read-more-collapse {
-      display: none;
-    }
-
-    #read-more-collapse.show {
-      display: block;
-    }
-
-    #signup {
-      margin: 0;
-    }
-
-    /* Petition text */
-    .petition-sidebar-text {
-      display: none;
-      border-top: 3px solid #ceccc9;
-      border-bottom: 3px solid #ceccc9;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-
-    .petition-intro-text {
-      border-top: 3px solid #ceccc9;
-      border-bottom: 3px solid #ceccc9;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-
-    .petition-intro-text p {
-      margin-bottom: 0;
-      font-size: 18px;
-    }
-
-    /* Floating button */
-    .floating-button {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      z-index: 999;
-      background: #e35e14;
-      width: 100%;
-      text-align: center;
-      color: white;
-    }
-
-    #issues .floating-button p {
-      text-align: center;
-      color: white;
-      margin: 1rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .reveal-back {
-      background: white;
-      width: 100%;
-      border-top: 2px solid #e3e3e3;
-      border-bottom: 2px solid #e3e3e3;
-      display: none;
-    }
-
-    #issues .reveal-back span {
-      display: block;
-      margin: 0;
-      padding: 0.5rem;
-    }
-
-    .colhide {
-      display: none;
-    }
-
-    .colshow {
-      display: block;
     }
 
     /* Footer */
@@ -274,6 +108,10 @@
       line-height: 1rem;
       font-size: 0.9rem;
       position: relative;
+      width: 100%;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
     }
 
     footer p {
@@ -284,7 +122,8 @@
       color: #cbc3b7;
     }
 
-    footer a:hover {
+    footer a:hover,
+    footer a:focus {
       color: #cbc3b7;
     }
 
@@ -319,227 +158,26 @@
       }
     }
 
-    /* BREAK */
+    /* Header */
     header {
       z-index: 999;
       padding-top: 2rem;
       margin-bottom: 2rem;
-    }
-
-    header:after,
-    header:before {
-      display: table;
-      content: "";
-      clear: both;
-    }
-
-    .clean-logo img {
-      height: 40px;
-    }
-
-    .footer_align {
-      background: white;
-    }
-
-    nav.fnav {
-      display: none;
-    }
-
-    .fnav_sub {
-      margin-top: 0;
-    }
-
-    footer,
-    header {
       width: 100%;
       min-height: 60px;
       display: flex;
       align-items: center;
     }
 
-    .fixed-background {
-      position: fixed;
-      top: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-    }
-
-    /* Amounts */
-    #contribution .amountWraps label {
-      background: #e35e14;
-      padding: 1rem 2rem;
-      margin: 0 0 1rem;
-      min-width: 100%;
-      border-radius: 5px;
-      text-align: center;
-      color: white;
-    }
-
-    #contribution .amountWraps span.radio {
-      display: inline-block;
-      margin: 0;
-      line-height: normal;
-      color: white;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-
-    #contribution .amountWraps input[type=radio] {
-      margin: 0;
-      visibility: hidden;
-      position: absolute;
-      left: 0;
-    }
-
-    #amt_other_wrap #amt_other_text {
-      margin: 0 0.5rem;
-      background: #e35e14;
-      border: 0;
-      padding: 0 0.25rem;
-      color: white;
-      border-bottom: 3px solid white;
-      box-sizing: border-box;
-      width: 50%;
-      display: inline-block;
-    }
-
-    #amt_other_wrap #amt_other_text:focus,
-    #amt_other_wrap #amt_other_text:hover {
-      outline: none;
-    }
-
-    .donation-block h2 {
-      margin-bottom: 1rem;
-      clear: both;
-    }
-
-    #gift-aid-wrap .gift-aid-label {
-      margin-bottom: 1rem;
-    }
-
-    .donate-nav-next {
-      float: right;
-    }
-
-    .donate-nav-back {
-      float: left;
-    }
-
-    .donate-nav {
-      margin-top: 1rem;
-    }
-
-    #giftaid-back {
-      margin: 0 0 1rem;
-      clear: both;
-    }
-
-    #processbutton {
-      background: #e35e14;
-      color: white;
-      font-size: 1.5rem;
-      border: 0;
-    }
-
-    /*.donation-block {
-  transform: translateX(9999px);
-  position: fixed;
-  }
-
-  .showDonate {
-  position: static;
-  transform: translateX(0);
-  }*/
-    .creditCardTypeSelector label {
-      display: none;
-    }
-
-    #contribution .amountWraps label.labelSelect {
-      background: #3c3b39;
-    }
-
-    #contribution .amountWraps label.labelSelect input#amt_other_text {
-      background: #3c3b39;
-      color: white;
-    }
-
-    a {
-      color: #e35e14;
-    }
-
-    a:hover {
-      color: #e35e14;
-    }
-
-    .content-wrap {
-      margin: 0;
-      color: white;
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    }
-
-    body {
-      color: #3c3b39;
-    }
-
-    .donation-block {
-      margin-bottom: 1rem;
-    }
-
-    .donation-block-wrap {
-      background: white;
-      box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
-      padding: 2rem;
-    }
-
-    #gift-aid-wrap .gift-aid-label {
-      text-transform: none;
-    }
-
-    .bsd-contribForm-belowContent p {
-      font-size: 0.7rem;
-      line-height: normal;
-    }
-
-    input#processbutton {
-      margin-bottom: 1rem;
-    }
-
-    .form-check-input {
-      width: auto;
-    }
-
-    .boldAmounts {
-      font-weight: bold;
-      color: #e35e14;
-    }
-
-    #giftaid-pre {
-      display: none;
-    }
-
-    h1 {
-      font-family: HelveticaNeueLTStd-BlkCn, Helvetica, sans-serif;
-    }
-
-    body {
-      font-family: helvetica, sans-serif;
-    }
-
-    .donation-block h2 {
-      font-family: HelveticaNeueLTStd-BlkCn, Helvetica, sans-serif;
-    }
-
-    /* Menu */
     header .row {
       align-items: center;
     }
+
+    .clean-logo img {
+      height: 40px;
+    }
+
+    /* Menu */
 
     .menu-wrapper {
       cursor: pointer;
@@ -605,7 +243,7 @@
       right: 0;
       width: 300px;
       height: 100vh;
-      padding: 33px;
+      padding: 2rem;
       transform: translate(300px, 0);
       transition: transform 0.5s linear;
     }
@@ -621,18 +259,22 @@
       margin-bottom: 1rem;
     }
 
-    ul#menu-mobile-menu {
+    .mobilemenu-wrapper.menu-active {
+      transform: translate(0, 0);
+    }
+
+    #menu-mobile-menu {
       margin: 0;
       list-style-type: none;
       padding: 0;
     }
 
-    #mobilemenu li.menu-item {
+    #menu-mobile-menu li.menu-item {
       margin-bottom: 0.5rem;
       line-height: normal;
     }
 
-    nav#mobilemenu ul li a {
+    #menu-mobile-menu li a {
       font-size: 30px;
       opacity: 0.7;
       transition: all 0.3s ease;
@@ -640,31 +282,199 @@
       /* margin-bottom: 1rem; */
     }
 
-    nav#mobilemenu ul li a:hover {
+    #menu-mobile-menu li a:hover {
       opacity: 1;
       text-decoration: none;
     }
 
-    .mobilemenu-wrapper.menu-active {
-      transform: translate(0, 0);
+    .menuLabel {
+      color: white;
+      float: right;
+      line-height: 35px;
+      padding: 0 0.5rem;
+      font-size: 14px;
     }
 
-    .mobilemenu-wrapper #hamburger-1.is-active .line:nth-child(1) {
-      -webkit-transform: translateY(8px) rotate(45deg);
-      -ms-transform: translateY(8px) rotate(45deg);
-      -o-transform: translateY(8px) rotate(45deg);
-      transform: translateY(8px) rotate(45deg);
+
+    /* Background */
+
+    .fixed-background {
+      position: fixed;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
     }
 
-    .mobilemenu-wrapper #hamburger-1.is-active .line:nth-child(2) {
-      opacity: 0;
+    .fixed-background {
+      background-color: black;
+      background-image: url(https://act.reprieve.org.uk/page/-/Yemi%20and%20Andy%20Flipped%20Compressed.png);
     }
 
-    .mobilemenu-wrapper #hamburger-1.is-active .line:nth-child(3) {
-      -webkit-transform: translateY(-9px) rotate(-45deg);
-      -ms-transform: translateY(-9px) rotate(-45deg);
-      -o-transform: translateY(-9px) rotate(-45deg);
-      transform: translateY(-9px) rotate(-45deg);
+    /* Amounts */
+    #contribution .amountWraps label {
+      background: #e35e14;
+      padding: 1rem 2rem;
+      margin: 0 0 1rem;
+      min-width: 100%;
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+    }
+
+    #contribution .amountWraps span.radio {
+      display: inline-block;
+      margin: 0;
+      line-height: normal;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    #contribution .amountWraps input[type=radio] {
+      margin: 0;
+      visibility: hidden;
+      position: absolute;
+      left: 0;
+    }
+
+    #contribution .amountWraps label.labelSelect {
+      background: #3c3b39;
+    }
+
+    #amt_other_wrap #amt_other_text {
+      padding: 0 0.25rem;
+      box-sizing: border-box;
+      width: 50%;
+      display: inline-block;
+      margin: 0;
+      background: none;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 2px solid #e35e14;
+      color: #e35e14;
+    }
+
+    #amt_other_wrap label.labelSelect input#amt_other_text {
+      color: #3C3B33;
+      border-color: #3C3B33;
+    }
+
+    #contribution #amt_other_wrap label {
+      background: none;
+      border: 2px solid #E35E14;
+      padding: 1rem 0;
+    }
+
+    #contribution #amt_other_wrap label.labelSelect {
+      border-color: #3c3b39;
+    }
+
+    #contribution #amt_other_wrap span.radio {
+      color: #e35e14;
+      font-size: 1rem;
+    }
+
+    #contribution #amt_other_wrap .labelSelect span.radio {
+      color: #3c3b39;
+    }
+
+
+    #amt_other_wrap #amt_other_text:focus,
+    #amt_other_wrap #amt_other_text:hover {
+      outline: none;
+    }
+
+    #processbutton {
+      background: #e35e14;
+      color: white;
+      font-size: 1.5rem;
+      border: 0;
+      margin: 1rem 0 0 0 !important;
+    }
+
+    /* Forms */
+
+    .form-check-input {
+      width: auto;
+    }
+
+    /* Main */
+
+    body {
+      color: #3c3b39;
+      font-family: helvetica, sans-serif;
+    }
+
+    a {
+      color: #e35e14;
+    }
+
+    a:hover,
+    a:focus {
+      color: #e35e14;
+    }
+
+    h1,
+    h2 {
+      font-family: HelveticaNeueLTStd-BlkCn, Helvetica, sans-serif;
+    }
+
+    .content-wrap {
+      margin: 0;
+      color: white;
+      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+      min-height: calc(100vh - 60px);
+    }
+
+    .donation-block-wrap {
+      background: white;
+      box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
+      padding: 2rem;
+    }
+
+    .donation-block {
+      margin-bottom: 1rem;
+    }
+
+    .donation-block h2 {
+      margin-bottom: 1rem;
+      clear: both;
+    }
+
+    .bsd-contribForm-belowContent p {
+      font-size: 0.7rem;
+      line-height: normal;
+    }
+
+
+    /* Giftaid */
+
+    #gift-aid-wrap .gift-aid-label {
+      text-transform: none;
+    }
+
+    #giftaid-pre {
+      display: none;
+    }
+
+    #gift-aid-wrap .gift-aid-label {
+      margin-bottom: 1rem;
+    }
+
+    #gift-aid-wrap .form-check:before,
+    #gift-aid-wrap .form-check:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .boldAmounts {
+      font-weight: bold;
+      color: #e35e14;
     }
 
     /* Errors */
@@ -686,25 +496,43 @@
       margin-bottom: 0.5rem;
     }
 
-    gift-aid-wrap .form-check:before,
-    #gift-aid-wrap .form-check:after {
-      display: table;
-      clear: both;
-      content: "";
-    }
-
     .form-check-input {
       z-index: 999;
     }
 
-    /* Signup */
+    /* Opt in */
     #contribution .signup_optin_wrap label {
       float: left;
-      text-transform: none !important;
+      text-transform: none;
+      display: block;
+      clear: right;
+      width: 100%;
+      margin-bottom: 0.5rem;
     }
 
-    .signup_optin_wrap {
-      padding: 0 1.5rem;
+    #contribution .signup_optin_wrap label[for=optin_1] {
+      margin-bottom: 0.125rem;
+    }
+
+    #contribution .signup_optin_wrap input#signup_optin,
+    #contribution label[for=signup_optin] {
+      display: none;
+    }
+
+    .optinradio_fieldset {
+      clear: both;
+    }
+
+    .optinradio_fieldset input {
+      margin-right: 0.5rem;
+    }
+
+    p#optin_warning {
+      color: red;
+      clear: both;
+      float: left;
+      display: none;
+      margin: 0;
     }
 
     /* State */
@@ -730,8 +558,20 @@
       height: calc(2.25rem + 2px);
     }
 
-    /* Matched */
-    /* New */
+    /* Simple matched */
+
+    .matched-number {
+      color: #e35e14;
+      font-weight: bold;
+    }
+
+    /* Donation form */
+
+    #contribution {
+      margin-bottom: 1rem;
+      color: #3c3b39;
+    }
+
     .form-6 {
       width: 50%;
       float: left;
@@ -751,9 +591,6 @@
       padding-right: 1rem;
     }
 
-    .signup_optin_wrap {
-      float: left;
-    }
 
     .form-2 {
       width: 20%;
@@ -761,83 +598,22 @@
     }
 
 
-
-    .form-group.signup_optin_wrap.clearfix {
-      padding: 0;
-    }
-
-    .signup_optin_wrap input#signup_optin {
-      display: none;
-      margin: 0.25rem 0.5rem 0 0;
-      position: relative;
-      float: left;
-    }
-
-    #contribution fieldset.optinradio_fieldset label {
-      width: 100%;
-      margin-bottom: 0.25rem;
-      display: block;
-    }
-
-    fieldset.optinradio_fieldset {
-      clear: both;
-    }
-
-    fieldset.optinradio_fieldset input {
-      margin-right: 0.5rem;
-    }
-
-    p#optin_warning {
-      color: red;
-      clear: both;
-      float: left;
-      display: none;
-    }
-
-    #contribution .signup_optin_wrap label {
-      float: left;
-      text-transform: none !important;
-      display: block;
-      clear: right;
-      margin-bottom: 0.5rem;
-    }
-
-    #contribution .signup_optin_wrap label {
-      display: none;
-    }
-
-    .matched-number {
-      color: #e35e14;
-      font-weight: bold;
-    }
-
-    .goalText {
-      margin-bottom: 1rem;
-    }
-
-    #amounts {
-      display: block;
-    }
+    /* Alt Set-up */
 
     .donation-block,
     #processbutton {
       display: none;
     }
 
-    .content-wrap {
-      min-height: calc(100vh);
-    }
-
-    form#contribution {
-      margin-bottom: 1rem;
-      color: #3c3b39;
+    #amounts {
+      display: block;
     }
 
     #donate-options {
-      margin: 1rem 0;
+      margin: 0 0 1rem 0;
     }
 
-    a.btn.donateOp {
+    .donateOp {
       background-color: #555;
       color: white;
       width: 100%;
@@ -846,75 +622,37 @@
       font-weight: bold;
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
       white-space: normal;
-      margin: 0 0 1rem 0;
+      margin: 0;
     }
 
-    a.btn.donateOp:hover,
-    a.btn.donateOp:focus {
+    .donatePaypal, .donateCard {
+      margin-bottom: 1rem;
+    }
+
+    .btn.donateOp:hover,
+    .btn.donateOp:focus {
       color: white;
-    }
-
-    .fixed-background {
-      background-color: black;
-      background-image: url(https://act.reprieve.org.uk/page/-/Yemi%20and%20Andy%20Flipped%20Compressed.png);
-    }
-
-    span.menuLabel {
-      color: white;
-      float: right;
-      line-height: 35px;
-      padding: 0 0.5rem;
-      font-size: 14px;
     }
 
     #donate-options .col-md-4 {
       padding: 0;
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       #donate-options .col-md-4:nth-of-type(2) {
         padding: 0 1rem;
       }
-    }
-
-    #contribution #amt_other_wrap label {
-      background: none;
-      border: 2px solid #E35E14;
-      padding: 1rem 0;
-    }
-
-    #amt_other_wrap #amt_other_text {
-      margin: 0;
-      background: none;
-      border-radius: 0;
-      border: 0;
-      border-bottom: 2px solid #e35e14;
-      color: #e35e14;
-    }
-
-    #contribution .amountWraps label.labelSelect input#amt_other_text {
-      background: none;
-      color: #3C3B33;
-      border-color: #3C3B33;
-    }
-
-    #contribution #amt_other_wrap label.labelSelect {
-      border-color: #3c3b39;
-    }
-
-    #contribution #amt_other_wrap label.labelSelect span {
-      color: #3c3b39;
-    }
-
-    #contribution #amt_other_wrap span.radio {
-      color: #e35e14;
-      font-size: 1rem;
-    }
-
-    #contribution #amt_other_wrap.labelSelect span.radio {
-      color: #3c3b39;
+      .donatePaypal, .donateCard {
+        margin-bottom: 0rem;
+      }
     }
   </style>
+
+  <link href="https://act.reprieve.org.uk/page/-/images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+  <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9602547-1"></script>
   <script>
