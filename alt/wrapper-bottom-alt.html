@@ -98,8 +98,8 @@
   $(".bsd-contribForm-gdpr-modal-content div:nth-of-type(2), .bsd-contribForm-gdpr-modal-content div:nth-of-type(3)").wrap("<div class='col-md-2'>");
   $(".bsd-contribForm-gdpr-modal-content").addClass("row");
   $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(2)").prepend(" ");
-  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("href","http://www.reprieve.org.uk/privacy/");
-  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("target","_blank");
+  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("href", "http://www.reprieve.org.uk/privacy/");
+  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("target", "_blank");
   $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(3)").remove();
 
 
@@ -282,8 +282,8 @@
     var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
     var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
 
-    $(".donatePaypal").attr("href",paypalLink);
-    $(".donateDebit").attr("href",edirectLink);
+    $(".donatePaypal").attr("href", paypalLink);
+    $(".donateDebit").attr("href", edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
@@ -311,17 +311,32 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
     var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+
+    $(".donatePaypal").attr("href", paypalLink);
+    $(".donateDebit").attr("href", edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
-    giftaidableAmount = this.value;
-    giftaidableAmount = giftaidableAmount.replace(/[^\d.-]/g, "");
-    giftaidAmount = giftaidableAmount * 1.25;
-    giftaidAmountD = giftaidAmount.toFixed(2);
-    $("#giftaid-amount").text(giftaidableAmount);
-    $("#giftaid-amount-total").text(giftaidAmountD);
+
+    if ($('#full-gift-checkbox').is(":checked")) {
+      giftaidableAmount = this.value;
+      fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
+      fullgiftAmountD = fullgiftAmount.toFixed(2);
+      giftaidAmount = fullgiftAmount * 1.25;
+      giftaidAmountD = giftaidAmount.toFixed(2);
+      $("#giftaid-amount").text(fullgiftAmountD);
+      $("#giftaid-amount-total").text(giftaidAmountD);
+    } else {
+      giftaidableAmount = this.value;
+      giftaidAmount = giftaidableAmount * 1.25;
+      giftaidAmountD = giftaidAmount.toFixed(2);
+      $("#giftaid-amount").text(giftaidableAmount);
+      $("#giftaid-amount-total").text(giftaidAmountD);
+    }
+
+
   });
 
   $('#full-gift-checkbox').change(function() {
@@ -384,21 +399,24 @@
   });
 
   // Calculate Grand Total for pre-determined Amounts.
+
+
   var inputs = document.querySelectorAll(".amountNum input[type='radio']");
 
-  inputs.forEach(el =>
-    el.addEventListener('click', function() {
-      var value = parseInt(this.value, 10);
-      var URL = `https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=${value}&max=2500.00`;
-      jQuery.get(URL, function(data) {
-        var fee = data.fee;
-        var total = fee + value;
-        total = total.toFixed(2);
-        jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
-        jQuery("#processbutton").val("Donate £" + total);
-        jQuery("#giftaid-amount").innerText = (total);
-      })
-    }));
+Array.prototype.forEach.call(inputs, function (el) {
+  el.addEventListener('click', function () {
+    var value = parseInt(this.value, 10);
+    var URL = "https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
+    jQuery.get(URL, function (data) {
+      var fee = data.fee;
+      var total = fee + value;
+      total = total.toFixed(2);
+      jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
+      jQuery("#processbutton").val("Donate £" + total);
+      jQuery("#giftaid-amount").innerText = (total);
+    });
+  });
+});
 </script>
 </body>
 <style>
