@@ -1,19 +1,24 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reprieve</title>
+
   <link href="/page/-/images/favicon.ico" rel="icon" type="image/x-icon" />
   <meta name="description" content="Reprieve delivers justice and saves lives, from death row to Guantanamo Bay." />
+
   <meta property="og:site_name" content="Reprieve">
   <meta property="og:description" content="Reprieve delivers justice and saves lives, from death row to Guantanamo Bay." />
   <meta property="og:title" content="Reprieve" />
   <meta property="og:type" content="website">
+
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@Reprieve">
   <meta name="twitter:title" content="Reprieve">
   <meta name="twitter:description" content="Reprieve delivers justice and saves lives, from death row to Guantanamo Bay.">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic" rel="stylesheet" type="text/css">
   <link href="https://act.reprieve.org.uk/page/-/images/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -34,7 +39,6 @@
     }
 
     /* Basics */
-
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -54,9 +58,6 @@
     }
 
     /* Progress bar */
-
-
-
     .progress-1,
     .progress-2 {
       width: 100% !important;
@@ -136,14 +137,26 @@
     }
 
     @media (min-width: 992px) {
-
       .goal-progress {
         display: block;
       }
     }
 
-    /* Read more */
+    .progress-bar.progress {
+      width: 100%;
+      border-radius: 0;
+    }
 
+    .amount {
+      font-size: inherit;
+    }
+
+    .goal-progress {
+      text-align: left;
+      padding: 0;
+    }
+
+    /* Read more */
     span#read-more {
       font-size: 14px !important;
     }
@@ -187,7 +200,6 @@
     }
 
     /* Petition text */
-
     .petition-sidebar-text {
       display: none;
       border-top: 3px solid #ceccc9;
@@ -210,73 +222,7 @@
       font-size: 18px;
     }
 
-    /* Forms */
-
-    /*
-    td#required_note {
-      display: none;
-    }
-
-    #issues .label label {
-      margin: 0;
-    }
-
-    .fieldset {
-      margin: 0px 0px 5px 0px;
-    }
-
-    div#bsd-field-submit-btn {
-      margin-bottom: 1rem;
-    }
-
-    select {
-      background: none;
-    }
-
-    #issues .label label {
-      white-space: normal;
-    }
-
-    #bsd-field-submit-btn input[type="submit"] {
-      width: 100%;
-    }
-
-    div#bsd-field-submit-btn {
-      margin-bottom: 0;
-    }
-
-    #bsd-field-email_opt_in .label {
-      padding: 0;
-    }
-
-    .input input[type=checkbox],
-    .input input[type=radio] {
-      margin: 5px 5px 0 0;
-    }
-
-    #signup .checkbox,
-    #signup .radiobutton,
-    #signup .label,
-    #signup .text {
-      margin: 0;
-    }
-
-    #signup .label {
-      padding: 0px 0 5px 0;
-    }
-
-    span.error.bsd-mailcheck {
-      margin: 5px 0 0px 0;
-      display: block;
-    }
-
-    div#bsd-field-submit-btn {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }*/
-
     /* Floating button */
-
     .floating-button {
       position: fixed;
       bottom: 0;
@@ -318,18 +264,11 @@
       display: block;
     }
 
-    /* FOOTER */
-
+    /* Footer */
     #footer {
       z-index: 999;
       background-color: #3c3b39;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-family: "effra", "Helvetica Neue", helvetica, arial, sans-serif;
       font-weight: 500;
-      -moz-font-feature-settings: "kern=1";
-      -webkit-font-feature-settings: "kern"1;
-      text-rendering: optimizeLegibility;
       color: #cbc3b7;
       padding: 1rem 0;
       line-height: 1rem;
@@ -370,11 +309,6 @@
 
     @media (min-width: 992px) {
 
-      #footer {
-        position: fixed;
-        bottom: 0;
-      }
-
       .fnav_sub_secondary {
         float: right;
       }
@@ -383,12 +317,9 @@
         margin-bottom: 0;
         width: auto;
       }
-
-
     }
 
     /* BREAK */
-
     header {
       z-index: 999;
       padding-top: 2rem;
@@ -418,275 +349,12 @@
       margin-top: 0;
     }
 
-    /* START */
-
-    /*#issues span.error {
-      color: red;
-      font-weight: bold;
-    }
-
-    table#signuptable {
-      display: none;
-    }
-
-    strong,
-    b {
-      color: #e35e14;
-    }
-
-    input[type=text],
-    input[type=email] {
-      width: 90%;
-    }
-
-    input#processbutton {
-      background: #e35e14;
-      -webkit-appearance: none;
-      color: white;
-      border: 0;
-      padding: 0.5rem 1rem;
-      font-size: 1.5rem;
-      min-width: 200px;
-    }
-
-    tr.bsd-tableRow td.label {
-      width: 100%;
-    }
-
-    .creditCardTypeSelector-creditCardList:before,
-    .creditCardTypeSelector-creditCardList:after {
-      display: table;
-      content: "";
-      clear: both;
-    }
-
-    .creditCardTypeSelector-creditCardList {
-      margin-bottom: 0.5rem;
-    }
-
-    #contribution td.contribcolumn {
-      width: 100% !important;
-      display: block;
-    }
-
-    input#firstname,
-    input#lastname {
-      width: 200px;
-    }
-
-    #contribution .nested_table td {
-      display: block;
-    }
-
-    input#amt_other_text {
-      width: 200px;
-    }
-
-    #issues label {
-      text-transform: none;
-      font-weight: normal;
-    }
-
-    #contribution td.contribcolumn label {
-      text-transform: capitalize;
-      font-weight: bold;
-    }
-
-    .bsd-contribForm-belowContent p {
-      font-size: 0.9rem;
-    }
-
-    input#processbutton {
-      margin: 1rem 0;
-    }
-
-    #issues input[type=text],
-    #issues input[type=email],
-    #issues textarea {
-      background: transparent;
-      -webkit-appearance: none;
-      border: 2px solid #aaa;
-      border-radius: 0;
-      padding: 0.5rem;
-      box-sizing: border-box;
-    }
-
-    #contribution td td td {
-      max-width: 100%;
-      display: block;
-    }
-
-    input#cc_cvv {
-      max-width: 300px;
-      margin-bottom: 0.5rem;
-    }
-
-    #contribution td,
-    #contribution th {
-      display: block;
-    }
-
-    span#full-gift-label {
-      text-transform: none;
-    }
-
-    #home #wrapper,
-    #home #content {
-      background: #f2f0ed !important;
-    }
-
-    select {
-      font-size: 1rem;
-      min-height: 43px !important;
-      -webkit-appearance: none;
-      background: transparent;
-      -webkit-appearance: none;
-      border: 2px solid #aaa;
-      border-radius: 0;
-      padding: 0.5rem;
-      box-sizing: border-box;
-    }
-
-    #contribution td.contribheader,
-    #contribution #pa_status {
-      border-bottom: 3px solid #e35e14;
-      margin-bottom: 1rem;
-    }
-
-    #contribution td.contribcolumn label {
-      display: block;
-    }
-
-    #contribution table.amounts nobr label {
-      display: inline-block;
-      width: auto;
-      clear: none;
-      margin: 0 0 0 0.5rem;
-    }
-
-    input[type=checkbox],
-    input[type=radio] {
-      display: inline;
-      width: auto;
-      clear: none;
-    }
-
-    .checkbox,
-    .radio {
-      display: inline;
-    }
-
-    #full-gift-container label {
-      display: inline-block !important;
-      margin-left: 0.5rem;
-    }
-
-    a.popuphelp {
-      display: none;
-    }
-
-    tr#bsd-contribution-section-header-giftaid label {
-      display: inline-block !important;
-    }
-
-    #issues label[for=qf_b8d989] {
-      display: inline;
-    }
-
-    input#qf_b8d989 {
-      margin-right: 0.5rem;
-    }
-
-    .creditCardTypeSelector-creditCardTextBox {
-      display: block !important;
-    }
-
-    input#credit_card-creditCardNumberTextBox {
-      /* float:  left; */
-
-    /*display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    td.label {
-      padding: 0;
-    }
-
-    #contribution td.contribcolumn label {
-      margin-bottom: 0;
-    }
-
-    section#issues {
-      padding: 1rem !important;
-    }
-
-    .giftaidWrap label {
-      display: inline;
-    }
-
-    .giftaidWrap input {
-      margin-right: 0.5rem;
-    }
-
-    input#processbutton {
-      border-radius: 2px;
-    }
-
-    .bsd-contribForm-belowContent p {
-      font-size: 0.75rem !important;
-    }
-
-    span#full-gift-label {
-      margin: 0 !important;
-    }
-
-    #full-gift-container label {
-      margin: 0;
-      display: inline !important;
-    }
-
-    input#full-gift-checkbox {
-      margin-right: 0.5rem;
-    }
-
-    input#firstname,
-    input#lastname {
-      width: 90%;
-      max-width: 250px;
-    }
-
-    input:focus,
-    input:hover,
-    select:focus,
-    select:hover {
-      outline: none;
-    }
-
-    #cc_expir_month,
-    #cc_expir_year {
-      width: 100%;
-      max-width: 250px;
-      margin-bottom: 1rem;
-      margin-right: 1rem;
-    }
-
-    input#cc_cvv {
-      max-width: 250px;
-    }*/
-
-    */
-    /* NEWWEST */
-
     footer,
     header {
       width: 100%;
       min-height: 60px;
       display: flex;
       align-items: center;
-    }
-
-    #footer {
-      position: static;
     }
 
     .fixed-background {
@@ -699,7 +367,6 @@
     }
 
     /* Amounts */
-
     #contribution .amountWraps label {
       background: #e35e14;
       padding: 1rem 2rem;
@@ -743,8 +410,6 @@
       outline: none;
     }
 
-
-
     .donation-block h2 {
       margin-bottom: 1rem;
       clear: both;
@@ -781,18 +446,15 @@
     /*.donation-block {
   transform: translateX(9999px);
   position: fixed;
-}
+  }
 
-.showDonate {
+  .showDonate {
   position: static;
   transform: translateX(0);
-}*/
-
+  }*/
     .creditCardTypeSelector label {
       display: none;
     }
-
-
 
     #contribution .amountWraps label.labelSelect {
       background: #3c3b39;
@@ -821,8 +483,6 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-
-
 
     body {
       color: #3c3b39;
@@ -877,7 +537,6 @@
     }
 
     /* Menu */
-
     header .row {
       align-items: center;
     }
@@ -937,7 +596,6 @@
       transform: rotate(-45deg);
       transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
     }
-
 
     .mobilemenu-wrapper {
       z-index: 999;
@@ -1010,7 +668,6 @@
     }
 
     /* Errors */
-
     .error {
       text-transform: capitalize;
       display: block;
@@ -1041,7 +698,6 @@
     }
 
     /* Signup */
-
     #contribution .signup_optin_wrap label {
       float: left;
       text-transform: none !important;
@@ -1052,7 +708,6 @@
     }
 
     /* State */
-
     input[type=text]#state_cd {
       display: none;
     }
@@ -1076,8 +731,6 @@
     }
 
     /* Matched */
-
-
     /* New */
     .form-6 {
       width: 50%;
@@ -1107,21 +760,7 @@
       float: left;
     }
 
-    .progress-bar.progress {
-      width: 100%;
-      border-radius: 0;
-    }
 
-
-
-    .amount {
-      font-size: inherit;
-    }
-
-    .goal-progress {
-      text-align: left;
-      padding: 0;
-    }
 
     .form-group.signup_optin_wrap.clearfix {
       padding: 0;
@@ -1133,10 +772,6 @@
       position: relative;
       float: left;
     }
-
-
-
-
 
     #contribution fieldset.optinradio_fieldset label {
       width: 100%;
@@ -1214,15 +849,10 @@
       margin: 0 0 1rem 0;
     }
 
-
-
     a.btn.donateOp:hover,
     a.btn.donateOp:focus {
       color: white;
     }
-
-
-
 
     .fixed-background {
       background-color: black;
@@ -1240,7 +870,6 @@
     #donate-options .col-md-4 {
       padding: 0;
     }
-
 
     @media (min-width: 992px) {
       #donate-options .col-md-4:nth-of-type(2) {

@@ -403,20 +403,20 @@
 
   var inputs = document.querySelectorAll(".amountNum input[type='radio']");
 
-Array.prototype.forEach.call(inputs, function (el) {
-  el.addEventListener('click', function () {
-    var value = parseInt(this.value, 10);
-    var URL = "https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
-    jQuery.get(URL, function (data) {
-      var fee = data.fee;
-      var total = fee + value;
-      total = total.toFixed(2);
-      jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
-      jQuery("#processbutton").val("Donate £" + total);
-      jQuery("#giftaid-amount").innerText = (total);
+  Array.prototype.forEach.call(inputs, function(el) {
+    el.addEventListener('click', function() {
+      var value = parseInt(this.value, 10);
+      var URL = "https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
+      jQuery.get(URL, function(data) {
+        var fee = data.fee;
+        var total = fee + value;
+        total = total.toFixed(2);
+        jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
+        jQuery("#processbutton").val("Donate £" + total);
+        jQuery("#giftaid-amount").innerText = (total);
+      });
     });
   });
-});
 </script>
 </body>
 <style>
