@@ -67,6 +67,18 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
+  // Functions
+
+  function precise_round(num, decimals) {
+    var t = Math.pow(10, decimals);
+    return (Math.round(
+      num * t +
+      (decimals > 0 ? 1 : 0) * (Math.sign(num) * (10 / Math.pow(100, decimals)))
+    ) / t).toFixed(decimals);
+  }
+
+  // Essential
+
   $(document).ready(function() {
     $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
   });
@@ -81,18 +93,7 @@
     $("#donate-options").hide();
   });
 
-
-  // Functions
-
-  function precise_round(num, decimals) {
-    var t = Math.pow(10, decimals);
-    return (Math.round(
-      num * t +
-      (decimals > 0 ? 1 : 0) * (Math.sign(num) * (10 / Math.pow(100, decimals)))
-    ) / t).toFixed(decimals);
-  }
-
-  //Organise and order
+  // GDPR Pop-up fixes
 
   $(".bsd-contribForm-gdpr-modal-content h3, .bsd-contribForm-gdpr-modal-content p").wrapAll("<div class='col-md-10'>");
   $(".bsd-contribForm-gdpr-modal-content div:nth-of-type(2), .bsd-contribForm-gdpr-modal-content div:nth-of-type(3)").wrap("<div class='col-md-2'>");
@@ -102,6 +103,7 @@
   $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("target", "_blank");
   $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(3)").remove();
 
+  // Organise and order
 
   $("#contribution").find("input").addClass("form-control");
   $("#contribution").find("select").addClass("form-control");
@@ -130,6 +132,24 @@
   $("#credit_card-creditCardNumberTextBox").attr("placeholder", "Card Number");
   $("#cc_cvv").attr("placeholder", "CVV");
   $("#payment-details").prepend('<h2>Payment Details</h2>');
+
+  $("#payment-card").append("<div class='cc-select-wrap form-group'></div>");
+
+  $(".contribcolumn:eq(0)").find(".cc_type_cd").each(function() {
+    $(this).addClass("form-check-input");
+    $(this).wrap("<div class='form-check cc-select'></div>");
+    $('.cc-select').appendTo(".cc-select-wrap");
+  });
+
+  $("#cc_ax").after('<label class="form-check-label">American Express</label>');
+  $("#cc_ds").after('<label class="form-check-label">Discover</label>');
+  $("#cc_mc").after('<label class="form-check-label">Mastercard</label>');
+  $("#cc_vs").after('<label class="form-check-label">Visa</label>');
+
+  $('#cc_number').wrap("<div class='form-group cc-group'></div>");
+  $('.cc-group').appendTo("#payment-card");
+  $('#cc_number').attr("placeholder", "Card Number");
+
 
   // Amounts
 
@@ -178,56 +198,49 @@
   $("#contribution #amt_other_wrap label span").text("£");
   $("#amt_other_text").attr('placeholder', 'Other');
 
-
-
-  $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
-  $("#amounts").append($(".fullgift-wrap"))
-  $("#full-gift-container").remove();
-  $('.fullgift-wrap').attr('id', 'full-gift-container');
-
   $(".amountWraps").addClass("col-6 col-lg-3");
   $(".amountWraps").wrapAll("<div class='amountRow'></div>");
 
   $("#amt_preset_1_wrap, #amt_preset_2_wrap, #amt_preset_3_wrap, #amt_preset_4_wrap").wrapAll("<div class='row'></div>");
   $("#amt_preset_5_wrap, #amt_preset_6_wrap, #amt_preset_7_wrap, #amt_other_wrap").wrapAll("<div class='row'></div>");
 
+
+  // Full Gift
+
+  $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
+  $("#amounts").append($(".fullgift-wrap"))
+  $("#full-gift-container").remove();
+  $('.fullgift-wrap').attr('id', 'full-gift-container');
   $("#full-gift-checkbox").removeClass("form-control");
   $("#full-gift-checkbox").addClass("form-check-input");
   $("label[for='full-gift-checkbox']").addClass("form-check-label");
   $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
 
+  $('#full-gift-checkbox').change(function() {
+    if ($(this).is(":checked")) {
+      fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
+      fullgiftAmountD = fullgiftAmount.toFixed(2);
+      giftaidAmount = fullgiftAmount * 1.25;
+      giftaidAmountD = giftaidAmount.toFixed(2);
+      $("#giftaid-amount").text(fullgiftAmountD);
+      $("#giftaid-amount-total").text(giftaidAmountD);
+    } else {
+      giftaidAmount = giftaidableAmount * 1.25;
+      giftaidAmountD = giftaidAmount.toFixed(2);
+      $("#giftaid-amount").text(giftaidableAmount);
+      $("#giftaid-amount-total").text(giftaidAmountD);
+    }
+  });
+
   // Your Details
 
   $('#firstname').attr("placeholder", "First Name");
-
   $('#lastname').attr("placeholder", "Last Name");
-
   $('#addr1').attr("placeholder", "Address 1");
-
   $('#addr2').attr("placeholder", "Address 2");
-
   $('#city').attr("placeholder", "City");
-
   $('#zip').attr("placeholder", "Postcode");
-
   $('#email').attr("placeholder", "Email");
-
-  $("#payment-card").append("<div class='cc-select-wrap form-group'></div>")
-
-  $(".contribcolumn:eq(0)").find(".cc_type_cd").each(function() {
-    $(this).addClass("form-check-input");
-    $(this).wrap("<div class='form-check cc-select'></div>");
-    $('.cc-select').appendTo(".cc-select-wrap");
-  });
-
-  $("#cc_ax").after('<label class="form-check-label">American Express</label>');
-  $("#cc_ds").after('<label class="form-check-label">Discover</label>');
-  $("#cc_mc").after('<label class="form-check-label">Mastercard</label>');
-  $("#cc_vs").after('<label class="form-check-label">Visa</label>');
-
-  $('#cc_number').wrap("<div class='form-group cc-group'></div>");
-  $('.cc-group').appendTo("#payment-card");
-  $('#cc_number').attr("placeholder", "Card Number");
 
   $("#your-details").prepend("<h2>Your Details</h2>")
   $("#email").appendTo("#your-details");
@@ -237,6 +250,9 @@
   $("#firstname, #lastname").wrap("<div class='form-group form-6'></div>");
   $("#city, #zip").wrap("<div class='form-group form-4'></div>");
   $("#state_cd").wrap("<div class='form-group form-2'></div>");
+
+// Opt-in
+
   $("input#signup_optin").wrap("<div class='form-group signup_optin_wrap clearfix'></div>");
   $("label[for=signup_optin]").appendTo(".signup_optin_wrap");
   $(".optinradio_fieldset").appendTo(".signup_optin_wrap");
@@ -244,21 +260,6 @@
   $("input#signup_optin").addClass("form-check-input");
   $("label[for=signup_optin]").text("I'd like to receive updates about our news, campaigns and appeals by email");
   $(".signup_optin_wrap").appendTo("#your-details");
-
-  $(".giftaid_confirm_checkbox").each(function() {
-    var GiftAid = $(".giftaid_confirm_checkbox").attr('id');
-    $("#gift-aid-wrap").prepend('<h2>Add Giftaid</h2>');
-    $("#giftaid-pre").appendTo("#gift-aid-wrap");
-    $(this).appendTo('#gift-aid-wrap');
-    $(this).addClass('form-check-input');
-    $('#gift-aid-wrap').append('<label class="form-check-label gift-aid-label">Yes, I want to Gift Aid this donation, any future donations I make in the future, or any donation I have made in the past fours year to Reprieve. </label>');
-    $('.gift-aid-label').attr('for', GiftAid);
-    $('#gift-aid-wrap .form-check-input, #gift-aid-wrap .form-check-label').wrap('<div class="form-check"></div>');
-    $('#gift-aid-wrap').append(
-      "<p style='text-size:0.75rem'>I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all of my donations in that tax year it is my responsibility to pay any difference.</p>"
-    );
-    $('.gift-aid-label').attr('for', GiftAid);
-  });
 
   jQuery("#optin_1").change(function() {
     if (jQuery(this).is(":checked")) {
@@ -275,6 +276,24 @@
     }
   });
 
+  // Gift Aid
+
+  $(".giftaid_confirm_checkbox").each(function() {
+    var GiftAid = $(".giftaid_confirm_checkbox").attr('id');
+    $("#gift-aid-wrap").prepend('<h2>Add Giftaid</h2>');
+    $("#giftaid-pre").appendTo("#gift-aid-wrap");
+    $(this).appendTo('#gift-aid-wrap');
+    $(this).addClass('form-check-input');
+    $('#gift-aid-wrap').append('<label class="form-check-label gift-aid-label">Yes, I want to Gift Aid this donation, any future donations I make in the future, or any donation I have made in the past fours year to Reprieve. </label>');
+    $('.gift-aid-label').attr('for', GiftAid);
+    $('#gift-aid-wrap .form-check-input, #gift-aid-wrap .form-check-label').wrap('<div class="form-check"></div>');
+    $('#gift-aid-wrap').append(
+      "<p style='text-size:0.75rem'>I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all of my donations in that tax year it is my responsibility to pay any difference.</p>"
+    );
+    $('.gift-aid-label').attr('for', GiftAid);
+  });
+
+// Click functions
 
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
@@ -339,21 +358,8 @@
 
   });
 
-  $('#full-gift-checkbox').change(function() {
-    if ($(this).is(":checked")) {
-      fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
-      fullgiftAmountD = fullgiftAmount.toFixed(2);
-      giftaidAmount = fullgiftAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(fullgiftAmountD);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    } else {
-      giftaidAmount = giftaidableAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(giftaidableAmount);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    }
-  });
+
+// Change colour of buttons on select
 
   $('.amountWraps').click(function() {
 
@@ -374,8 +380,12 @@
     $('#amt_other_wrap').find('label').addClass("labelSelect");
   });
 
+  // Final fixes
+
   $("#contribution table").hide();
   $("#processbutton").appendTo("#contribution");
+
+  // Error fixes
 
   $('.contriberrorbanner').prependTo('.donateWrap');
   $('#contribution .error').appendTo('.contriberrorbanner');
@@ -398,8 +408,7 @@
     }, animationLength);
   });
 
-  // Calculate Grand Total for pre-determined Amounts.
-
+  // Full Gift: Calculate Grand Total for pre-determined Amounts.
 
   var inputs = document.querySelectorAll(".amountNum input[type='radio']");
 
