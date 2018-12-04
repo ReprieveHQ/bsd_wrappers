@@ -7,84 +7,103 @@
 </div>
 </div>
 </div>
-</div>
-<div class="slide2 slide darkslide" style="display: none;">
+<div class="slide2 slide darkslide donationSlide" style="">
 
   <div class="container">
     <div class="row">
-      <div class="col-md">
-        <!-- TODO: Edit text above share buttons below. Place to edit Twitter and Facebook text itself is further down. -->
-        <h2>Thank you <span class="first_name"></span> for signing the petition</h2>
-        <h4>Can you help us by sharing the petition?</h4>
-        <button class="solid button facebook_share" onclick="return submitAndShare();">Share on Facebook</button> <button class="solid button twitter_share">Share on Twitter</a>
-          <button class="button outline" id="slide2_skip">Skip</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="slide3 slide darkslide" style="display: none;">
-
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md">
+      <div class="col-md-4">
         <!-- TODO: Add text to convince people to donate below! You may not need three lines, so feel free to delete the <p></p> section if not. -->
         <div class="unsigned">
           <h2>Help make our work possible</h2>
-          <p>We will need more than just a petition to make real change. This isn’t a campaign that we can win in a day or a week or a month. We’ll need to consistently raise these cases, build pressure on Egypt and its allies, and use our expertise
-            to ensure that Egypt undertakes much needed reforms. We can do it – but we need your help. <strong>Can you donate and make a difference?</strong></p>
+          <p>The fight for human rights in 2019 starts now. Donate today to fund the investigations, legal work and campaigns that save lives and deliver justice.</p>
+          <div class="matched-calc-container">
+            <p><span class="match-text">All donations until the end of 2018 will be matched to make double the impact.</span> <span class="match-you-container">
+                <span class="matched-center">
+                  <span class="matched-number">£<span id="matched-you">15</span>
+                  </span>
+                  <span class="matched-sub">from you</span>
+                </span>
+              </span>
+
+              <span class="match-plus"> + </span>
+
+              <span class="match-us-container">
+                <span class="matched-center">
+                  <span class="matched-number">£<span id="matched-us">15</span>
+                  </span>
+                  <span class="matched-sub">matched</span></span>
+              </span>
+
+              <span class="match-equals"> = </span>
+
+              <span class="match-total">
+                <span class="matched-center">
+                  <span class="matched-number">£<span id="matched-calc">30</span>
+                  </span> <span class="matched-sub">for Reprieve</span></span>
+              </span>
+            </p>
+          </div>
 
 
         </div>
+      </div>
+      <div class="col-md">
 
         <!-- TODO: Change URLs below to URL of relevant donation page. PLEASE rememember to create a source code. -->
 
-        <div class="donate-tab-container ukdonate">
-          <div class="donate-tab-top clearfix">
-            <div class="donate-tab-gn donate-tab picked-tab">
-              <h2>Give Now</h2>
+        <div class="goal-progress donation-progress">
+          <div class="goal-progress-wrapper">
+            <div class="percentage-text">
+              <div class="percentage-bar">
+                <div class="progress-wrap progress">
+                  <div class="progress-bar progress" style="left: 54%;">
+                    &nbsp;</div>
+                </div>
+              </div>
             </div>
-            <div class="donate-tab-gm donate-tab">
-              <h2>Give Monthly</h2>
-            </div>
-
           </div>
-          <div class="donate-tab-main clearfix">
-            <div class="donate-tab-givenow donate-tab-body picked-body">
-              <p>Give an individual donation now to fund our most urgent cases.</p>
-              <a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/egypt-1018?source=eg1018gnpet&amp;default_amt=10">£10
-              </a><a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/egypt-1018?source=eg1018gnpet&amp;default_amt=25">£25
-              </a><a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/egypt-1018?source=eg1018gnpet&amp;default_amt=37">£37
-              </a><a class="button outline small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/egypt-1018?source=eg1018gnpet">Other
-              </a>
+        </div>
+        <div id="contribution" class="donation-block-wrap">
+          <div id="amounts" class="donation-block showDonate clearfix">
+            <div class="goalText">
+              <div id="goalText">
+                <div class="percentage-text">We've raised <span class="pound">£</span><span class="amount">0</span> of our <span class="pound">£</span><span class="goal">70,000</span> goal</div>!
+              </div> What can you give to help us reach our target?
             </div>
-            <div class="donate-tab-givemonthly donate-tab-body">
-              <p>Giving monthly helps us fund long-term projects and cases.</p>
-              <a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet&amp;amount=5">£5
-              </a><a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet&amp;amount=10">£10
-              </a><a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet&amp;amount=15">£15
-              </a><a class="button outline small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet">Other
-              </a>
+            <div class="amountRow">
+              <div class="row">
+                <div id="amt_preset_1_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_1"><input id="amt_preset_1" name="amount" value="15" type="radio" class="form-control"><span class="radio">£15</span></label></div>
+                <div id="amt_preset_2_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_2"><input id="amt_preset_2" name="amount" value="25" type="radio" class="form-control"><span class="radio">£25</span></label></div>
+                <div id="amt_preset_3_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_3"><input id="amt_preset_3" name="amount" value="50" type="radio" class="form-control"><span class="radio">£50</span></label></div>
+                <div id="amt_preset_4_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_4"><input id="amt_preset_4" name="amount" value="75" type="radio" class="form-control"><span class="radio">£75</span></label></div>
+              </div>
+              <div class="row">
+                <div id="amt_preset_5_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_5"><input id="amt_preset_5" name="amount" value="100" type="radio" class="form-control"><span class="radio">£100</span></label></div>
+                <div id="amt_preset_6_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_6"><input id="amt_preset_6" name="amount" value="250" type="radio" class="form-control"><span class="radio">£250</span></label></div>
+                <div id="amt_preset_7_wrap" class="amountWraps amountNum col-6 col-lg-3"><label for="amt_preset_7"><input id="amt_preset_7" name="amount" value="500" type="radio" class="form-control"><span class="radio">£500</span></label></div>
+                <div id="amt_other_wrap" class="amountWraps col-6 col-lg-3"><label for="amt_other"><input id="amt_other" name="amount" value="other" type="radio" class="form-control"><span class="radio">£</span><input id="amt_other_text" size="4"
+                      intl_currency_symbol="GBP" class="bsd-other-amount-input form-control" pattern="^\d*[\.]?\d*$" title="Must be a number" name="amount_other" type="text" placeholder="Other"></label></div>
+              </div>
             </div>
 
           </div>
         </div>
 
-        <div class="usdonate" style="display: none;">
-          <a href="https://secure.reprieve.org/page/contribute/egypt_donate?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
-          <!--
-      --><a href="https://secure.reprieve.org/page/contribute/egypt_donate?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
-          <!--
-      --><a href="https://secure.reprieve.org/page/contribute/egypt_donate?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
-          <!--
-      --><a href="https://secure.reprieve.org/page/contribute/egypt_donate" class="outline button small" target="_blank">Other amount</a>
-        </div>
+        <a class="btn donationBtn donatePaypal" href="https://act.reprieve.org.uk/page/contribute/dec18-pl">Donate now</a>
+
+      <div class="usdonate" style="display: none;">
+        <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
+        <!--
+      --><a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
+        <!--
+      --><a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
+        <!--
+      --><a href="https://secure.reprieve.org/page/contribute/dec18" class="outline button small" target="_blank">Other amount</a>
       </div>
     </div>
+    </div>
   </div>
+</div>
 </div>
 <footer id="footer" class="footer">
   <div class="container clearfix">
@@ -178,7 +197,58 @@
     $(".mobilemenu-wrapper").toggleClass("menu-active");
   });
 
-  // Count Signups
+  // Amounts
+
+  $('.amountWraps').click(function() {
+
+    $('.amountWraps').find('label').removeClass("labelSelect");
+    $(this).find('label').addClass("labelSelect");
+
+  });
+
+  $('#amt_other_wrap').click(function() {
+
+    $('.amountWraps').find('label').removeClass("labelSelect");
+    $(this).find('label').addClass("labelSelect");
+
+  });
+
+  $('#amt_other_text').keyup(function() {
+    $('.amountWraps').find('label').removeClass("labelSelect");
+    $('#amt_other_wrap').find('label').addClass("labelSelect");
+  });
+
+  $(".amountNum").click(function() {
+    $("#amt_other_text").val("");
+    var matchedAmount = $(this).find("input").val();
+    var matchedAmountDoubled = matchedAmount * 2;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
+    // var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+    //
+    $(".donatePaypal").attr("href", paypalLink);
+    // $(".donateDebit").attr("href", edirectLink);
+    $("#matched-you,#matched-us").text(matchedAmount);
+    $("#matched-calc").text(matchedAmountDoubled);
+
+
+
+  });
+
+  $("#amt_other_text").on("keyup", function() {
+    var matchedAmount = this.value;
+    matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
+    var matchedAmountDoubled = matchedAmount * 2;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
+    // var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+    //
+    $(".donatePaypal").attr("href", paypalLink);
+    // $(".donateDebit").attr("href", edirectLink);
+    $("#matched-you,#matched-us").text(matchedAmount);
+    $("#matched-calc").text(matchedAmountDoubled);
+    $("#giftaid-pre").show();
+
+
+  });
 
   // Petition counter
 
@@ -214,81 +284,35 @@
       var optionSelected = $("#country option:selected").val();
       if (optionSelected === "US") {
         $(".usdonate").show();
-        $(".ukdonate").hide();
+        $(".donation-progress, .donation-block-wrap, .donatePaypal").hide();
       } else {
         $(".usdonate").hide();
-        $(".ukdonate").show();
+        $(".donation-progress, .donation-block-wrap, .donatePaypal").show();
       }
     });
 
-    function count_signups(signup_form_id) {
-
-      // This function formats numbers by adding commas
-      function numberFormat(nStr, prefix) {
-        var prefix = prefix || '';
-        nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1))
-          x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        return prefix + x1 + x2;
-      }
-
-      function load_counter(data) {
-        var cumulativeNum = data * 1;
-
-        console.log(cumulativeNum)
-
-        cumulativeNum += 0; // accounting for offline action
-
-        console.log(cumulativeNum)
-
-        var signups = numberFormat(cumulativeNum);
-
-        var signupsnum = signups.replace(",", "");
-
-        var signupstotal = signupsnum;
-
-        var target = 20000;
-
-        var percentageComplete = (signupstotal / target) * 100;
-
-        $(".totalLevel").css("width", percentageComplete + "%");
-
-        $('.amount').text(signups);
-
-        $('.goal').text("20,000");
-
-        $(".goal-progress").addClass('js-percent');
-
-        var getPercent = percentageComplete;
-        var getProgressWrapWidth = $('.js-percent .progress-wrp').width();
-        var progressTotal = percentageComplete + "%";
-        var animationLength = 2500;
-
-        // on page load, animate percentage bar to data percentage length
-        // .stop() used to prevent animation queueing
-        $('.js-percent .progress-bar').stop().animate({
-          left: progressTotal
-        }, animationLength);
-        var numTruncated = parseFloat(percentageComplete).toFixed(2);
-        $('.js-percent .percentage-number').text(numTruncated + "%");
-        $(".goal-progress").removeClass('js-percent');
-
-      }
-
-      bQuery.get("/utils/cons_counter/signup_counter.ajax.php?signup_form_id=159", load_counter);
-    }
-
-
-
-    count_signups();
-
+    bQuery.get('https://act.reprieve.org.uk/page/contribute_c/dec18/text', function(data) {
+      $('#goalText').html(data);
+      amountNoCommas = $("#goalText").find(".amount").text().replace(",", "");
+      goalNoCommas = $("#goalText").find(".goal").text().replace(",", "");
+      console.log(goalNoCommas, amountNoCommas);
+      var goalPercent = Math.round((amountNoCommas / goalNoCommas) * 100);
+      $(".donationSlide .percentage-number").text(goalPercent + "%");
+      $(".donationSlide .pound").text("£");
+      $(".donationSlide .amount").text($("#goalText").find(".amount").text());
+      $(".donationSlide .goal").text($("#goalText").find(".goal").text());
+      var progressTotal = goalPercent + "%";
+      console.log(progressTotal);
+      var animationLength = 2500;
+      $('.donationSlide .progress-bar').stop().animate({
+        left: progressTotal
+      }, animationLength);
+    });
 
 
   });
+
+
 
 
   // Expander
@@ -333,23 +357,6 @@
   });
 
 
-  // Data
-
-  var voteName = "Supporter";
-
-  $("#firstname").change(function() {
-    voteName = $(this).val();
-    $('.first_name').text(voteName)
-  });
-
-
-  $("#signup").submit(function(event) {
-    event.preventDefault();
-    var $form = $(this),
-      url = $form.attr("action");
-    var posting = $.post(url, $form.serialize());
-    nextSlide('.slide1');
-  });
 
 
 
@@ -600,4 +607,154 @@
 
     return false;
   }
+  // Data
+
+  var voteName = "Supporter";
+
+  $("#firstname").change(function() {
+    voteName = $(this).val();
+    $('.first_name').text(voteName)
+  });
+
+
+  $("#signup").submit(function(event) {
+    event.preventDefault();
+    var $form = $(this),
+      url = $form.attr("action");
+    var posting = $.post(url, $form.serialize());
+    nextSlide('.slide1');
+  });
+
 </script>
+<style>
+  #contribution .amountWraps label {
+    background: #e35e14;
+    padding: 1rem 2rem;
+    margin: 0 0 1rem;
+    min-width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+  }
+
+  #contribution .amountWraps span.radio {
+    display: inline-block;
+    margin: 0;
+    line-height: normal;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  #contribution .amountWraps input[type=radio] {
+    margin: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+  }
+
+  #contribution .amountWraps label.labelSelect {
+    background: #3c3b39;
+  }
+
+  #amt_other_wrap #amt_other_text {
+    padding: 0 0.25rem;
+    box-sizing: border-box;
+    width: 50%;
+    display: inline-block;
+    margin: 0;
+    background: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid #e35e14;
+    color: #e35e14;
+  }
+
+  #amt_other_wrap label.labelSelect input#amt_other_text {
+    color: #3C3B33;
+    border-color: #3C3B33;
+  }
+
+  #contribution #amt_other_wrap label {
+    background: none;
+    border: 2px solid #E35E14;
+    padding: 1rem 0;
+  }
+
+  #contribution #amt_other_wrap label.labelSelect {
+    border-color: #3c3b39;
+  }
+
+  #contribution #amt_other_wrap span.radio {
+    color: #e35e14;
+    font-size: 1rem;
+  }
+
+  #contribution #amt_other_wrap .labelSelect span.radio {
+    color: #3c3b39;
+  }
+
+
+  #amt_other_wrap #amt_other_text:focus,
+  #amt_other_wrap #amt_other_text:hover {
+    outline: none;
+  }
+
+  .donationBtn {
+    background: #e35e14;
+    color: white;
+    font-size: 1.5rem;
+    border: 0;
+    margin: 1rem 0 0 0 !important;
+    width: 100%;
+    outline: none;
+  }
+
+  .donationBtn:hover, .donationBtn:focus {
+    color: white;
+    outline:none;
+}
+
+
+  .donation-block-wrap {
+    background: white;
+    box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
+    padding: 2rem;
+    color: black;
+  }
+
+  .donationSlide .goal-progress {
+    margin: 0;
+  }
+
+  .donationSlide .progress-wrap,
+  .donationSlide .progress {
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .donationSlide .percentage-text,
+  .donationSlide #goalText {
+    display: inline;
+  }
+
+  .donationSlide #goalText,
+  .donationSlide .percentage-text {
+    display: inline;
+  }
+
+  .goalText {
+    margin-bottom: 1rem;
+  }
+
+  .donationSlide {
+    text-align: left;
+  }
+
+  .matched-number {
+    color: #e35e14;
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+</style>
