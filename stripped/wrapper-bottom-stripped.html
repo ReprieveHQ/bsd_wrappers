@@ -1,14 +1,5 @@
 <!-- wrapper-bottom -->
-<fieldset class='optinradio_fieldset'><label class='optin_lang'>Would you like to receive updates about our news, campaigns and appeals by email? <a href='http://www.reprieve.org.uk/privacy/' target='_blank'>(see our privacy policy)</a></label>
-  <label for='optin_1'><input id='optin_1' class='optinradio' name='optin' value='Yes' type='radio'>Yes</label> <label for='optin_0'><input id='optin_0' class='optinradio' name='optin' value='No' type='radio'>No</label>
-  <p id='optin_warning'>Don't want to hear from us? If you're already on our mailing list, selecting this option may unsubscribe you from our alerts.</p>
-</fieldset>
 
-<div id="donate-options" class="clearfix row">
-  <div class="col-md-4"><a class="btn donateOp donateCard">Donate by Card</a></div>
-  <div class="col-md-4"><a class="btn donateOp donatePaypal" href="https://act.reprieve.org.uk/page/contribute/dec18-pl">Donate by PayPal</a></div>
-  <div class="col-md-4"><a class="btn donateOp donateDebit" href="https://secure.edirectdebit.com/Reprieve/Donate4">Donate by Direct Debit</a></div>
-</div>
 
 </div>
 </div>
@@ -79,19 +70,19 @@
 
   // Essential
 
-  $(document).ready(function() {
-    $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
-  });
+  // $(document).ready(function() {
+  //   $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
+  // });
 
   $(".menu-wrapper").click(function() {
     $('.hamburger-menu').toggleClass('animate');
     $(".mobilemenu-wrapper").toggleClass("menu-active");
   });
 
-  $(".donateCard").click(function() {
-    $(".donation-block, #processbutton").show();
-    $("#donate-options").hide();
-  });
+  // $(".donateCard").click(function() {
+  //   $(".donation-block, #processbutton").show();
+  //   $("#donate-options").hide();
+  // });
 
   // GDPR Pop-up fixes
 
@@ -108,113 +99,113 @@
   $("#contribution").find("input").addClass("form-control");
   $("#contribution").find("select").addClass("form-control");
   $("#contribution").prepend('<div class="donation-block-wrap"></div>');
-  $(".donation-block-wrap").prepend('<div id="gift-aid-wrap" class="donation-block clearfix"></div>');
-  $(".donation-block-wrap").prepend('<div id="payment-details" class="donation-block clearfix"></div>');
-  $(".donation-block-wrap").prepend('<div id="your-details" class="donation-block clearfix"></div>');
-  $(".donation-block-wrap").prepend('<div id="amounts" class="donation-block showDonate clearfix"></div>');
+  // $(".donation-block-wrap").prepend('<div id="gift-aid-wrap" class="donation-block clearfix"></div>');
+  // $(".donation-block-wrap").prepend('<div id="payment-details" class="donation-block clearfix"></div>');
+  // $(".donation-block-wrap").prepend('<div id="your-details" class="donation-block clearfix"></div>');
+  // $(".donation-block-wrap").prepend('<div id="amounts" class="donation-block showDonate clearfix"></div>');
   $(".bsd-contribForm-oneCol").addClass('row');
   $(".bsd-contribForm-aboveContent").addClass('col-md-4');
   $("#contribution").wrap('<div class="donateWrap col-md-8"></div>');
-  $("#donate-options").appendTo(".donateWrap");
+  // $("#donate-options").appendTo(".donateWrap");
   $(".bsd-contribForm-belowContent").appendTo('.donateWrap');
   $(".goalText").prependTo("#amounts");
   $(".goal-progress").prependTo("#contribution");
 
   // Payment Details
 
-  $("#payment-details").append('<div id="payment-card" class="clearfix"></div>');
-  $("#payment-details").append('<div id="payment-card-details" class="clearfix"></div>');
-  $('#credit_card-creditCardTypeSelector').appendTo('#payment-card');
-  $('.creditCardTypeSelector-creditCardTextBox, .creditCardTypeSelector-creditCardList').addClass('clearfix form-group');
-  $('#cc_cvv, #cc_expir_month, #cc_expir_year').appendTo('#payment-card-details');
-  $('#cc_cvv, #cc_expir_month, #cc_expir_year').wrapAll('<div class="row">')
-  $('#cc_cvv, #cc_expir_month, #cc_expir_year').wrap('<div class="col-md-4"><div class="form-group">')
+  // $("#payment-details").append('<div id="payment-card" class="clearfix"></div>');
+  // $("#payment-details").append('<div id="payment-card-details" class="clearfix"></div>');
+  // $('#credit_card-creditCardTypeSelector').appendTo('#payment-card');
+  // $('.creditCardTypeSelector-creditCardTextBox, .creditCardTypeSelector-creditCardList').addClass('clearfix form-group');
+  // $('#cc_cvv, #cc_expir_month, #cc_expir_year').appendTo('#payment-card-details');
+  // $('#cc_cvv, #cc_expir_month, #cc_expir_year').wrapAll('<div class="row">')
+  // $('#cc_cvv, #cc_expir_month, #cc_expir_year').wrap('<div class="col-md-4"><div class="form-group">')
   $("#credit_card-creditCardNumberTextBox").attr("placeholder", "Card Number");
   $("#cc_cvv").attr("placeholder", "CVV");
-  $("#payment-details").prepend('<h2>Payment Details</h2>');
+  // $("#payment-details").prepend('<h2>Payment Details</h2>');
 
-  $("#payment-card").append("<div class='cc-select-wrap form-group'></div>");
+  // $("#payment-card").append("<div class='cc-select-wrap form-group'></div>");
 
-  $(".contribcolumn:eq(0)").find(".cc_type_cd").each(function() {
-    $(this).addClass("form-check-input");
-    $(this).wrap("<div class='form-check cc-select'></div>");
-    $('.cc-select').appendTo(".cc-select-wrap");
-  });
+  // $(".contribcolumn:eq(0)").find(".cc_type_cd").each(function() {
+  //   $(this).addClass("form-check-input");
+  //   $(this).wrap("<div class='form-check cc-select'></div>");
+  //   $('.cc-select').appendTo(".cc-select-wrap");
+  // });
 
-  $("#cc_ax").after('<label class="form-check-label">American Express</label>');
-  $("#cc_ds").after('<label class="form-check-label">Discover</label>');
-  $("#cc_mc").after('<label class="form-check-label">Mastercard</label>');
-  $("#cc_vs").after('<label class="form-check-label">Visa</label>');
+  // $("#cc_ax").after('<label class="form-check-label">American Express</label>');
+  // $("#cc_ds").after('<label class="form-check-label">Discover</label>');
+  // $("#cc_mc").after('<label class="form-check-label">Mastercard</label>');
+  // $("#cc_vs").after('<label class="form-check-label">Visa</label>');
 
-  $('#cc_number').wrap("<div class='form-group cc-group'></div>");
-  $('.cc-group').appendTo("#payment-card");
+  // $('#cc_number').wrap("<div class='form-group cc-group'></div>");
+  // $('.cc-group').appendTo("#payment-card");
   $('#cc_number').attr("placeholder", "Card Number");
 
 
   // Amounts
 
-  $("label[for='amt_preset_1']").wrap("<div id='amt_preset_1_wrap'>");
-  $("label[for='amt_preset_1']").prepend($("#amt_preset_1"));
+  // $("label[for='amt_preset_1']").wrap("<div id='amt_preset_1_wrap'>");
+  // $("label[for='amt_preset_1']").prepend($("#amt_preset_1"));
+  //
+  // $("label[for='amt_preset_2']").wrap("<div id='amt_preset_2_wrap'>");
+  // $("label[for='amt_preset_2']").prepend($("#amt_preset_2"));
+  //
+  // $("label[for='amt_preset_3']").wrap("<div id='amt_preset_3_wrap'>");
+  // $("label[for='amt_preset_3']").prepend($("#amt_preset_3"));
+  //
+  // $("label[for='amt_preset_4']").wrap("<div id='amt_preset_4_wrap'>");
+  // $("label[for='amt_preset_4']").prepend($("#amt_preset_4"));
+  //
+  // $("label[for='amt_preset_5']").wrap("<div id='amt_preset_5_wrap'>");
+  // $("label[for='amt_preset_5']").prepend($("#amt_preset_5"));
+  //
+  // $("label[for='amt_preset_6']").wrap("<div id='amt_preset_6_wrap'>");
+  // $("label[for='amt_preset_6']").prepend($("#amt_preset_6"));
+  //
+  // $("label[for='amt_preset_7']").wrap("<div id='amt_preset_7_wrap'>");
+  // $("label[for='amt_preset_7']").prepend($("#amt_preset_7"));
+  //
+  // $("label[for='amt_other']").wrap("<div id='amt_other_wrap'>");
+  // $("label[for='amt_other']").prepend($("#amt_other"));
+  // $("label[for='amt_other']").append($("#amt_other_text"))
 
-  $("label[for='amt_preset_2']").wrap("<div id='amt_preset_2_wrap'>");
-  $("label[for='amt_preset_2']").prepend($("#amt_preset_2"));
-
-  $("label[for='amt_preset_3']").wrap("<div id='amt_preset_3_wrap'>");
-  $("label[for='amt_preset_3']").prepend($("#amt_preset_3"));
-
-  $("label[for='amt_preset_4']").wrap("<div id='amt_preset_4_wrap'>");
-  $("label[for='amt_preset_4']").prepend($("#amt_preset_4"));
-
-  $("label[for='amt_preset_5']").wrap("<div id='amt_preset_5_wrap'>");
-  $("label[for='amt_preset_5']").prepend($("#amt_preset_5"));
-
-  $("label[for='amt_preset_6']").wrap("<div id='amt_preset_6_wrap'>");
-  $("label[for='amt_preset_6']").prepend($("#amt_preset_6"));
-
-  $("label[for='amt_preset_7']").wrap("<div id='amt_preset_7_wrap'>");
-  $("label[for='amt_preset_7']").prepend($("#amt_preset_7"));
-
-  $("label[for='amt_other']").wrap("<div id='amt_other_wrap'>");
-  $("label[for='amt_other']").prepend($("#amt_other"));
-  $("label[for='amt_other']").append($("#amt_other_text"))
-
-  $("#amt_other_wrap").addClass("amountWraps");
-  $("#amt_preset_7_wrap").addClass("amountWraps amountNum");
-  $("#amt_preset_6_wrap").addClass("amountWraps amountNum");
-  $("#amt_preset_5_wrap").addClass("amountWraps amountNum");
-  $("#amt_preset_4_wrap").addClass("amountWraps amountNum");
-  $("#amt_preset_3_wrap").addClass("amountWraps amountNum");
-  $("#amt_preset_2_wrap").addClass("amountWraps amountNum");
-  $("#amt_preset_1_wrap").addClass("amountWraps amountNum");
-
-  $("#amounts").append($("#amt_preset_1_wrap"));
-  $("#amounts").append($("#amt_preset_2_wrap"));
-  $("#amounts").append($("#amt_preset_3_wrap"));
-  $("#amounts").append($("#amt_preset_4_wrap"));
-  $("#amounts").append($("#amt_preset_5_wrap"));
-  $("#amounts").append($("#amt_preset_6_wrap"));
-  $("#amounts").append($("#amt_preset_7_wrap"));
-  $("#amounts").append($("#amt_other_wrap"));
-  $("#contribution #amt_other_wrap label span").text("£");
+  // $("#amt_other_wrap").addClass("amountWraps");
+  // $("#amt_preset_7_wrap").addClass("amountWraps amountNum");
+  // $("#amt_preset_6_wrap").addClass("amountWraps amountNum");
+  // $("#amt_preset_5_wrap").addClass("amountWraps amountNum");
+  // $("#amt_preset_4_wrap").addClass("amountWraps amountNum");
+  // $("#amt_preset_3_wrap").addClass("amountWraps amountNum");
+  // $("#amt_preset_2_wrap").addClass("amountWraps amountNum");
+  // $("#amt_preset_1_wrap").addClass("amountWraps amountNum");
+  //
+  // $("#amounts").append($("#amt_preset_1_wrap"));
+  // $("#amounts").append($("#amt_preset_2_wrap"));
+  // $("#amounts").append($("#amt_preset_3_wrap"));
+  // $("#amounts").append($("#amt_preset_4_wrap"));
+  // $("#amounts").append($("#amt_preset_5_wrap"));
+  // $("#amounts").append($("#amt_preset_6_wrap"));
+  // $("#amounts").append($("#amt_preset_7_wrap"));
+  // $("#amounts").append($("#amt_other_wrap"));
+  // $("#contribution #amt_other_wrap label span").text("£");
   $("#amt_other_text").attr('placeholder', 'Other');
 
-  $(".amountWraps").addClass("col-6 col-lg-3");
-  $(".amountWraps").wrapAll("<div class='amountRow'></div>");
-
-  $("#amt_preset_1_wrap, #amt_preset_2_wrap, #amt_preset_3_wrap, #amt_preset_4_wrap").wrapAll("<div class='row'></div>");
-  $("#amt_preset_5_wrap, #amt_preset_6_wrap, #amt_preset_7_wrap, #amt_other_wrap").wrapAll("<div class='row'></div>");
+  // $(".amountWraps").addClass("col-6 col-lg-3");
+  // $(".amountWraps").wrapAll("<div class='amountRow'></div>");
+  //
+  // $("#amt_preset_1_wrap, #amt_preset_2_wrap, #amt_preset_3_wrap, #amt_preset_4_wrap").wrapAll("<div class='row'></div>");
+  // $("#amt_preset_5_wrap, #amt_preset_6_wrap, #amt_preset_7_wrap, #amt_other_wrap").wrapAll("<div class='row'></div>");
 
 
   // Full Gift
 
-  $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
-  $("#amounts").append($(".fullgift-wrap"))
-  $("#full-gift-container").remove();
-  $('.fullgift-wrap').attr('id', 'full-gift-container');
-  $("#full-gift-checkbox").removeClass("form-control");
-  $("#full-gift-checkbox").addClass("form-check-input");
-  $("label[for='full-gift-checkbox']").addClass("form-check-label");
-  $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
+  // $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
+  // $("#amounts").append($(".fullgift-wrap"))
+  // $("#full-gift-container").remove();
+  // $('.fullgift-wrap').attr('id', 'full-gift-container');
+  // $("#full-gift-checkbox").removeClass("form-control");
+  // $("#full-gift-checkbox").addClass("form-check-input");
+  // $("label[for='full-gift-checkbox']").addClass("form-check-label");
+  // $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
 
   $('#full-gift-checkbox').change(function() {
     if ($(this).is(":checked")) {
@@ -242,39 +233,39 @@
   $('#zip').attr("placeholder", "Postcode");
   $('#email').attr("placeholder", "Email");
 
-  $("#your-details").prepend("<h2>Your Details</h2>")
-  $("#email").appendTo("#your-details");
-  $("#country, #firstname, #lastname, #addr1, #addr2, #city, #zip").appendTo("#your-details");
-  $("#state_cd").appendTo("#your-details");
-  $("#country, #addr1, #addr2, #email").wrap("<div class='form-group'></div>");
-  $("#firstname, #lastname").wrap("<div class='form-group form-6'></div>");
-  $("#city, #zip").wrap("<div class='form-group form-4'></div>");
-  $("#state_cd").wrap("<div class='form-group form-2'></div>");
+  // $("#your-details").prepend("<h2>Your Details</h2>")
+  // $("#email").appendTo("#your-details");
+  // $("#country, #firstname, #lastname, #addr1, #addr2, #city, #zip").appendTo("#your-details");
+  // $("#state_cd").appendTo("#your-details");
+  // $("#country, #addr1, #addr2, #email").wrap("<div class='form-group'></div>");
+  // $("#firstname, #lastname").wrap("<div class='form-group form-6'></div>");
+  // $("#city, #zip").wrap("<div class='form-group form-4'></div>");
+  // $("#state_cd").wrap("<div class='form-group form-2'></div>");
 
 // Opt-in
 
-  $("input#signup_optin").wrap("<div class='form-group signup_optin_wrap clearfix'></div>");
-  $("label[for=signup_optin]").appendTo(".signup_optin_wrap");
-  $(".optinradio_fieldset").appendTo(".signup_optin_wrap");
-  $("label[for=signup_optin]").addClass("form-check-label");
-  $("input#signup_optin").addClass("form-check-input");
+  // $("input#signup_optin").wrap("<div class='form-group signup_optin_wrap clearfix'></div>");
+  // $("label[for=signup_optin]").appendTo(".signup_optin_wrap");
+  // $(".optinradio_fieldset").appendTo(".signup_optin_wrap");
+  // $("label[for=signup_optin]").addClass("form-check-label");
+  // $("input#signup_optin").addClass("form-check-input");
   $("label[for=signup_optin]").text("I'd like to receive updates about our news, campaigns and appeals by email");
-  $(".signup_optin_wrap").appendTo("#your-details");
+  // $(".signup_optin_wrap").appendTo("#your-details");
 
-  jQuery("#optin_1").change(function() {
-    if (jQuery(this).is(":checked")) {
-      jQuery('#signup_optin').prop('checked', true);
-      $("#optin_warning").hide();
-    }
-  });
-
-
-  jQuery("#optin_0").change(function() {
-    if (jQuery(this).is(":checked")) {
-      jQuery('#signup_optin').prop('checked', false);
-      $("#optin_warning").show();
-    }
-  });
+  // jQuery("#optin_1").change(function() {
+  //   if (jQuery(this).is(":checked")) {
+  //     jQuery('#signup_optin').prop('checked', true);
+  //     $("#optin_warning").hide();
+  //   }
+  // });
+  //
+  //
+  // jQuery("#optin_0").change(function() {
+  //   if (jQuery(this).is(":checked")) {
+  //     jQuery('#signup_optin').prop('checked', false);
+  //     $("#optin_warning").show();
+  //   }
+  // });
 
   // Gift Aid
 
@@ -298,11 +289,11 @@
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
-
-    $(".donatePaypal").attr("href", paypalLink);
-    $(".donateDebit").attr("href", edirectLink);
+    // var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
+    // var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+    //
+    // $(".donatePaypal").attr("href", paypalLink);
+    // $(".donateDebit").attr("href", edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
@@ -330,11 +321,11 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
-
-    $(".donatePaypal").attr("href", paypalLink);
-    $(".donateDebit").attr("href", edirectLink);
+    // var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
+    // var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+    //
+    // $(".donatePaypal").attr("href", paypalLink);
+    // $(".donateDebit").attr("href", edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
@@ -361,34 +352,34 @@
 
 // Change colour of buttons on select
 
-  $('.amountWraps').click(function() {
-
-    $('.amountWraps').find('label').removeClass("labelSelect");
-    $(this).find('label').addClass("labelSelect");
-
-  });
-
-  $('#amt_other_wrap').click(function() {
-
-    $('.amountWraps').find('label').removeClass("labelSelect");
-    $(this).find('label').addClass("labelSelect");
-
-  });
-
-  $('#amt_other_text').keyup(function() {
-    $('.amountWraps').find('label').removeClass("labelSelect");
-    $('#amt_other_wrap').find('label').addClass("labelSelect");
-  });
+  // $('.amountWraps').click(function() {
+  //
+  //   $('.amountWraps').find('label').removeClass("labelSelect");
+  //   $(this).find('label').addClass("labelSelect");
+  //
+  // });
+  //
+  // $('#amt_other_wrap').click(function() {
+  //
+  //   $('.amountWraps').find('label').removeClass("labelSelect");
+  //   $(this).find('label').addClass("labelSelect");
+  //
+  // });
+  //
+  // $('#amt_other_text').keyup(function() {
+  //   $('.amountWraps').find('label').removeClass("labelSelect");
+  //   $('#amt_other_wrap').find('label').addClass("labelSelect");
+  // });
 
   // Final fixes
 
-  $("#contribution table").hide();
-  $("#processbutton").appendTo("#contribution");
+  // $("#contribution table").hide();
+  // $("#processbutton").appendTo("#contribution");
 
   // Error fixes
 
-  $('.contriberrorbanner').prependTo('.donateWrap');
-  $('#contribution .error').appendTo('.contriberrorbanner');
+  // $('.contriberrorbanner').prependTo('.donateWrap');
+  // $('#contribution .error').appendTo('.contriberrorbanner');
 
   // Progress Bar
 
@@ -410,22 +401,22 @@
 
   // Full Gift: Calculate Grand Total for pre-determined Amounts.
 
-  var inputs = document.querySelectorAll(".amountNum input[type='radio']");
-
-  Array.prototype.forEach.call(inputs, function(el) {
-    el.addEventListener('click', function() {
-      var value = parseInt(this.value, 10);
-      var URL = "https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
-      jQuery.get(URL, function(data) {
-        var fee = data.fee;
-        var total = fee + value;
-        total = total.toFixed(2);
-        jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
-        jQuery("#processbutton").val("Donate £" + total);
-        jQuery("#giftaid-amount").innerText = (total);
-      });
-    });
-  });
+  // var inputs = document.querySelectorAll(".amountNum input[type='radio']");
+  //
+  // Array.prototype.forEach.call(inputs, function(el) {
+  //   el.addEventListener('click', function() {
+  //     var value = parseInt(this.value, 10);
+  //     var URL = "https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
+  //     jQuery.get(URL, function(data) {
+  //       var fee = data.fee;
+  //       var total = fee + value;
+  //       total = total.toFixed(2);
+  //       jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
+  //       jQuery("#processbutton").val("Donate £" + total);
+  //       jQuery("#giftaid-amount").innerText = (total);
+  //     });
+  //   });
+  // });
 </script>
 </body>
 <style>

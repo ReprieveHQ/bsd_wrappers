@@ -7,39 +7,39 @@
 </div>
 </div>
 </div>
-<div class="slide2 slide darkslide donationSlide" style="">
+<div class="slide2 slide darkslide donationSlide" style="display:none;">
 
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <!-- TODO: Add text to convince people to donate below! You may not need three lines, so feel free to delete the <p></p> section if not. -->
         <div class="unsigned">
-          <h2>Help make our work possible</h2>
+          <h2>Help fund our fight to save people like Ali</h2>
           <p>The fight for human rights in 2019 starts now. Donate today to fund the investigations, legal work and campaigns that save lives and deliver justice.</p>
           <div class="matched-calc-container">
-            <p><span class="match-text">All donations until the end of 2018 will be matched to make double the impact.</span> <span class="match-you-container">
-                <span class="matched-center">
-                  <span class="matched-number">£<span id="matched-you">15</span>
+            <p><span class="match-text">All donations until the end of 2018 will be matched to make double the impact.</span> <span class="match-all-container"><span class="match-you-container">
+                  <span class="matched-center">
+                    <span class="matched-number">£<span id="matched-you">15</span>
+                    </span>
+                    <span class="matched-sub">from you</span>
                   </span>
-                  <span class="matched-sub">from you</span>
                 </span>
-              </span>
 
-              <span class="match-plus"> + </span>
+                <span class="match-plus"> + </span>
 
-              <span class="match-us-container">
-                <span class="matched-center">
-                  <span class="matched-number">£<span id="matched-us">15</span>
-                  </span>
-                  <span class="matched-sub">matched</span></span>
-              </span>
+                <span class="match-us-container">
+                  <span class="matched-center">
+                    <span class="matched-number">£<span id="matched-us">15</span>
+                    </span>
+                    <span class="matched-sub">matched</span></span>
+                </span>
 
-              <span class="match-equals"> = </span>
+                <span class="match-equals"> = </span>
 
-              <span class="match-total">
-                <span class="matched-center">
-                  <span class="matched-number">£<span id="matched-calc">30</span>
-                  </span> <span class="matched-sub">for Reprieve</span></span>
+                <span class="match-total">
+                  <span class="matched-center">
+                    <span class="matched-number">£<span id="matched-calc">30</span>
+                    </span> <span class="matched-sub">for Reprieve</span></span></span>
               </span>
             </p>
           </div>
@@ -89,18 +89,17 @@
           </div>
         </div>
 
-        <a class="btn donationBtn donatePaypal" href="https://act.reprieve.org.uk/page/contribute/dec18-pl">Donate now</a>
+        <a class="btn donationBtn donatePaypal" href="https://act.reprieve.org.uk/page/contribute/dec18-ali18-a">Donate now</a>
 
-      <div class="usdonate" style="display: none;">
-        <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
-        <!--
-      --><a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
-        <!--
-      --><a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
-        <!--
-      --><a href="https://secure.reprieve.org/page/contribute/dec18" class="outline button small" target="_blank">Other amount</a>
+        <div class="usdonate" style="display: none;">
+          <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=15" class="solid button small" target="_blank">Donate $15</a>
+          <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
+          <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
+          <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=100" class="solid button small" target="_blank">Donate $100</a>
+          <a href="https://secure.reprieve.org/page/contribute/dec18?default_amt=500" class="solid button small" target="_blank">Donate $500</a>
+          <a href="https://secure.reprieve.org/page/contribute/dec18" class="outline button small" target="_blank">Other amount</a>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
@@ -149,8 +148,8 @@
         <li class="menu-item"><a href="https://reprieve.org.uk/">Home</a></li>
         <li class="menu-item"><a href="https://reprieve.org.uk/about/">About</a></li>
         <li class="menu-item"><a href="https://act.reprieve.org.uk/page/s/join">Join us</a></li>
-        <li class="menu-item"><a href="https://act.reprieve.org.uk/page/contribute/make-a-donation">Donate now</a></li>
-        <li class="menu-item"><a href="https://secure.edirectdebit.com/Reprieve/Donate/">Donate monthly</a></li>
+        <li class="menu-item"><a href="https://act.reprieve.org.uk/page/contribute/dec18-sl">Donate now</a></li>
+        <li class="menu-item"><a href="https://secure.edirectdebit.com/Reprieve/Donate4/">Donate monthly</a></li>
         <li class="menu-item"><a href="https://reprieve.org.uk/contact/">Contact</a></li>
       </ul>
     </div>
@@ -222,7 +221,7 @@
     $("#amt_other_text").val("");
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-ali18-a?default_amt=" + matchedAmount;
     // var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
     //
     $(".donatePaypal").attr("href", paypalLink);
@@ -238,7 +237,7 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-pl?default_amt=" + matchedAmount;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/dec18-ali18-a?default_amt=" + matchedAmount;
     // var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
     //
     $(".donatePaypal").attr("href", paypalLink);
@@ -270,7 +269,8 @@
     } else if (countryurl === "US") {
       $("#country").val(countryurl);
       $(".usdonate").show();
-      $(".ukdonate").hide();
+      $(".donation-progress, .donation-block-wrap, .donatePaypal").hide();
+      $(".match-all-container").hide();
     } else {
       $("#country").val(countryurl);
     }
@@ -285,9 +285,11 @@
       if (optionSelected === "US") {
         $(".usdonate").show();
         $(".donation-progress, .donation-block-wrap, .donatePaypal").hide();
+        $(".match-all-container").hide();
       } else {
         $(".usdonate").hide();
         $(".donation-progress, .donation-block-wrap, .donatePaypal").show();
+        $(".match-all-container").show();
       }
     });
 
@@ -624,7 +626,6 @@
     var posting = $.post(url, $form.serialize());
     nextSlide('.slide1');
   });
-
 </script>
 <style>
   #contribution .amountWraps label {
@@ -710,10 +711,11 @@
     outline: none;
   }
 
-  .donationBtn:hover, .donationBtn:focus {
+  .donationBtn:hover,
+  .donationBtn:focus {
     color: white;
-    outline:none;
-}
+    outline: none;
+  }
 
 
   .donation-block-wrap {
@@ -756,5 +758,15 @@
     color: #e35e14;
     font-weight: bold;
     font-size: 1.125rem;
+  }
+
+  .usdonate .button {
+          width: calc(100%);
+          text-align: center;
+      }
+  @media (min-width: 992px) {
+      .usdonate .button {
+          width: calc(33% - 2rem);
+      }
   }
 </style>
