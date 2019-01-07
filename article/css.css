@@ -1,0 +1,36 @@
+.helper {
+    position: sticky;
+    /* width: initial; */
+}
+
+.helper {
+    background: #eee;
+    padding: 1rem;
+    margin-top: 48px;
+}
+
+.read-more-card {
+    flex: 1;
+    margin-right: 1rem;
+    display: flex;
+}
+
+.read-more-card img {
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
+    margin-bottom: 1rem;
+}
+
+.read-more-card-wrap {
+    background: #eee;
+    padding: 1rem;
+}
+
+.read-more-card:nth-of-type(3) {
+    margin: 0;
+}
+
+.read-more-card .btn {
+    color: #e35e14 !important;
+    font-weight: bold;
+}
