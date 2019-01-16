@@ -1,0 +1,1892 @@
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Reprieve">
+<meta name="twitter:creator" content="@Reprieve">
+<meta name="twitter:title" content="How many of these countries can you name?">
+<meta name="twitter:description" content="Put your geography knowledge to the test with this quick quiz.">
+<meta name="twitter:image" content="https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png">
+
+<style>
+  .fixed-background {
+    background: #252728;
+    /*background-image: url(https://s.bsd.net/reprieve/main/page/-/TrumpBackground.png);
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;*/
+  }
+
+  .quizProgress {
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  .slide.darkslide {
+    background: #252728;
+  }
+
+  .buttonRadio label span.smallLabel {
+    font-size: 0.75rem;
+    font-weight: normal;
+  }
+
+  .topIntro {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .slide1 .topIntro {
+    margin-bottom: 3rem;
+  }
+
+  .quizProgress {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .qbutton {
+    width: 100%;
+  }
+
+  .qslide {
+    text-align: left;
+  }
+
+  .qslide .col-md {
+    align-self: center;
+  }
+
+  .slide11,
+  .slide13 {
+    text-align: center;
+  }
+
+  .slide12 {
+    text-align: left;
+  }
+
+  img.countryMap {
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    img.countryMap {
+      max-width: 70%;
+      margin-bottom: 0;
+    }
+  }
+
+
+
+  .slide {
+    min-height: calc(100vh - 60px);
+    padding: 120px 0;
+  }
+
+  span.colon {
+    display: none;
+  }
+
+  #countdown .time,
+  #countdown .label {
+    display: inline-block;
+  }
+
+  .time span {
+    color: #e35e14;
+  }
+
+  .time {
+    display: inline-block;
+  }
+
+
+  button.outline.button.answer_reveal {
+    width: auto;
+    max-width: none;
+    margin: 0 auto 1rem;
+    border: 0;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  .answer_reveal_wrap {
+    display: none;
+    border: 5px solid rgb(227, 94, 20);
+    padding: 1rem;
+    margin: 0px 0px 1rem;
+    text-align: left;
+  }
+
+  .qtpp {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  p.qdec {
+    font-size: 0.8rem;
+  }
+
+  span.qmark {
+    color: #e35e14;
+    font-size: 1.5rem;
+  }
+
+  span.qmark.qtick {
+    color: green;
+  }
+
+  span.qmark.qcross {
+    color: red;
+  }
+
+  .slide13 button {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+
+  button.outline.button.answer_reveal:hover {
+    background: transparent;
+  }
+
+  #countdown {
+    font-size: 4rem;
+    font-family: 'HelveticaNeueLTStd-BlkCn', Helvetica, sans-serif;
+    line-height: 1;
+  }
+
+  .slide12 h3 {
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .slide12 h2 span {
+    color: #e35e14;
+  }
+
+  .slide14.slide {
+    text-align: center;
+  }
+
+  /* Cookies */
+
+  .bsd-contribForm-gdpr-modal {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    bottom: 0;
+    z-index: 9999999999;
+    overflow: hidden;
+    top: auto;
+    background: #e35e14;
+    color: #fff;
+    border: 0;
+    text-align: center;
+    -moz-box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 -10px 50px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .bsd-contribForm-gdpr-modal-content {
+    margin: 0 auto;
+    border: 0;
+    text-align: left;
+    padding: 0;
+    width: auto;
+  }
+
+  @media (min-width: 992px) {
+    .bsd-contribForm-gdpr-modal-content {
+      width: 970px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .bsd-contribForm-gdpr-modal-content {
+      width: 750px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .bsd-contribForm-gdpr-modal-content {
+      width: 970px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .bsd-contribForm-gdpr-modal-content {
+      width: 970px;
+    }
+  }
+
+  .bsd-contribForm-gdpr-modal-content h3,
+  #issues .bsd-contribForm-gdpr-modal-content p,
+  .bsd-contribForm-gdpr-modal-content a {
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .bsd-contribForm-gdpr-modal-content input.gdpr-button {
+    -webkit-appearance: none;
+    background: #252728;
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    color: white;
+    font-size: 1.25rem;
+    outline: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: auto;
+    display: block;
+    transition: 0.3s all ease;
+    outline: none;
+    text-align: center;
+    color: white !important;
+    text-decoration: none;
+    line-height: 0;
+  }
+
+  .bsd-contribForm-gdpr-modal-content div div a {
+    text-decoration: none !important;
+  }
+
+  .col-md-10,
+  .col-md-2 {
+    padding: 5px 10px 5px 10px;
+  }
+
+  .bsd-contribForm-gdpr-modal-content p {
+    margin: 0;
+    line-height: normal;
+    /* font-size: 16px; */
+  }
+
+  .bsd-contribForm-gdpr-modal-content a {
+    text-decoration: underline;
+  }
+
+  .bsd-contribForm-gdpr-modal-content.container.row {
+    align-items: center;
+  }
+
+
+  .slide11 h2 {
+    letter-spacing: 0.75px;
+  }
+
+  @media (min-width: 768px) {
+
+    .slide11 h2 {
+      max-width: 75%;
+      margin: 0 auto 1rem auto;
+    }
+
+
+  }
+
+  .bsd-contribForm-gdpr-modal-content .col-md-2:nth-of-type(2) {
+    display: block !important;
+  }
+</style>
+
+  <title></title>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPB66G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="main-wrap">
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="clean-logo">
+              <a href="http://www.reprieve.org.uk" target="_blank"><img src="https://reprieve.org.uk/wp-content/themes/reprieve/assets/images/logo-white@2x.png"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="hamburger" id="hamburger-1">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="fixed-background"></div>
+    <div class="content-wrap">
+      <div class="slide1 slide darkslide qslide">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <div class="topIntro">
+                Take a look at this map. Can you name the country?
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/China.png" class="countryMap">
+            </div>
+            <div class="col-md">
+              <button class="q1 q1a qbutton">Canada</button>
+              <button class="q1 q1b q-correct qbutton">China</button>
+              <button class="q1 q1c qbutton">Brazil</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="slide2 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+
+          <div class="row">
+            <div class="col-md">
+              <div class="quizProgress">
+                2 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Egypt.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q2 q2a qbutton">South Africa</button>
+              <button class="q2 q2b qbutton">Argentina</button>
+              <button class="q2 q2c q-correct qbutton">Egypt</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide3 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                3 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Singapore.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q3 q3a q-correct qbutton">Singapore</button>
+              <button class="q3 q3b qbutton">Iceland</button>
+              <button class="q3 q3c qbutton">Japan</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide4 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                4 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/USA.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q4 q4a qbutton">Kazakhstan</button>
+              <button class="q4 q4b q-correct  qbutton">USA</button>
+              <button class="q4 q4c qbutton">Mongolia</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide5 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                5 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Saudi%20Arabia.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q5 q5a q-correct qbutton">Saudi Arabia</button>
+              <button class="q5 q5b qbutton">India</button>
+              <button class="q5 q5c qbutton">Chile</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide6 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                6 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Iran.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q6 q6a q-correct qbutton">Iran</button>
+              <button class="q6 q6b qbutton">Italy</button>
+              <button class="q6 q6c qbutton">Morocco</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide7 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                7 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Somalia.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q7 q7a qbutton">Norway</button>
+              <button class="q7 q7b qbutton">South Korea</button>
+              <button class="q7 q7c q-correct qbutton">Somalia</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide8 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                8 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Iraq.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q8 q8a q-correct qbutton">Iraq</button>
+              <button class="q8 q8b qbutton">Peru</button>
+              <button class="q8 q8c qbutton">Ireland</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide9 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                9 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Pakistan.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q9 q9a qbutton">Vietnam</button>
+              <button class="q9 q9b q-correct qbutton">Pakistan</button>
+              <button class="q9 q9c qbutton">France</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide10 slide darkslide qslide" style="display: none;">
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md">
+              <div class="quizProgress">
+                10 / 10
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md">
+              <img src="https://act.reprieve.org.uk/page/-/Jordan.png" class="countryMap">
+            </div>
+            <div class="col-md">
+
+              <button class="q10 q10a q-correct qbutton">Jordan</button>
+              <button class="q10 q10b qbutton">Venezuela</button>
+              <button class="q10 q10c qbutton">Germany</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide11 slide darkslide" style="display: none;">
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <div class="topIntro">
+                <h2>Well done! While we calculate your results, can you take a minute to stand up for human rights?</h2>
+                <p>The 10 countries featured in this quiz are the top 10 countries for executions worldwide.</p>
+                <p>Some execute peaceful protesters, people suffering from mental illness, and even children.</p>
+                <p>The movement to end the death penalty needs you - can you add your name?</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <button class="showPetitionSlide">Yes, I'll add my name!</button>
+              <button class="answer outline">No thanks</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="slide12 slide darkslide" style="display: none;">
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>On average, an execution takes place somewhere in the world every <span>4 hours</span>. The next one could be in...</h2>
+              <div id="countdown">
+                <div class="time-line">
+                  <div class="time hours"><span>00</span></div>
+                  <div class="label hrs"><span>Hours</span></div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-line">
+                  <div class="time minutes"><span>04</span></div>
+                  <div class="label mins"><span>Minutes</span></div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-line">
+                  <div class="time seconds"><span>35</span></div>
+                  <div class="label secs"><span>Seconds</span></div>
+                </div>
+              </div>
+
+
+
+            </div>
+            <div class="col-md">
+              <h3>Somewhere, someone is running out of time. Join the global movement against the death penalty now.</h3>
+              <form name="signup" class="bsd-signup-150" action="https://act.reprieve.org.uk/page/sp/join-movement-against-death-penalty" method="post" id="signup" _lpchecked="1">
+                <div class="fieldset" id="bsd-field-country">
+
+                  <div class="input"><select id="country" name="country"><option value=""></option><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BR">Brazil</option><option value="VG">British Virgin Islands</option><option value="IO">British Indian Ocean Territory</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CO">Colombia</option><option value="KM">Comoros Islands</option><option value="CD">Congo, Democratic Republic of the</option><option value="CG">Congo, Republic of the</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CI">Cote D'ivoire</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="TP">East Timor</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands (Malvinas)</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="VA">Holy See (Vatican City State)</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Republic of Ireland</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KR">South Korea</option><option value="XK">Kosovo</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova, Republic of</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn Island</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russian Federation</option><option value="RW">Rwanda</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="SS">South Sudan</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SH">St. Helena</option><option value="PM">St. Pierre and Miquelon</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SY">Syria</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB" selected="selected">United Kingdom</option><option value="US">United States</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VE">Venezuela</option><option value="VN">Viet Nam</option><option value="VI">Virgin Islands (U.S.)</option><option value="WF">Wallis and Futuna Islands</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select></div>
+                </div>
+
+                <div class="fieldset" id="bsd-field-email">
+
+                  <div class="input"><input type="email" class="text" size="48" id="email" name="email" placeholder="Email" required=""></div>
+                </div>
+
+                <div class="fieldset" id="bsd-field-firstname">
+
+                  <div class="input"><input size="16" id="firstname" name="firstname" placeholder="First Name" type="text" required=""></div>
+                </div>
+
+                <div class="fieldset" id="bsd-field-lastname">
+
+                  <div class="input"><input size="25" id="lastname" name="lastname" type="text" placeholder="Last Name" required=""></div>
+                </div>
+
+                <fieldset class="optinradio_fieldset form-radio"><label class="optin_lang">Would you like to receive updates about our news, campaigns and appeals by email? <a href="http://www.reprieve.org.uk/privacy/" target="_blank">(See our Privacy Policy)</a></label>
+                  <label for="optin_1"><input id="optin_1" class="optinradio" name="optin" value="Yes" type="radio" required="">Yes</label>
+                  <label for="optin_0"><input id="optin_0" class="optinradio" name="optin" value="No" type="radio">No</label>
+                  <p id="optin_warning">Don't want to hear from us? If you're already on our mailing list, selecting this option will unsubscribe you from our alerts.</p>
+                </fieldset>
+                <div class="fieldset" id="bsd-field-email_opt_in">
+                  <div class="label"><label class="field"></label></div>
+                  <div class="input"><input id="email_opt_in" name="email_opt_in" type="checkbox" value="1"><label for="email_opt_in">Would you like to receive updates about our news, campaigns and appeals by email?</label></div>
+                </div>
+
+                <div style="display: none"><label for="best-contact-time">Please leave this field blank:</label> <input id="best-contact-time" name="best-contact-time" type="text"></div>
+
+                <div class="fieldset" id="bsd-field-submit-btn">
+                  <div class="label"><label class="field"></label></div>
+                  <div class="input"><input name="submit-btn" value="Add my name" type="submit" id="submit_button"></div>
+                </div>
+                <input name="redirect_url" type="hidden" value=""><input id="_guid" name="_guid" type="hidden" value=""></form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide13 slide darkslide" style="display: none;">
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>You got <span id="scorePrint">0</span> out of 10 correct.</h2>
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="outline button answer_reveal">Your answer breakdown</button>
+                </div>
+              </div>
+              <div class="answer_reveal_wrap">
+                <div class="row">
+
+                  <div class="col-md">
+                    <p class="q1tpp qtpp">Q1. <span class="q1tpm">China</span> <span class="q1tpl">(You said <span class="q1tp"></span>)</span>
+                    </p>
+                    <p class="qdec">China is the world's top executor. Exact numbers are a secret, but they likely execute thousands each year.</p>
+                    <p class="q2tpp qtpp">Q2. <span class="q2tpm">Egypt</span> <span class="q2tpl">(You said <span class="q2tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Egypt executed at least 35 people last year.</p>
+                    <p class="q3tpp qtpp">Q3. <span class="q3tpm">Singapore</span> <span class="q3tpl">(You said <span class="q3tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Singapore executed 8 people last year.</p>
+                    <p class="q4tpp qtpp">Q4. <span class="q4tpm">USA</span> <span class="q4tpl">(You said <span class="q4tp"></span>)</span>
+                    </p>
+                    <p class="qdec">USA executed 23 people last year.</p>
+                    <p class="q5tpp qtpp">Q5. <span class="q5tpm">Saudi Arabia</span> <span class="q5tpl">(You said <span class="q5tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Saudi Arabia executed at least 146 people last year.</p>
+                  </div>
+                  <div class="col-md">
+                    <p class="q6tpp qtpp">Q6. <span class="q6tpm">Iran</span> <span class="q6tpl">(You said <span class="q6tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Iran executed at least 507 people last year.</p>
+                    <p class="q7tpp qtpp">Q7. <span class="q7tpm">Somalia</span> <span class="q7tpl">(You said <span class="q7tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Somalia executed 24 people last year.</p>
+                    <p class="q8tpp qtpp">Q8. <span class="q8tpm">Iraq</span> <span class="q8tpl">(You said <span class="q8tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Iraq executed at least 125 people last year.</p>
+                    <p class="q9tpp qtpp">Q9. <span class="q9tpm">Pakistan</span> <span class="q9tpl">(You said <span class="q9tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Pakistan executed at least 65 people last year.</p>
+                    <p class="q10tpp qtpp">Q10. <span class="q10tpm">Jordan</span> <span class="q10tpl">(You said <span class="q10tp"></span>)</span>
+                    </p>
+                    <p class="qdec">Jordan executed 15 people last year.</p>
+                  </div>
+                </div>
+              </div>
+              <h3>Can you share with your friends so they can take part?</h3>
+              <div class="row">
+                <div class="col-md-5">
+                  <button class="solid button facebook_share" onclick="return submitAndShare();">Share on Facebook</button>
+                </div>
+                <div class="col-md-5">
+                  <button class="solid button twitter_share">Share on Twitter</button>
+                </div>
+                <div class="col-md-2">
+                  <button class="outline button answer_skip">Skip</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="slide14 slide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+
+              <div class="unsigned">
+                <h2><span class="first_name">Supporter</span>, our lawyers and investigators work around the world to deliver justice and save lives.</h2>
+                <h3>Stop the execution of another human being. Please donate now to help fund our vital work.</h3>
+
+              </div>
+
+              <a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=15" class="solid button small" target="_blank">Donate &pound;15</a>
+              <!--
+      --><a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=25" class="solid button small" target="_blank">Donate &pound;25</a>
+              <!--
+      --><a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=50" class="solid button small" target="_blank">Donate &pound;50</a>
+              <!--
+      --><a href="https://act.reprieve.org.uk/page/contribute/quiz-donate" class="outline button small" target="_blank">Other amount</a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="footer">
+      <div class="container clearfix">
+        <ul class="fnav_sub_primary clearfix">
+          <li class="fnav_sub_primary_block first">
+            <a href="http://www.reprieve.org.uk" rel="external" class="fnav_sub_element">Reprieve</a>
+          </li>
+          <li class="fnav_sub_primary_block">
+            <a href="http://www.reprieve.org/" rel="external" class="fnav_sub_element">Reprieve US</a>
+          </li>
+          <li class="fnav_sub_primary_block">
+            <a href="http://www.reprieve.org.uk/accessibility/" rel="external" class="fnav_sub_element">Accessibility</a>
+          </li>
+          <li class="fnav_sub_primary_block">
+            <a href="http://www.reprieve.org.uk/privacy/" rel="external" class="fnav_sub_element">Privacy</a>
+          </li>
+          <li class="fnav_sub_primary_block">
+            <a href="https://www.reprieve.org.uk/terms-of-use/" rel="external" class="fnav_sub_element">Terms of use</a>
+          </li>
+          <li class="fnav_sub_primary_block">
+            <a href="https://www.reprieve.org.uk/cookies-policy/" rel="external" class="fnav_sub_element">Cookies</a>
+          </li>
+          <li class="fnav_sub_primary_block">
+            <a href="https://www.reprieve.org.uk/acceptable-use//" rel="external" class="fnav_sub_element">Acceptable Use</a>
+          </li>
+        </ul>
+        <div class="fnav_sub_secondary clearfix">
+          <p class="fnav_sub_element">© 2018 Reprieve. Registered charity (No. 1114900).</p>
+        </div>
+      </div>
+    </footer>
+    <div class="bsd-contribForm-gdpr-modal">
+
+      <!-- Modal content -->
+      <div class="bsd-contribForm-gdpr-modal-content container row">
+
+        <div class="col-md-10">
+          <p>This website uses cookies to provide you with the best experiences, personalise content, and so website administrators may analyse traffic patterns. Learn more about the use of cookies in our <a href="http://www.reprieve.org.uk/privacy/" target="_blank">Privacy Policy</a>.</p>
+        </div>
+
+
+
+
+        <div class="col-md-2">
+          <div>
+
+            <input type="button" id="gdpr-cookie-accept" class="gdpr-button form-control" value="Accept ">
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+      <script src="/page/static/20180801.2/ext/jquery/cookie/jquery.cookie.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+        (function($) {
+          var name = "Allowed-Cookies";
+
+          $("#gdpr-cookie-do-not-accept").click(function(e) {
+            setGdrpCookie(e, 0);
+          });
+
+          $("#gdpr-cookie-accept").click(function(e) {
+            setGdrpCookie(e, 1);
+          });
+
+          function setGdrpCookie(e, val) {
+            var options = {
+              expires: null,
+              path: '/',
+              domain: "." + window.location.hostname
+            };
+
+            $.cookie(name, val, options);
+            e.preventDefault();
+            $(".bsd-contribForm-gdpr-modal").hide();
+          }
+
+          $(document).ready(function() {
+            if (!$.cookie(name)) {
+              $(".bsd-contribForm-gdpr-modal").show();
+            }
+          });
+        })(window.bQuery && window.bQuery.cookie ? window.bQuery : window.jQuery);
+      </script>
+    </div>
+  </div>
+  <div class="mobilemenu-wrapper">
+    <div class="mobilemenu-trigger">
+      <div class="hamburger" id="hamburger-2">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <nav id="mobilemenu">
+      <div class="menu">
+        <ul id="menu-mobile-menu">
+          <li class="menu-item"><a href="https://reprieve.org.uk/">Home</a></li>
+          <li class="menu-item"><a href="https://reprieve.org.uk/about/">About</a></li>
+          <li class="menu-item"><a href="https://act.reprieve.org.uk/page/s/join">Join us</a></li>
+          <li class="menu-item"><a href="https://act.reprieve.org.uk/page/contribute/make-a-donation">Donate now</a></li>
+          <li class="menu-item"><a href="https://secure.edirectdebit.com/Reprieve/Donate/">Donate monthly</a></li>
+          <li class="menu-item"><a href="https://reprieve.org.uk/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+  <script>
+    // Petition counter
+
+    jQuery(document).ready(function($) {
+
+      function count_signups(signup_form_id) {
+
+        // This function formats numbers by adding commas
+        function numberFormat(nStr, prefix) {
+          var prefix = prefix || '';
+          nStr += '';
+          x = nStr.split('.');
+          x1 = x[0];
+          x2 = x.length > 1 ? '.' + x[1] : '';
+          var rgx = /(\d+)(\d{3})/;
+          while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+          return prefix + x1 + x2;
+        }
+
+        function load_counter(data) {
+          var cumulativeNum = data * 1;
+
+          console.log(cumulativeNum)
+
+          cumulativeNum += 0; // accounting for offline action
+
+          console.log(cumulativeNum)
+
+          var signups = numberFormat(cumulativeNum);
+
+          var signupsnum = signups.replace(",", "");
+
+          var signupstotal = signupsnum;
+
+          var target = 10000;
+
+          var percentageComplete = (signupstotal / target) * 100;
+
+          $(".totalLevel").css("width", percentageComplete + "%");
+
+          $('.amount').text(signups);
+
+          $('.goal').text("10,000");
+
+          $(".goal-progress").addClass('js-percent');
+
+          var getPercent = percentageComplete;
+          var getProgressWrapWidth = $('.js-percent .progress-wrp').width();
+          var progressTotal = percentageComplete + "%";
+          var animationLength = 2500;
+
+          // on page load, animate percentage bar to data percentage length
+          // .stop() used to prevent animation queueing
+          $('.js-percent .progress-bar').stop().animate({
+            left: progressTotal
+          }, animationLength);
+          var numTruncated = parseFloat(percentageComplete).toFixed(2);
+          $('.js-percent .percentage-number').text(numTruncated + "%");
+          $(".goal-progress").removeClass('js-percent');
+
+        }
+
+        bQuery.get("/utils/cons_counter/signup_counter.ajax.php?signup_form_id=150", load_counter);
+      }
+
+
+
+      count_signups();
+
+
+
+    });
+
+    // MENU
+
+    $("#hamburger-1").click(function() {
+      $("#hamburger-2").toggleClass("is-active");
+      $(".mobilemenu-wrapper").toggleClass("menu-active");
+    });
+
+    $("#hamburger-2").click(function() {
+      $("#hamburger-2").toggleClass("is-active");
+      $(".mobilemenu-wrapper").toggleClass("menu-active");
+    });
+
+
+    // Expander
+
+    jQuery('#expand').on('click', function(e) {
+      jQuery('#expand-box').toggleClass("toggle-expand");
+      jQuery('#expand-minus').toggleClass("toggle-expand");
+      jQuery('#expand-plus').toggleClass("toggle-collapse");
+      e.preventDefault();
+    });
+
+    // (function() {
+    //   if (window.__twitterIntentHandler) return;
+    //   var intentRegex = /twitter\.com\/intent\/(\w+)/,
+    //     windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
+    //     width = 550,
+    //     height = 420,
+    //     winHeight = screen.height,
+    //     winWidth = screen.width;
+    //
+    //   function handleIntent(e) {
+    //     e = e || window.event;
+    //     var target = e.target || e.srcElement,
+    //       m, left, top;
+    //
+    //     while (target && target.nodeName.toLowerCase() !== 'a') {
+    //       target = target.parentNode;
+    //     }
+    //
+    //     if (target && target.nodeName.toLowerCase() === 'a' && target.href) {
+    //       m = target.href.match(intentRegex);
+    //       if (m) {
+    //         left = Math.round((winWidth / 2) - (width / 2));
+    //         top = 0;
+    //
+    //         if (winHeight > height) {
+    //           top = Math.round((winHeight / 2) - (height / 2));
+    //         }
+    //
+    //         window.open(target.href, 'intent', windowOptions + ',width=' + width +
+    //           ',height=' + height + ',left=' + left + ',top=' + top);
+    //         e.returnValue = false;
+    //         e.preventDefault && e.preventDefault();
+    //       }
+    //     }
+    //   }
+    //
+    //   if (document.addEventListener) {
+    //     document.addEventListener('click', handleIntent, false);
+    //   } else if (document.attachEvent) {
+    //     document.attachEvent('onclick', handleIntent);
+    //   }
+    //   window.__twitterIntentHandler = true;
+    // }());
+
+    /**
+          SLIDE 1
+    **/
+
+    var voteChoice = "something else";
+
+    $('.buttonRadio .input label').click(function() {
+
+      $('.buttonRadio .input label').removeClass('voteSelect');
+      $(this).addClass('voteSelect');
+      voteChoice = $(this).text();
+      $(".vote_answer").text(voteChoice);
+      $('#voteError').hide();
+    });
+
+
+
+
+
+    var voteName = "Supporter";
+
+    $("#firstname").change(function() {
+      voteName = $(this).val();
+      $('.first_name').text(voteName)
+    });
+
+    jQuery("#optin_1").change(function() {
+      if (jQuery(this).is(":checked")) {
+        jQuery('#email_opt_in').prop('checked', true);
+        $("#optin_warning").hide();
+      }
+    });
+
+
+    jQuery("#optin_0").change(function() {
+      if (jQuery(this).is(":checked")) {
+        jQuery('#email_opt_in').prop('checked', false);
+        $("#optin_warning").show();
+      }
+    });
+
+
+
+    // var validateText = 1;
+    // var validateVote = 0;
+    // var validateOpt = 0;
+    // var validateFinal = validateText + validateVote + validateOpt;
+
+    $("#signup").submit(function(event) {
+      event.preventDefault();
+      //
+      //
+      // $("#signup .form-control").each(function() {
+      //   if (!$(this).val() == '') {
+      //     validateText = 0;
+      //   }
+      // });
+      // if ($('#email').val()) {
+      //   validateText = 0
+      //   return false;
+      // };
+      //
+      //
+      // if ($('input[name=optin]:checked').val()) {
+      //   validateOpt = 1;
+      // };
+      //
+      // if (validateVote == 0) {
+      //   alert('Validate Vote!');
+      //   return false;
+      // }
+      //
+      // if (validateText == 0) {
+      //   alert('Validate Text!');
+      //   return false;
+      // }
+      // // else {
+
+      // // }
+      //
+      // if (validateOpt == 0) {
+      //   alert('Validate Opt!');
+      //   return false;
+      // }
+      //
+      // validateFinal = validateText + validateVote + validateOpt
+      //
+      // if (validateFinal < 3) {
+      //   alert('Validate All!');
+      //   return false;
+      // }
+      //
+
+      var $form = $(this),
+        url = $form.attr("action");
+      var posting = $.post(url, $form.serialize());
+      nextSlide('.slide12');
+
+
+    });
+
+    // $('#signup').validate({
+    //     var vote_0 = e.target."#custom-1963_0".checked;
+    //     var vote_1 = e.target."#custom-1963_1".checked;
+    //     var vote_2 = e.target."#custom-1963_2".checked;
+    //     var firstname = e.target.firstname.value;
+    //     var lastname = e.target.lastname.value;
+    //     var email = e.target.email.value;
+    //     var country = e.target.country.value;
+    //     var optin = e.target.optin.value;
+    //   ,
+    //   rules: {
+    //     firstname: "required",
+    //     lastname: "required",
+    //     optin: "required",
+    //     country: "required",
+    //     email: {
+    //       required: true,
+    //       email: true
+    //     }
+    //   },
+    //   messages: {
+    //     firstname: "Please enter your first name",
+    //     lastname: "Please enter your last name",
+    //     country: "Please select your country",
+    //     optin: "Please select your preference",
+    //     email: {
+    //       required: "Please enter your email address",
+    //       email: "Please enter a valid email address"
+    //     }
+    //   }
+    // });
+
+    /**
+          SLIDE 2
+    **/
+
+
+
+    /**/
+    // document.getElementById('shareBtn').onclick = function() {
+    //   function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage) {
+    //     FB.ui({
+    //         method: 'share_open_graph',
+    //         action_type: 'og.shares',
+    //         action_properties: JSON.stringify({
+    //           object: {
+    //             'og:url': overrideLink,
+    //             'og:title': overrideTitle,
+    //             'og:description': overrideDescription,
+    //             'og:image': ''
+    //           }
+    //         })
+    //       },
+    //       function(response) {
+    //         // Action after response
+    //       });
+    //   }
+    // }
+    //
+    // $('.facebook_share').click(function(e) {
+    //   var currentUrl = encodeURIComponent(getPathFromUrl(window.location.href));
+    //   window.open("https://www.facebook.com/dialog/feed?app_id=1607740472651807&link=" + currentUrl , "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
+    //   nextSlide('.slide13');
+    //   initSlider();
+    // });
+
+
+
+    jQuery('.answer_reveal').click(function(e) {
+      jQuery('.answer_reveal_wrap').toggle();
+    });
+
+    jQuery('.answer_skip').click(function(e) {
+      nextSlide('.slide13');
+    });
+
+    jQuery('.twitter_share').click(function(e) {
+
+      var twfirstname = encodeURIComponent("I");
+
+      // if ($('#firstname').val()) {
+      //   twfirstname = $('#firstname').val();
+      // }
+
+      var twanswer = $('#scorePrint').text();
+
+
+      var currentUrl = encodeURIComponent("https://act.reprieve.org.uk/page/content/name-the-countries?source=cq2018tw1&utm_source=twitter&utm_medium=post&utm_campaign=countries_quiz&utm_content=1");
+      var tweet = encodeURIComponent(" named ");
+      var tweet2 = encodeURIComponent(" out of these 10 countries correctly. Do you think you can do better? Take the quiz now! ");
+      var twansweren = encodeURIComponent(twanswer);
+      var space = encodeURIComponent(" ");
+      // var shareimage = encodeURIComponent("https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png");
+      window.open("https://twitter.com/intent/tweet?text=" + twfirstname + tweet + twansweren + tweet2 + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
+      nextSlide('.slide13');
+      // initSlider();
+    });
+
+    jQuery('#slide2_skip').click(function(e) {
+      e.preventDefault();
+      nextSlide('.slide12');
+      // initSlider();
+    });
+
+    jQuery('.twitter_share').click(function(e) {
+      nextSlide('.slide13');
+      // initSlider();
+    });
+
+    jQuery('#slide3_skip').click(function(e) {
+      e.preventDefault();
+      nextSlide('.slide13');
+      // initSlider();
+    });
+
+    var getPathFromUrl = function getPathFromUrl(url) {
+      return url.split("?")[0];
+    };
+
+
+    var numberWithCommas = function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+    var nextSlide = function nextSlide(el) {
+      var marginHeight = jQuery('.top_margin').height();
+      var nextSlide = jQuery(el).closest('.slide').next();
+      nextSlide.show();
+      jQuery.scrollTo(nextSlide, 1000, {});
+    };
+
+
+    jQuery(function() {
+
+
+      var doc = document.documentElement;
+      doc.setAttribute('data-useragent', navigator.userAgent);
+    });
+
+    /**
+     * Copyright (c) 2007-2015 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
+     * Licensed under MIT
+     * @author Ariel Flesler
+     * @version 2.1.0
+     */
+    ;
+    (function(l) {
+      'use strict';
+      l(['jquery'], function($) {
+        var k = $.scrollTo = function(a, b, c) {
+          return $(window).scrollTo(a, b, c);
+        };
+        k.defaults = {
+          axis: 'xy',
+          duration: 0,
+          limit: true
+        };
+
+        function isWin(a) {
+          return !a.nodeName || $.inArray(a.nodeName.toLowerCase(), ['iframe', '#document', 'html', 'body']) !== -1;
+        }
+        $.fn.scrollTo = function(f, g, h) {
+          if (typeof g === 'object') {
+            h = g;
+            g = 0;
+          }
+          if (typeof h === 'function') {
+            h = {
+              onAfter: h
+            };
+          }
+          if (f === 'max') {
+            f = 9e9;
+          }
+          h = $.extend({}, k.defaults, h);
+          g = g || h.duration;
+          var j = h.queue && h.axis.length > 1;
+          if (j) {
+            g /= 2;
+          }
+          h.offset = both(h.offset);
+          h.over = both(h.over);
+          return this.each(function() {
+            if (f === null) return;
+            var d = isWin(this),
+              elem = d ? this.contentWindow || window : this,
+              $elem = $(elem),
+              targ = f,
+              attr = {},
+              toff;
+            switch (typeof targ) {
+              case 'number':
+              case 'string':
+                if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
+                  targ = both(targ);
+                  break;
+                }
+                targ = d ? $(targ) : $(targ, elem);
+                if (!targ.length) return;
+              case 'object':
+                if (targ.is || targ.style) {
+                  toff = (targ = $(targ)).offset();
+                }
+            }
+            var e = $.isFunction(h.offset) && h.offset(elem, targ) || h.offset;
+            $.each(h.axis.split(''), function(i, a) {
+              var b = a === 'x' ? 'Left' : 'Top',
+                pos = b.toLowerCase(),
+                key = 'scroll' + b,
+                prev = $elem[key](),
+                max = k.max(elem, a);
+              if (toff) {
+                attr[key] = toff[pos] + (d ? 0 : prev - $elem.offset()[pos]);
+                if (h.margin) {
+                  attr[key] -= parseInt(targ.css('margin' + b), 10) || 0;
+                  attr[key] -= parseInt(targ.css('border' + b + 'Width'), 10) || 0;
+                }
+                attr[key] += e[pos] || 0;
+                if (h.over[pos]) {
+                  attr[key] += targ[a === 'x' ? 'width' : 'height']() * h.over[pos];
+                }
+              } else {
+                var c = targ[pos];
+                attr[key] = c.slice && c.slice(-1) === '%' ? parseFloat(c) / 100 * max : c;
+              }
+              if (h.limit && /^\d+$/.test(attr[key])) {
+                attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
+              }
+              if (!i && h.axis.length > 1) {
+                if (prev === attr[key]) {
+                  attr = {};
+                } else if (j) {
+                  animate(h.onAfterFirst);
+                  attr = {};
+                }
+              }
+            });
+            animate(h.onAfter);
+
+            function animate(a) {
+              var b = $.extend({}, h, {
+                queue: true,
+                duration: g,
+                complete: a && function() {
+                  a.call(elem, targ, h);
+                }
+              });
+              $elem.animate(attr, b);
+            }
+          });
+        };
+        k.max = function(a, b) {
+          var c = b === 'x' ? 'Width' : 'Height',
+            scroll = 'scroll' + c;
+          if (!isWin(a)) return a[scroll] - $(a)[c.toLowerCase()]();
+          var d = 'client' + c,
+            doc = a.ownerDocument || a.document,
+            html = doc.documentElement,
+            body = doc.body;
+          return Math.max(html[scroll], body[scroll]) - Math.min(html[d], body[d]);
+        };
+
+        function both(a) {
+          return $.isFunction(a) || $.isPlainObject(a) ? a : {
+            top: a,
+            left: a
+          };
+        }
+        $.Tween.propHooks.scrollLeft = $.Tween.propHooks.scrollTop = {
+          get: function get(t) {
+            return $(t.elem)[t.prop]();
+          },
+          set: function set(t) {
+            var a = this.get(t);
+            if (t.options.interrupt && t._last && t._last !== a) {
+              return $(t.elem).stop();
+            }
+            var b = Math.round(t.now);
+            if (a !== b) {
+              $(t.elem)[t.prop](b);
+              t._last = this.get(t);
+            }
+          }
+        };
+        return k;
+      });
+    })(typeof define === 'function' && define.amd ? define : function(a, b) {
+      'use strict';
+      if (typeof module !== 'undefined' && module.exports) {
+        module.exports = b(require('jquery'));
+      } else {
+        b(jQuery);
+      }
+    });
+
+    // Quiz
+    var q1 = 0;
+    var q2 = 0;
+    var q3 = 0;
+    var q4 = 0;
+    var q5 = 0;
+    var q6 = 0;
+    var q7 = 0;
+    var q8 = 0;
+    var q9 = 0;
+    var q10 = 0;
+
+    var q1t = 0;
+    var q2t = 0;
+    var q3t = 0;
+    var q4t = 0;
+    var q5t = 0;
+    var q6t = 0;
+    var q7t = 0;
+    var q8t = 0;
+    var q9t = 0;
+    var q10t = 0;
+
+    var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+
+    $(".q1").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q1 = 1;
+      } else {
+        q1 = 0;
+      }
+      q1t = $(this).text();
+      $('.q1tp').text(q1t);
+
+      if ($(".q1tp").text() == $(".q1tpm").text()) {
+        $(".q1tpl").hide();
+        $(".q1tpp").prepend("<span class='qmark qtick'>✓ </span>");
+
+
+      } else {
+        $(".q1tpl").css('color', '#e35e14');
+        $(".q1tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide1');
+    });
+
+
+    $(".q2").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q2 = 1;
+      } else {
+        q2 = 0;
+      }
+
+      q2t = $(this).text();
+      $('.q2tp').text(q2t);
+
+      if ($(".q2tp").text() == $(".q2tpm").text()) {
+        $(".q2tpl").hide();
+        $(".q2tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q2tpl").css('color', '#e35e14');
+        $(".q2tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide2');
+    });
+
+    $(".q3").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q3 = 1;
+      } else {
+        q3 = 0;
+      }
+
+      q3t = $(this).text();
+      $('.q3tp').text(q3t);
+
+      if ($(".q3tp").text() == $(".q3tpm").text()) {
+        $(".q3tpl").hide();
+        $(".q3tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q3tpl").css('color', '#e35e14');
+        $(".q3tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide3');
+    });
+
+    $(".q4").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q4 = 1;
+      } else {
+        q4 = 0;
+      }
+
+      q4t = $(this).text();
+      $('.q4tp').text(q4t);
+
+      if ($(".q4tp").text() == $(".q4tpm").text()) {
+        $(".q4tpl").hide();
+        $(".q4tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q4tpl").css('color', '#e35e14');
+        $(".q4tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide4');
+    });
+
+    $(".q5").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q5 = 1;
+      } else {
+        q5 = 0;
+      }
+
+      q5t = $(this).text();
+      $('.q5tp').text(q5t);
+
+      if ($(".q5tp").text() == $(".q5tpm").text()) {
+        $(".q5tpl").hide();
+        $(".q5tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q5tpl").css('color', '#e35e14');
+        $(".q5tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide5');
+    });
+
+    $(".q6").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q6 = 1;
+      } else {
+        q6 = 0;
+      }
+
+      q6t = $(this).text();
+      $('.q6tp').text(q6t);
+
+      if ($(".q6tp").text() == $(".q6tpm").text()) {
+        $(".q6tpl").hide();
+        $(".q6tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q6tpl").css('color', '#e35e14');
+        $(".q6tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide6');
+    });
+
+    $(".q7").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q7 = 1;
+      } else {
+        q7 = 0;
+      }
+
+      q7t = $(this).text();
+      $('.q7tp').text(q7t);
+
+      if ($(".q7tp").text() == $(".q7tpm").text()) {
+        $(".q7tpl").hide();
+        $(".q7tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q7tpl").css('color', '#e35e14');
+        $(".q7tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide7');
+    });
+
+    $(".q8").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q8 = 1;
+      } else {
+        q8 = 0;
+      }
+
+      q8t = $(this).text();
+      $('.q8tp').text(q8t);
+
+      if ($(".q8tp").text() == $(".q8tpm").text()) {
+        $(".q8tpl").hide();
+        $(".q8tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q8tpl").css('color', '#e35e14');
+        $(".q8tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide8');
+    });
+
+    $(".q9").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q9 = 1;
+      } else {
+        q9 = 0;
+      }
+
+      q9t = $(this).text();
+      $('.q9tp').text(q9t);
+
+      if ($(".q9tp").text() == $(".q9tpm").text()) {
+        $(".q9tpl").hide();
+        $(".q9tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q9tpl").css('color', '#e35e14');
+        $(".q9tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+      nextSlide('.slide9');
+    });
+
+
+    $(".q10").click(function() {
+      if ($(this).hasClass("q-correct")) {
+        q10 = 1;
+      } else {
+        q10 = 0;
+      }
+
+      q10t = $(this).text();
+      $('.q10tp').text(q10t);
+
+      if ($(".q10tp").text() == $(".q10tpm").text()) {
+        $(".q10tpl").hide();
+        $(".q10tpp").prepend("<span class='qmark qtick'>✓ </span>");
+      } else {
+        $(".q10tpl").css('color', '#e35e14');
+        $(".q10tpp").prepend("<span class='qmark qcross'>x </span>");
+      }
+
+
+      var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+      $("#scorePrint").text(answer);
+      nextSlide('.slide10');
+
+    });
+
+    $(".showPetitionSlide").click(function() {
+      nextSlide('.slide11');
+    });
+
+    $(".answer").click(function() {
+      nextSlide('.slide12');
+    });
+
+    $(".petitionSign").click(function() {
+      nextSlide('.slide12');
+    });
+
+    function submitAndShare() {
+      // get the selected answer
+      // var playerName = 'George L.';
+      // var val = '';
+      // var form = document.getElementById('star_trek_quiz');
+      // var answers = form.elements['answer'];
+      //
+      // for (var i = 0; i < answers.length; i++) {
+      //   if (answers[i].checked) {
+      //     val = answers[i].value;
+      //     break;
+      //   }
+      // }
+      var fbfirstname = "I"
+
+      if ($('#firstname').val()) {
+        fbfirstname = $('#firstname').val();
+      }
+
+      var fbanswer = $('#scorePrint').text();
+
+      var title = fbfirstname + " could name " + fbanswer + " out of these 10 countries!"
+      var description = 'Do you think you can do better? Take the quiz now!';
+
+
+
+      // switch (val) {
+      //   case 'Tiberius':
+      //     title = playerName + ' is wise like Yoda!';
+      //     description = 'Congratulations! ' + playerName + ' is the champion of the StarTrek geekhood - and nobody can beat him. Or ... ? Click to play and prove to the ' + playerName + ' that you are as good as  him!';
+      //     image = 'http://drib.tech/fbsharetest/quiz_yoda.jpg';
+      //     break;
+      //   default:
+      //     title = playerName + ' is wise like Jar Jar Binks!';
+      //     description = playerName + 'is the champion of the StarTrek geekhood - NOT! Click to play and prove to the ' + playerName + ' that anybody is better then him!';
+      //     image = 'http://drib.tech/fbsharetest/quiz_jar_jar_binks.jpg';
+      //     break;
+      // }
+
+
+      // and finally share it
+
+      shareOverrideOGMeta(window.location.href,
+        title,
+        description);
+
+      nextSlide('.slide13');
+      // initSlider();
+
+      return false;
+
+
+    }
+
+    function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription) {
+      FB.ui({
+          method: 'share_open_graph',
+          action_type: 'og.shares',
+          action_properties: JSON.stringify({
+            object: {
+              'og:url': overrideLink,
+              'og:title': overrideTitle,
+              'og:description': overrideDescription,
+              'og:image': 'https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png'
+            }
+          })
+        },
+        function(response) {
+          // Action after response
+        });
+    }
+
+    function shareOriginal() {
+      FB.ui({
+          method: 'share',
+          href: 'https://act.reprieve.org.uk/page/content/name-the-countries?source=cq2018fb1&utm_source=facebook&utm_medium=post&utm_campaign=countries_quiz&utm_content=1'
+        },
+        function(response) {
+          // Action after response
+        });
+
+      return false;
+    }
+
+
+    var now = new Date();
+    var currentHour = now.getHours();
+    var currentDay = now.getDate();
+    var deadline = undefined;
+
+    if (currentHour >= 0 && currentHour < 4) {
+      deadline = new Date(Date.parse(new Date()));
+      deadline.setHours(4);
+      deadline.setMinutes(0);
+      deadline.setSeconds(0);
+    } else if (currentHour >= 4 && currentHour < 8) {
+      deadline = new Date(Date.parse(new Date()));
+      deadline.setHours(8);
+      deadline.setMinutes(0);
+      deadline.setSeconds(0);
+    } else if (currentHour >= 8 && currentHour < 12) {
+      deadline = new Date(Date.parse(new Date()));
+      deadline.setHours(12);
+      deadline.setMinutes(0);
+      deadline.setSeconds(0);
+    } else if (currentHour >= 12 && currentHour < 16) {
+      deadline = new Date(Date.parse(new Date()));
+      deadline.setHours(16);
+      deadline.setMinutes(0);
+      deadline.setSeconds(0);
+    } else if (currentHour >= 16 && currentHour < 20) {
+      deadline = new Date(Date.parse(new Date()));
+      deadline.setHours(20);
+      deadline.setMinutes(0);
+      deadline.setSeconds(0);
+    } else if (currentHour >= 20 && currentHour < 24) {
+      deadline = new Date(Date.parse(new Date()));
+      deadline.setDate(deadline.getDate() + 1);
+      deadline.setHours(0);
+      deadline.setMinutes(0);
+      deadline.setSeconds(0);
+    }
+
+
+
+    var getTimeRemaining = function getTimeRemaining(endtime) {
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor(t / 1000 % 60);
+      var minutes = Math.floor(t / 1000 / 60 % 60);
+      var hours = Math.floor(t / (1000 * 60 * 60) % 24);
+      return {
+        'total': t,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    };
+
+    var initializeClock = function initializeClock(id, endtime) {
+      var clock = $('#' + id);
+      var hoursSpan = $('#' + id + ' .hours span');
+      var minutesSpan = $('#' + id + ' .minutes span');
+      var secondsSpan = $('#' + id + ' .seconds span');
+
+      function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        if (id === 'facebook_countdown') {
+          hoursSpan.html(('' + t.hours).slice(-2));
+          minutesSpan.html(('' + t.minutes).slice(-2));
+          if (t.hours === 0) {
+            $('#' + id + ' .hours').hide();
+          } else {
+            $('#' + id + ' .hours').show();
+          }
+        } else {
+          hoursSpan.html(('0' + t.hours).slice(-2));
+          minutesSpan.html(('0' + t.minutes).slice(-2));
+        }
+        secondsSpan.html(('0' + t.seconds).slice(-2));
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+
+      }
+
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+    };
+
+
+    $(function() {
+      initializeClock('countdown', deadline);
+      initializeClock('side_countdown', deadline);
+      initializeClock('mobile_countdown', deadline);
+      initializeClock('facebook_countdown', deadline);
+
+
+      var doc = document.documentElement;
+      doc.setAttribute('data-useragent', navigator.userAgent);
+    });
+  </script>
