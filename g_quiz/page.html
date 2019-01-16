@@ -290,6 +290,63 @@
   .bsd-contribForm-gdpr-modal-content .col-md-2:nth-of-type(2) {
     display: block !important;
   }
+
+  /* Guantanamo */
+
+  .qbutton {
+    /* display: none; */
+    margin: 0 0 1rem 0;
+    text-align: left;
+    background: transparent;
+    border: 3px solid #252728;
+    color: #252728;
+    font-weight: bold;
+    position: relative;
+    /* background: #2c8c99; */
+    /* background: #2997a7; */
+}
+
+p.question {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-align: lext;
+}
+
+.qbutton:before {
+    /* border: 3px solid black; */
+    background: #e35e14;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    margin-right: 1rem;
+    display: none;
+}
+
+.q1a:before {
+    content: "A";
+}
+
+.q1b:before {
+    content: "B";
+}
+
+.q1c:before {
+    content: "C";
+}
+
+.slide1:before {
+    content: "";
+    /* background: url(https://act.reprieve.org.uk/page/-/GTMO-PRB-Cover); */
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+}
 </style>
 
   <title></title>
@@ -322,27 +379,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     <div class="fixed-background"></div>
     <div class="content-wrap">
-      <div class="slide1 slide darkslide qslide">
-        <div class="container">
-          <div class="row">
-            <div class="col-md">
-              <div class="topIntro">
-                Take a look at this map. Can you name the country?
+      <div class="slide1 slide qslide">
+              <div class="container">
+
+                <p class="question">Do you like American TV?</p><div class="row">
+
+                  <div class="col-md-4">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/USA_flag_on_television.svg/1200px-USA_flag_on_television.svg.png" class="img-fluid">
+          </div>
+                  <div class="col-md">
+
+                    <button class="q1 q1a qbutton">No, I don’t watch TV.</button>
+                    <button class="q1 q1b q-correct qbutton">No, I prefer to watch TV from my own country.</button>
+                    <button class="q1 q1c qbutton">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/China.png" class="countryMap">
-            </div>
-            <div class="col-md">
-              <button class="q1 q1a qbutton">Canada</button>
-              <button class="q1 q1b q-correct qbutton">China</button>
-              <button class="q1 q1c qbutton">Brazil</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
       <div class="slide2 slide darkslide qslide" style="display: none;">
