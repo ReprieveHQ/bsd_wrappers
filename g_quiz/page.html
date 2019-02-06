@@ -8,10 +8,10 @@
 <style>
   .fixed-background {
     background: #252728;
-    /*background-image: url(https://s.bsd.net/reprieve/main/page/-/TrumpBackground.png);
+    background-image: url(https://act.reprieve.org.uk/page/-/ChainLinkBackground.png);
     background-position: top left;
     background-size: cover;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
   }
 
   .quizProgress {
@@ -311,7 +311,8 @@ p.question {
     font-weight: bold;
     text-align: center;
     margin-bottom: 2rem;
-    text-align: lext;
+    text-align: left;
+        line-height: normal;
 }
 
 .qbutton:before {
@@ -347,6 +348,60 @@ p.question {
     position: absolute;
     background-size: cover;
 }
+
+.quizProg {
+    width: 0;
+    height: 10px;
+    position: absolute;
+    bottom: -10px;
+
+    background-image:
+  linear-gradient(
+    to left,
+    #e35e14,
+    #b74507
+  );
+  transition: 1s ease all;
+}
+
+header{
+background: #252728;
+padding: 1rem 0;
+border-bottom: 10px solid grey;
+}
+
+.qbutton {
+  background: #fafafa;
+}
+
+.slide {
+  background: rgba(255,255,255,0.95);
+}
+
+.qbutton:hover, .qbutton:focus {
+    border-color: #e35e14;
+    color: #e35e14;
+}
+
+.slide.darkslide {
+    background: rgba(37,39,40,0.9);
+}
+
+.standfirst {
+  font-size: 2rem;
+line-height: normal;
+font-weight: bold;
+}
+
+button.quizStart {
+    margin: 1rem auto;
+    display: block;
+    min-width: 50%;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
 </style>
 
 <title></title>
@@ -375,301 +430,99 @@ p.question {
           </div>
         </div>
       </div>
+      <div class="quizProg"></div>
     </header>
     <div class="fixed-background"></div>
     <div class="content-wrap">
+
       <div class="slide1 slide qslide">
         <div class="container">
+          <div class="prompt">
+            <p class="standfirst">For the past seventeen years, you have been held at Guantánamo Bay detention camp. You were sold for a bounty and tortured in a CIA-run black site before your rendition to Guantánamo. You have never been charged with a crime.
+            </p>
+            <p>In order to leave Guantánamo, you must face the Periodic Review Board (PRB). If you fail the review, you will remain imprisoned indefinitely – without charge or trial. You do not have an automatic right to a lawyer and you cannot see any of the “evidence” against you.
+            </p>
+            <p><strong>
+                Do you think you can pass the test and be released from Guantánamo?
+              </strong></p>
 
-          <p class="question">Do you like American TV?</p>
+          </div>
           <div class="row">
-
-            <div class="col-md-4">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/USA_flag_on_television.svg/1200px-USA_flag_on_television.svg.png" class="img-fluid">
-            </div>
             <div class="col-md">
-
-              <button class="q1 q1a qbutton">No, I don’t watch TV.</button>
-              <button class="q1 q1b q-correct qbutton">No, I prefer to watch TV from my own country.</button>
-              <button class="q1 q1c qbutton">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
+              <button class="quizStart">Start the Quiz</button>
             </div>
           </div>
         </div>
       </div>
+
 
 
       <div class="slide2 slide qslide" style="display: none;">
-
-
         <div class="container">
-
-          <!--
+          <p class="question">Do you like American TV?</p>
           <div class="row">
             <div class="col-md">
-              <div class="quizProgress">
-                2 / 10
-              </div>
+              <button class="q1 q1a qbutton trapdoor">No, I don’t watch TV.</button>
+              <button class="q1 q1b qbutton trapdoor">No, I prefer to watch TV from my own country.</button>
+              <button class="q1 q1c qbutton proceed">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
             </div>
-          </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="slide3 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review</h2>
+              <p class="reason">Not watching TV and specifically American TV shows can lead to you being labelled as having an “insufficiently changed mindset” and failing the review.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide4 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">If you are released, you get no choice in what country you are sent to and you may not be allowed to return to your home country. If you had a preference, would you rather be sent to:</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q2 q2a qbutton followup">Albania</button>
+              <button class="q2 q2b qbutton followup">Belgium</button>
+              <button class="q2 q2c qbutton followup">Bermuda</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide7 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">Do you like American TV?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q2 q2a qbutton trapdoor">No, I don’t watch TV.</button>
+              <button class="q2 q2b qbutton trapdoor">No, I prefer to watch TV from my own country.</button>
+              <button class="q2 q2c qbutton proceed">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="slide9 slide qslide" style="display: none;">
+        <div class="container">
           <p class="question">Your third cousin twice removed who you haven’t seen in over 20 years once expressed anti-American sentiment on Facebook. What do you think about that?</p>
           <div class="row">
-            <div class="col-md-4">
-              <img src="https://act.reprieve.org.uk/page/-/Egypt.png" class="img-fluid">
-            </div>
             <div class="col-md">
-
-              <button class="q2 q2a qbutton">What’s Facebook?</button>
-              <button class="q2 q2b qbutton">I don’t know him and don’t agree with him.</button>
-              <button class="q2 q2c q-correct qbutton">It’s common to have anti-American feelings in my country.</button>
-
+              <button class="q3 q3a qbutton">What’s Facebook?</button>
+              <button class="q3 q3b qbutton">I don’t know him and don’t agree with him.</button>
+              <button class="q3 q3c q-correct qbutton">It’s common to have anti-American feelings in my country.</button>
             </div>
           </div>
         </div>
       </div>
-<!--
-      <div class="slide3 slide darkslide qslide" style="display: none;">
 
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                3 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Singapore.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q3 q3a q-correct qbutton">Singapore</button>
-              <button class="q3 q3b qbutton">Iceland</button>
-              <button class="q3 q3c qbutton">Japan</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide4 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                4 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/USA.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q4 q4a qbutton">Kazakhstan</button>
-              <button class="q4 q4b q-correct  qbutton">USA</button>
-              <button class="q4 q4c qbutton">Mongolia</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide5 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                5 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Saudi%20Arabia.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q5 q5a q-correct qbutton">Saudi Arabia</button>
-              <button class="q5 q5b qbutton">India</button>
-              <button class="q5 q5c qbutton">Chile</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide6 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                6 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Iran.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q6 q6a q-correct qbutton">Iran</button>
-              <button class="q6 q6b qbutton">Italy</button>
-              <button class="q6 q6c qbutton">Morocco</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide7 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                7 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Somalia.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q7 q7a qbutton">Norway</button>
-              <button class="q7 q7b qbutton">South Korea</button>
-              <button class="q7 q7c q-correct qbutton">Somalia</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide8 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                8 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Iraq.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q8 q8a q-correct qbutton">Iraq</button>
-              <button class="q8 q8b qbutton">Peru</button>
-              <button class="q8 q8c qbutton">Ireland</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide9 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                9 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Pakistan.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q9 q9a qbutton">Vietnam</button>
-              <button class="q9 q9b q-correct qbutton">Pakistan</button>
-              <button class="q9 q9c qbutton">France</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="slide10 slide darkslide qslide" style="display: none;">
-
-
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md">
-              <div class="quizProgress">
-                10 / 10
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md">
-              <img src="https://act.reprieve.org.uk/page/-/Jordan.png" class="countryMap">
-            </div>
-            <div class="col-md">
-
-              <button class="q10 q10a q-correct qbutton">Jordan</button>
-              <button class="q10 q10b qbutton">Venezuela</button>
-              <button class="q10 q10c qbutton">Germany</button>
-
-            </div>
-          </div>
-
-        </div>
-      </div> -->
 
       <div class="slide11 slide slideWin darkslide" style="display: none;">
-
-
         <div class="container">
           <div class="row">
             <div class="col-md">
@@ -692,308 +545,385 @@ p.question {
 
 
       <div class="slide12 slide darkslide" style="display: none;">
-
-
         <div class="container">
           <div class="row">
             <div class="col-md">
-              <h2>On average, an execution takes place somewhere in the world every <span>4 hours</span>. The next one could be in...</h2>
-              <div id="countdown">
-                <div class="time-line">
-                  <div class="time hours"><span>00</span></div>
-                  <div class="label hrs"><span>Hours</span></div>
-                </div>
-                <span class="colon">:</span>
-                <div class="time-line">
-                  <div class="time minutes"><span>04</span></div>
-                  <div class="label mins"><span>Minutes</span></div>
-                </div>
-                <span class="colon">:</span>
-                <div class="time-line">
-                  <div class="time seconds"><span>35</span></div>
-                  <div class="label secs"><span>Seconds</span></div>
-                </div>
-              </div>
-
-
-
+              <h2>Headline</h2>
+              <p>Paragraph</p>
             </div>
             <div class="col-md">
-              <h3>Somewhere, someone is running out of time. Join the global movement against the death penalty now.</h3>
-              <form name="signup" class="bsd-signup-150" action="https://act.reprieve.org.uk/page/sp/join-movement-against-death-penalty" method="post" id="signup" _lpchecked="1">
-                <div class="fieldset" id="bsd-field-country">
-
-                  <div class="input"><select id="country" name="country">
-                      <option value=""></option>
-                      <option value="AF">Afghanistan</option>
-                      <option value="AL">Albania</option>
-                      <option value="DZ">Algeria</option>
-                      <option value="AS">American Samoa</option>
-                      <option value="AD">Andorra</option>
-                      <option value="AO">Angola</option>
-                      <option value="AI">Anguilla</option>
-                      <option value="AG">Antigua and Barbuda</option>
-                      <option value="AR">Argentina</option>
-                      <option value="AM">Armenia</option>
-                      <option value="AW">Aruba</option>
-                      <option value="AU">Australia</option>
-                      <option value="AT">Austria</option>
-                      <option value="AZ">Azerbaijan</option>
-                      <option value="BS">Bahamas</option>
-                      <option value="BH">Bahrain</option>
-                      <option value="BD">Bangladesh</option>
-                      <option value="BB">Barbados</option>
-                      <option value="BY">Belarus</option>
-                      <option value="BE">Belgium</option>
-                      <option value="BZ">Belize</option>
-                      <option value="BJ">Benin</option>
-                      <option value="BM">Bermuda</option>
-                      <option value="BT">Bhutan</option>
-                      <option value="BO">Bolivia</option>
-                      <option value="BA">Bosnia and Herzegovina</option>
-                      <option value="BW">Botswana</option>
-                      <option value="BR">Brazil</option>
-                      <option value="VG">British Virgin Islands</option>
-                      <option value="IO">British Indian Ocean Territory</option>
-                      <option value="BN">Brunei</option>
-                      <option value="BG">Bulgaria</option>
-                      <option value="BF">Burkina Faso</option>
-                      <option value="BI">Burundi</option>
-                      <option value="KH">Cambodia</option>
-                      <option value="CM">Cameroon</option>
-                      <option value="CA">Canada</option>
-                      <option value="CV">Cape Verde</option>
-                      <option value="KY">Cayman Islands</option>
-                      <option value="CF">Central African Republic</option>
-                      <option value="TD">Chad</option>
-                      <option value="CL">Chile</option>
-                      <option value="CN">China</option>
-                      <option value="CX">Christmas Island</option>
-                      <option value="CO">Colombia</option>
-                      <option value="KM">Comoros Islands</option>
-                      <option value="CD">Congo, Democratic Republic of the</option>
-                      <option value="CG">Congo, Republic of the</option>
-                      <option value="CK">Cook Islands</option>
-                      <option value="CR">Costa Rica</option>
-                      <option value="CI">Cote D'ivoire</option>
-                      <option value="HR">Croatia</option>
-                      <option value="CU">Cuba</option>
-                      <option value="CY">Cyprus</option>
-                      <option value="CZ">Czech Republic</option>
-                      <option value="DK">Denmark</option>
-                      <option value="DJ">Djibouti</option>
-                      <option value="DM">Dominica</option>
-                      <option value="DO">Dominican Republic</option>
-                      <option value="TP">East Timor</option>
-                      <option value="EC">Ecuador</option>
-                      <option value="EG">Egypt</option>
-                      <option value="SV">El Salvador</option>
-                      <option value="GQ">Equatorial Guinea</option>
-                      <option value="ER">Eritrea</option>
-                      <option value="EE">Estonia</option>
-                      <option value="ET">Ethiopia</option>
-                      <option value="FK">Falkland Islands (Malvinas)</option>
-                      <option value="FO">Faroe Islands</option>
-                      <option value="FJ">Fiji</option>
-                      <option value="FI">Finland</option>
-                      <option value="FR">France</option>
-                      <option value="GF">French Guiana</option>
-                      <option value="PF">French Polynesia</option>
-                      <option value="TF">French Southern Territories</option>
-                      <option value="GA">Gabon</option>
-                      <option value="GM">Gambia</option>
-                      <option value="GE">Georgia</option>
-                      <option value="DE">Germany</option>
-                      <option value="GH">Ghana</option>
-                      <option value="GI">Gibraltar</option>
-                      <option value="GR">Greece</option>
-                      <option value="GL">Greenland</option>
-                      <option value="GD">Grenada</option>
-                      <option value="GP">Guadeloupe</option>
-                      <option value="GU">Guam</option>
-                      <option value="GT">Guatemala</option>
-                      <option value="GN">Guinea</option>
-                      <option value="GW">Guinea-Bissau</option>
-                      <option value="GY">Guyana</option>
-                      <option value="HT">Haiti</option>
-                      <option value="VA">Holy See (Vatican City State)</option>
-                      <option value="HN">Honduras</option>
-                      <option value="HK">Hong Kong</option>
-                      <option value="HU">Hungary</option>
-                      <option value="IS">Iceland</option>
-                      <option value="IN">India</option>
-                      <option value="ID">Indonesia</option>
-                      <option value="IR">Iran</option>
-                      <option value="IQ">Iraq</option>
-                      <option value="IE">Republic of Ireland</option>
-                      <option value="IL">Israel</option>
-                      <option value="IT">Italy</option>
-                      <option value="JM">Jamaica</option>
-                      <option value="JP">Japan</option>
-                      <option value="JO">Jordan</option>
-                      <option value="KZ">Kazakhstan</option>
-                      <option value="KE">Kenya</option>
-                      <option value="KI">Kiribati</option>
-                      <option value="KR">South Korea</option>
-                      <option value="XK">Kosovo</option>
-                      <option value="KW">Kuwait</option>
-                      <option value="KG">Kyrgyzstan</option>
-                      <option value="LA">Laos</option>
-                      <option value="LV">Latvia</option>
-                      <option value="LB">Lebanon</option>
-                      <option value="LS">Lesotho</option>
-                      <option value="LR">Liberia</option>
-                      <option value="LY">Libya</option>
-                      <option value="LI">Liechtenstein</option>
-                      <option value="LT">Lithuania</option>
-                      <option value="LU">Luxembourg</option>
-                      <option value="MO">Macau</option>
-                      <option value="MK">Macedonia</option>
-                      <option value="MG">Madagascar</option>
-                      <option value="MW">Malawi</option>
-                      <option value="MY">Malaysia</option>
-                      <option value="MV">Maldives</option>
-                      <option value="ML">Mali</option>
-                      <option value="MT">Malta</option>
-                      <option value="MH">Marshall Islands</option>
-                      <option value="MQ">Martinique</option>
-                      <option value="MR">Mauritania</option>
-                      <option value="MU">Mauritius</option>
-                      <option value="YT">Mayotte</option>
-                      <option value="MX">Mexico</option>
-                      <option value="FM">Micronesia</option>
-                      <option value="MD">Moldova, Republic of</option>
-                      <option value="MC">Monaco</option>
-                      <option value="MN">Mongolia</option>
-                      <option value="ME">Montenegro</option>
-                      <option value="MS">Montserrat</option>
-                      <option value="MA">Morocco</option>
-                      <option value="MZ">Mozambique</option>
-                      <option value="MM">Myanmar</option>
-                      <option value="NA">Namibia</option>
-                      <option value="NR">Nauru</option>
-                      <option value="NP">Nepal</option>
-                      <option value="NL">Netherlands</option>
-                      <option value="AN">Netherlands Antilles</option>
-                      <option value="NC">New Caledonia</option>
-                      <option value="NZ">New Zealand</option>
-                      <option value="NI">Nicaragua</option>
-                      <option value="NE">Niger</option>
-                      <option value="NG">Nigeria</option>
-                      <option value="NU">Niue</option>
-                      <option value="NF">Norfolk Island</option>
-                      <option value="MP">Northern Mariana Islands</option>
-                      <option value="NO">Norway</option>
-                      <option value="OM">Oman</option>
-                      <option value="PK">Pakistan</option>
-                      <option value="PW">Palau</option>
-                      <option value="PA">Panama</option>
-                      <option value="PG">Papua New Guinea</option>
-                      <option value="PY">Paraguay</option>
-                      <option value="PE">Peru</option>
-                      <option value="PH">Philippines</option>
-                      <option value="PN">Pitcairn Island</option>
-                      <option value="PL">Poland</option>
-                      <option value="PT">Portugal</option>
-                      <option value="PR">Puerto Rico</option>
-                      <option value="QA">Qatar</option>
-                      <option value="RE">Reunion</option>
-                      <option value="RO">Romania</option>
-                      <option value="RU">Russian Federation</option>
-                      <option value="RW">Rwanda</option>
-                      <option value="KN">Saint Kitts and Nevis</option>
-                      <option value="LC">Saint Lucia</option>
-                      <option value="VC">Saint Vincent and the Grenadines</option>
-                      <option value="WS">Samoa</option>
-                      <option value="SM">San Marino</option>
-                      <option value="ST">Sao Tome and Principe</option>
-                      <option value="SA">Saudi Arabia</option>
-                      <option value="SN">Senegal</option>
-                      <option value="RS">Serbia</option>
-                      <option value="SC">Seychelles</option>
-                      <option value="SL">Sierra Leone</option>
-                      <option value="SG">Singapore</option>
-                      <option value="SK">Slovakia</option>
-                      <option value="SI">Slovenia</option>
-                      <option value="SB">Solomon Islands</option>
-                      <option value="SO">Somalia</option>
-                      <option value="ZA">South Africa</option>
-                      <option value="SS">South Sudan</option>
-                      <option value="ES">Spain</option>
-                      <option value="LK">Sri Lanka</option>
-                      <option value="SH">St. Helena</option>
-                      <option value="PM">St. Pierre and Miquelon</option>
-                      <option value="SD">Sudan</option>
-                      <option value="SR">Suriname</option>
-                      <option value="SY">Syria</option>
-                      <option value="SZ">Swaziland</option>
-                      <option value="SE">Sweden</option>
-                      <option value="CH">Switzerland</option>
-                      <option value="TW">Taiwan</option>
-                      <option value="TJ">Tajikistan</option>
-                      <option value="TZ">Tanzania</option>
-                      <option value="TH">Thailand</option>
-                      <option value="TG">Togo</option>
-                      <option value="TK">Tokelau</option>
-                      <option value="TO">Tonga</option>
-                      <option value="TT">Trinidad and Tobago</option>
-                      <option value="TN">Tunisia</option>
-                      <option value="TR">Turkey</option>
-                      <option value="TM">Turkmenistan</option>
-                      <option value="TC">Turks and Caicos Islands</option>
-                      <option value="TV">Tuvalu</option>
-                      <option value="UG">Uganda</option>
-                      <option value="UA">Ukraine</option>
-                      <option value="AE">United Arab Emirates</option>
-                      <option value="GB" selected="selected">United Kingdom</option>
-                      <option value="US">United States</option>
-                      <option value="UY">Uruguay</option>
-                      <option value="UZ">Uzbekistan</option>
-                      <option value="VU">Vanuatu</option>
-                      <option value="VE">Venezuela</option>
-                      <option value="VN">Viet Nam</option>
-                      <option value="VI">Virgin Islands (U.S.)</option>
-                      <option value="WF">Wallis and Futuna Islands</option>
-                      <option value="EH">Western Sahara</option>
-                      <option value="YE">Yemen</option>
-                      <option value="ZM">Zambia</option>
-                      <option value="ZW">Zimbabwe</option>
-                    </select></div>
+              <form name="signup" class="bsd-signup-118" action="https://act.reprieve.org.uk/page/sp/close-guantanamo" method="post" id="signup">
+                <div id="form-wrap">
+                  <div class="fieldset" id="bsd-field-country">
+                    <div class="label"><label class="field">Country</label></div>
+                    <div class="input"><select id="country" name="country">
+                        <option value=""></option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AO">Angola</option>
+                        <option value="AI">Anguilla</option>
+                        <option value="AG">Antigua and Barbuda</option>
+                        <option value="AR">Argentina</option>
+                        <option value="AM">Armenia</option>
+                        <option value="AW">Aruba</option>
+                        <option value="AU">Australia</option>
+                        <option value="AT">Austria</option>
+                        <option value="AZ">Azerbaijan</option>
+                        <option value="BS">Bahamas</option>
+                        <option value="BH">Bahrain</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BB">Barbados</option>
+                        <option value="BY">Belarus</option>
+                        <option value="BE">Belgium</option>
+                        <option value="BZ">Belize</option>
+                        <option value="BJ">Benin</option>
+                        <option value="BM">Bermuda</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="BO">Bolivia</option>
+                        <option value="BA">Bosnia and Herzegovina</option>
+                        <option value="BW">Botswana</option>
+                        <option value="BR">Brazil</option>
+                        <option value="VG">British Virgin Islands</option>
+                        <option value="IO">British Indian Ocean Territory</option>
+                        <option value="BN">Brunei</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="BF">Burkina Faso</option>
+                        <option value="BI">Burundi</option>
+                        <option value="KH">Cambodia</option>
+                        <option value="CM">Cameroon</option>
+                        <option value="CA">Canada</option>
+                        <option value="CV">Cape Verde</option>
+                        <option value="KY">Cayman Islands</option>
+                        <option value="CF">Central African Republic</option>
+                        <option value="TD">Chad</option>
+                        <option value="CL">Chile</option>
+                        <option value="CN">China</option>
+                        <option value="CX">Christmas Island</option>
+                        <option value="CO">Colombia</option>
+                        <option value="KM">Comoros Islands</option>
+                        <option value="CD">Congo, Democratic Republic of the</option>
+                        <option value="CG">Congo, Republic of the</option>
+                        <option value="CK">Cook Islands</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="CI">Cote D'ivoire</option>
+                        <option value="HR">Croatia</option>
+                        <option value="CU">Cuba</option>
+                        <option value="CY">Cyprus</option>
+                        <option value="CZ">Czech Republic</option>
+                        <option value="DK">Denmark</option>
+                        <option value="DJ">Djibouti</option>
+                        <option value="DM">Dominica</option>
+                        <option value="DO">Dominican Republic</option>
+                        <option value="TP">East Timor</option>
+                        <option value="EC">Ecuador</option>
+                        <option value="EG">Egypt</option>
+                        <option value="SV">El Salvador</option>
+                        <option value="GQ">Equatorial Guinea</option>
+                        <option value="ER">Eritrea</option>
+                        <option value="EE">Estonia</option>
+                        <option value="ET">Ethiopia</option>
+                        <option value="FK">Falkland Islands (Malvinas)</option>
+                        <option value="FO">Faroe Islands</option>
+                        <option value="FJ">Fiji</option>
+                        <option value="FI">Finland</option>
+                        <option value="FR">France</option>
+                        <option value="GF">French Guiana</option>
+                        <option value="PF">French Polynesia</option>
+                        <option value="TF">French Southern Territories</option>
+                        <option value="GA">Gabon</option>
+                        <option value="GM">Gambia</option>
+                        <option value="GE">Georgia</option>
+                        <option value="DE">Germany</option>
+                        <option value="GH">Ghana</option>
+                        <option value="GI">Gibraltar</option>
+                        <option value="GR">Greece</option>
+                        <option value="GL">Greenland</option>
+                        <option value="GD">Grenada</option>
+                        <option value="GP">Guadeloupe</option>
+                        <option value="GU">Guam</option>
+                        <option value="GT">Guatemala</option>
+                        <option value="GN">Guinea</option>
+                        <option value="GW">Guinea-Bissau</option>
+                        <option value="GY">Guyana</option>
+                        <option value="HT">Haiti</option>
+                        <option value="VA">Holy See (Vatican City State)</option>
+                        <option value="HN">Honduras</option>
+                        <option value="HK">Hong Kong</option>
+                        <option value="HU">Hungary</option>
+                        <option value="IS">Iceland</option>
+                        <option value="IN">India</option>
+                        <option value="ID">Indonesia</option>
+                        <option value="IR">Iran</option>
+                        <option value="IQ">Iraq</option>
+                        <option value="IE">Republic of Ireland</option>
+                        <option value="IL">Israel</option>
+                        <option value="IT">Italy</option>
+                        <option value="JM">Jamaica</option>
+                        <option value="JP">Japan</option>
+                        <option value="JO">Jordan</option>
+                        <option value="KZ">Kazakhstan</option>
+                        <option value="KE">Kenya</option>
+                        <option value="KI">Kiribati</option>
+                        <option value="KR">South Korea</option>
+                        <option value="XK">Kosovo</option>
+                        <option value="KW">Kuwait</option>
+                        <option value="KG">Kyrgyzstan</option>
+                        <option value="LA">Laos</option>
+                        <option value="LV">Latvia</option>
+                        <option value="LB">Lebanon</option>
+                        <option value="LS">Lesotho</option>
+                        <option value="LR">Liberia</option>
+                        <option value="LY">Libya</option>
+                        <option value="LI">Liechtenstein</option>
+                        <option value="LT">Lithuania</option>
+                        <option value="LU">Luxembourg</option>
+                        <option value="MO">Macau</option>
+                        <option value="MK">Macedonia</option>
+                        <option value="MG">Madagascar</option>
+                        <option value="MW">Malawi</option>
+                        <option value="MY">Malaysia</option>
+                        <option value="MV">Maldives</option>
+                        <option value="ML">Mali</option>
+                        <option value="MT">Malta</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MQ">Martinique</option>
+                        <option value="MR">Mauritania</option>
+                        <option value="MU">Mauritius</option>
+                        <option value="YT">Mayotte</option>
+                        <option value="MX">Mexico</option>
+                        <option value="FM">Micronesia</option>
+                        <option value="MD">Moldova, Republic of</option>
+                        <option value="MC">Monaco</option>
+                        <option value="MN">Mongolia</option>
+                        <option value="ME">Montenegro</option>
+                        <option value="MS">Montserrat</option>
+                        <option value="MA">Morocco</option>
+                        <option value="MZ">Mozambique</option>
+                        <option value="MM">Myanmar</option>
+                        <option value="NA">Namibia</option>
+                        <option value="NR">Nauru</option>
+                        <option value="NP">Nepal</option>
+                        <option value="NL">Netherlands</option>
+                        <option value="AN">Netherlands Antilles</option>
+                        <option value="NC">New Caledonia</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="NI">Nicaragua</option>
+                        <option value="NE">Niger</option>
+                        <option value="NG">Nigeria</option>
+                        <option value="NU">Niue</option>
+                        <option value="NF">Norfolk Island</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="NO">Norway</option>
+                        <option value="OM">Oman</option>
+                        <option value="PK">Pakistan</option>
+                        <option value="PW">Palau</option>
+                        <option value="PA">Panama</option>
+                        <option value="PG">Papua New Guinea</option>
+                        <option value="PY">Paraguay</option>
+                        <option value="PE">Peru</option>
+                        <option value="PH">Philippines</option>
+                        <option value="PN">Pitcairn Island</option>
+                        <option value="PL">Poland</option>
+                        <option value="PT">Portugal</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="QA">Qatar</option>
+                        <option value="RE">Reunion</option>
+                        <option value="RO">Romania</option>
+                        <option value="RU">Russian Federation</option>
+                        <option value="RW">Rwanda</option>
+                        <option value="KN">Saint Kitts and Nevis</option>
+                        <option value="LC">Saint Lucia</option>
+                        <option value="VC">Saint Vincent and the Grenadines</option>
+                        <option value="WS">Samoa</option>
+                        <option value="SM">San Marino</option>
+                        <option value="ST">Sao Tome and Principe</option>
+                        <option value="SA">Saudi Arabia</option>
+                        <option value="SN">Senegal</option>
+                        <option value="RS">Serbia</option>
+                        <option value="SC">Seychelles</option>
+                        <option value="SL">Sierra Leone</option>
+                        <option value="SG">Singapore</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="SI">Slovenia</option>
+                        <option value="SB">Solomon Islands</option>
+                        <option value="SO">Somalia</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="SS">South Sudan</option>
+                        <option value="ES">Spain</option>
+                        <option value="LK">Sri Lanka</option>
+                        <option value="SH">St. Helena</option>
+                        <option value="PM">St. Pierre and Miquelon</option>
+                        <option value="SD">Sudan</option>
+                        <option value="SR">Suriname</option>
+                        <option value="SY">Syria</option>
+                        <option value="SZ">Swaziland</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="TW">Taiwan</option>
+                        <option value="TJ">Tajikistan</option>
+                        <option value="TZ">Tanzania</option>
+                        <option value="TH">Thailand</option>
+                        <option value="TG">Togo</option>
+                        <option value="TK">Tokelau</option>
+                        <option value="TO">Tonga</option>
+                        <option value="TT">Trinidad and Tobago</option>
+                        <option value="TN">Tunisia</option>
+                        <option value="TR">Turkey</option>
+                        <option value="TM">Turkmenistan</option>
+                        <option value="TC">Turks and Caicos Islands</option>
+                        <option value="TV">Tuvalu</option>
+                        <option value="UG">Uganda</option>
+                        <option value="UA">Ukraine</option>
+                        <option value="AE">United Arab Emirates</option>
+                        <option value="GB" selected="selected">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="UY">Uruguay</option>
+                        <option value="UZ">Uzbekistan</option>
+                        <option value="VU">Vanuatu</option>
+                        <option value="VE">Venezuela</option>
+                        <option value="VN">Viet Nam</option>
+                        <option value="VI">Virgin Islands (U.S.)</option>
+                        <option value="WF">Wallis and Futuna Islands</option>
+                        <option value="EH">Western Sahara</option>
+                        <option value="YE">Yemen</option>
+                        <option value="ZM">Zambia</option>
+                        <option value="ZW">Zimbabwe</option>
+                      </select></div>
+                  </div>
+                  <div class="fieldset" id="bsd-field-email">
+                    <div class="label"><label class="field">Email</label></div>
+                    <div class="input"><input type="email" class="text" size="48" id="email" name="email" placeholder="Email" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: pointer;"></div>
+                  </div>
+                  <div class="fieldset" id="bsd-field-firstname">
+                    <div class="label"><label class="field">First Name</label></div>
+                    <div class="input"><input size="16" id="firstname" name="firstname" type="text" placeholder="First Name"></div>
+                  </div>
+                  <div class="fieldset" id="bsd-field-lastname">
+                    <div class="label"><label class="field">Last Name</label></div>
+                    <div class="input"><input size="25" id="lastname" name="lastname" type="text" placeholder="Last Name"></div>
+                  </div>
+                  <div class="fieldset optinradio_fieldset"><label class="optin_lang">Would you like to receive updates about our news, campaigns and appeals by email? <a href="http://www.reprieve.org.uk/privacy/" target="_blank">(see our privacy
+                        policy)</a></label>
+                    <label for="optin_1"><input id="optin_1" class="optinradio" name="optin" value="Yes" type="radio" required="">Yes</label>
+                    <label for="optin_0"><input id="optin_0" class="optinradio" name="optin" value="No" type="radio">No</label>
+                    <p id="optin_warning">Don't want to hear from us? If you're already on our mailing list, selecting this option may unsubscribe you from our alerts.</p>
+                  </div>
+                  <div class="fieldset" id="bsd-field-email_opt_in">
+                    <div class="label"><label class="field"></label></div>
+                    <div class="input"><input id="email_opt_in" name="email_opt_in" type="checkbox" value="1"><label for="email_opt_in">I would like to receive email updates about news, campaigns and appeals from Reprieve</label></div>
+                  </div>
+                  <div class="fieldset" id="bsd-field-submit-btn">
+                    <div class="label"><label class="field"></label></div>
+                    <div class="input"><input name="submit-btn" value="Add your name" type="submit" id="submit_button"></div>
+                  </div>
                 </div>
+                <table id="signuptable">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td valign="top">
 
-                <div class="fieldset" id="bsd-field-email">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td valign="top">
 
-                  <div class="input"><input type="email" class="text" size="48" id="email" name="email" placeholder="Email" required=""></div>
-                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td valign="top">
 
-                <div class="fieldset" id="bsd-field-firstname">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td valign="top">
 
-                  <div class="input"><input size="16" id="firstname" name="firstname" placeholder="First Name" type="text" required=""></div>
-                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%"></table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%"></table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td valign="top">
 
-                <div class="fieldset" id="bsd-field-lastname">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display: none"><label for="best-contact-time">Please leave this field blank:</label> <input id="best-contact-time" name="best-contact-time" type="text"></div>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td valign="top">
 
-                  <div class="input"><input size="25" id="lastname" name="lastname" type="text" placeholder="Last Name" required=""></div>
-                </div>
-
-                <fieldset class="optinradio_fieldset form-radio"><label class="optin_lang">Would you like to receive updates about our news, campaigns and appeals by email? <a href="http://www.reprieve.org.uk/privacy/" target="_blank">(See our
-                      Privacy Policy)</a></label>
-                  <label for="optin_1"><input id="optin_1" class="optinradio" name="optin" value="Yes" type="radio" required="">Yes</label>
-                  <label for="optin_0"><input id="optin_0" class="optinradio" name="optin" value="No" type="radio">No</label>
-                  <p id="optin_warning">Don't want to hear from us? If you're already on our mailing list, selecting this option will unsubscribe you from our alerts.</p>
-                </fieldset>
-                <div class="fieldset" id="bsd-field-email_opt_in">
-                  <div class="label"><label class="field"></label></div>
-                  <div class="input"><input id="email_opt_in" name="email_opt_in" type="checkbox" value="1"><label for="email_opt_in">Would you like to receive updates about our news, campaigns and appeals by email?</label></div>
-                </div>
-
-                <div style="display: none"><label for="best-contact-time">Please leave this field blank:</label> <input id="best-contact-time" name="best-contact-time" type="text"></div>
-
-                <div class="fieldset" id="bsd-field-submit-btn">
-                  <div class="label"><label class="field"></label></div>
-                  <div class="input"><input name="submit-btn" value="Add my name" type="submit" id="submit_button"></div>
-                </div>
-                <input name="redirect_url" type="hidden" value=""><input id="_guid" name="_guid" type="hidden" value="">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td id="required_note"><span style="font-size: 80%;"> denotes required field</span></td>
+                            </tr><input name="redirect_url" type="hidden" value=""><input id="_guid" name="_guid" type="hidden" value="">
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </form>
 
             </div>
@@ -1001,57 +931,10 @@ p.question {
         </div>
       </div>
 
-      <!-- <div class="slide13 slide darkslide" style="display: none;">
-
-
+      <div class="slide13 slide darkslide" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-md">
-              <h2>You got <span id="scorePrint">0</span> out of 10 correct.</h2>
-              <div class="row">
-                <div class="col-md-12">
-                  <button class="outline button answer_reveal">Your answer breakdown</button>
-                </div>
-              </div>
-              <div class="answer_reveal_wrap">
-                <div class="row">
-
-                  <div class="col-md">
-                    <p class="q1tpp qtpp">Q1. <span class="q1tpm">China</span> <span class="q1tpl">(You said <span class="q1tp"></span>)</span>
-                    </p>
-                    <p class="qdec">China is the world's top executor. Exact numbers are a secret, but they likely execute thousands each year.</p>
-                    <p class="q2tpp qtpp">Q2. <span class="q2tpm">Egypt</span> <span class="q2tpl">(You said <span class="q2tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Egypt executed at least 35 people last year.</p>
-                    <p class="q3tpp qtpp">Q3. <span class="q3tpm">Singapore</span> <span class="q3tpl">(You said <span class="q3tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Singapore executed 8 people last year.</p>
-                    <p class="q4tpp qtpp">Q4. <span class="q4tpm">USA</span> <span class="q4tpl">(You said <span class="q4tp"></span>)</span>
-                    </p>
-                    <p class="qdec">USA executed 23 people last year.</p>
-                    <p class="q5tpp qtpp">Q5. <span class="q5tpm">Saudi Arabia</span> <span class="q5tpl">(You said <span class="q5tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Saudi Arabia executed at least 146 people last year.</p>
-                  </div>
-                  <div class="col-md">
-                    <p class="q6tpp qtpp">Q6. <span class="q6tpm">Iran</span> <span class="q6tpl">(You said <span class="q6tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Iran executed at least 507 people last year.</p>
-                    <p class="q7tpp qtpp">Q7. <span class="q7tpm">Somalia</span> <span class="q7tpl">(You said <span class="q7tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Somalia executed 24 people last year.</p>
-                    <p class="q8tpp qtpp">Q8. <span class="q8tpm">Iraq</span> <span class="q8tpl">(You said <span class="q8tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Iraq executed at least 125 people last year.</p>
-                    <p class="q9tpp qtpp">Q9. <span class="q9tpm">Pakistan</span> <span class="q9tpl">(You said <span class="q9tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Pakistan executed at least 65 people last year.</p>
-                    <p class="q10tpp qtpp">Q10. <span class="q10tpm">Jordan</span> <span class="q10tpl">(You said <span class="q10tp"></span>)</span>
-                    </p>
-                    <p class="qdec">Jordan executed 15 people last year.</p>
-                  </div>
-                </div>
-              </div>
               <h3>Can you share with your friends so they can take part?</h3>
               <div class="row">
                 <div class="col-md-5">
@@ -1064,41 +947,31 @@ p.question {
                   <button class="outline button answer_skip">Skip</button>
                 </div>
               </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div> -->
-
-
-      <div class="slide14 slide darkslide" style="display: none;">
-        <div class="container">
-          <div class="row">
-            <div class="col-md">
-
-              <div class="unsigned">
-                <h2><span class="first_name">Supporter</span>, our lawyers and investigators work around the world to deliver justice and save lives.</h2>
-                <h3>Stop the execution of another human being. Please donate now to help fund our vital work.</h3>
-
-              </div>
-
-              <a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=15" class="solid button small" target="_blank">Donate &pound;15</a>
-              <!--
-      --><a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=25" class="solid button small" target="_blank">Donate &pound;25</a>
-              <!--
-      --><a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=50" class="solid button small" target="_blank">Donate &pound;50</a>
-              <!--
-      --><a href="https://act.reprieve.org.uk/page/contribute/quiz-donate" class="outline button small" target="_blank">Other amount</a>
-
-
             </div>
           </div>
         </div>
       </div>
 
 
-  <!-- SLIDES END -->
+      <div class="slide14 slide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <div class="unsigned">
+                <h2><span class="first_name">Supporter</span>, our lawyers and investigators work around the world to deliver justice and save lives.</h2>
+                <h3>Stop the execution of another human being. Please donate now to help fund our vital work.</h3>
+              </div>
+              <a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=15" class="solid button small" target="_blank">Donate &pound;15</a>
+              <a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=25" class="solid button small" target="_blank">Donate &pound;25</a>
+              <a href="https://act.reprieve.org.uk/page/contribute/quiz-donate?default_amt=50" class="solid button small" target="_blank">Donate &pound;50</a>
+              <a href="https://act.reprieve.org.uk/page/contribute/quiz-donate" class="outline button small" target="_blank">Other amount</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- SLIDES END -->
     </div>
     <footer id="footer" class="footer">
       <div class="container clearfix">
@@ -1746,50 +1619,44 @@ p.question {
     });
 
     // Quiz
-    var q1 = 0;
-    var q2 = 0;
-    var q3 = 0;
-    var q4 = 0;
-    var q5 = 0;
-    var q6 = 0;
-    var q7 = 0;
-    var q8 = 0;
-    var q9 = 0;
-    var q10 = 0;
+    // var q1 = 0;
+    // var q2 = 0;
+    // var q3 = 0;
+    // var q4 = 0;
+    // var q5 = 0;
+    // var q6 = 0;
+    // var q7 = 0;
+    // var q8 = 0;
+    // var q9 = 0;
+    // var q10 = 0;
+    //
+    // var q1t = 0;
+    // var q2t = 0;
+    // var q3t = 0;
+    // var q4t = 0;
+    // var q5t = 0;
+    // var q6t = 0;
+    // var q7t = 0;
+    // var q8t = 0;
+    // var q9t = 0;
+    // var q10t = 0;
+    //
+    // var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
 
-    var q1t = 0;
-    var q2t = 0;
-    var q3t = 0;
-    var q4t = 0;
-    var q5t = 0;
-    var q6t = 0;
-    var q7t = 0;
-    var q8t = 0;
-    var q9t = 0;
-    var q10t = 0;
+    $(".quizStart").click(function() {
+      $(".quizProg").css('width', 'calc((100% / 12) * 1)');
+      nextSlide('.slide1');
+    });
 
-    var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
 
     $(".q1").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q1 = 1;
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide2');
       } else {
-        q1 = 0;
+        $(".quizProg").css('width', 'calc((100% / 24) * 2)');
+        nextSlide('.slide3');
       }
-      q1t = $(this).text();
-      $('.q1tp').text(q1t);
-
-      if ($(".q1tp").text() == $(".q1tpm").text()) {
-        $(".q1tpl").hide();
-        $(".q1tpp").prepend("<span class='qmark qtick'>✓ </span>");
-
-
-      } else {
-        $(".q1tpl").css('color', '#e35e14');
-        $(".q1tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-      nextSlide('.slide1');
     });
 
 
@@ -1810,7 +1677,7 @@ p.question {
         $(".q2tpl").css('color', '#e35e14');
         $(".q2tpp").prepend("<span class='qmark qcross'>x </span>");
       }
-
+      $(".quizProg").css('width', 'calc((100% / 24) * 3)');
       nextSlide('.slide2');
     });
 
