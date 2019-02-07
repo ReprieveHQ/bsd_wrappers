@@ -402,6 +402,29 @@ button.quizStart {
 }
 
 
+.buttonQuiz.quizRestart {
+    background: none;
+    font-size: 1rem;
+    margin: 0 auto 1rem auto;
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.buttonQuiz.goToPetition {
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+button.buttonQuiz {
+    min-width: 300px;
+}
+
+p.reason {
+    border-bottom: 5px solid #e35e15;
+    padding-bottom: 1rem;
+}
+
 </style>
 
 <title></title>
@@ -435,12 +458,14 @@ button.quizStart {
     <div class="fixed-background"></div>
     <div class="content-wrap">
 
-      <div class="slide1 slide qslide">
+      <div class="slide1 slide slide">
         <div class="container">
           <div class="prompt">
-            <p class="standfirst">For the past seventeen years, you have been held at Guantánamo Bay detention camp. You were sold for a bounty and tortured in a CIA-run black site before your rendition to Guantánamo. You have never been charged with a crime.
+            <p class="standfirst">For the past seventeen years, you have been held at Guantánamo Bay detention camp. You were sold for a bounty and tortured in a CIA-run black site before your rendition to Guantánamo. You have never been charged
+              with a crime.
             </p>
-            <p>In order to leave Guantánamo, you must face the Periodic Review Board (PRB). If you fail the review, you will remain imprisoned indefinitely – without charge or trial. You do not have an automatic right to a lawyer and you cannot see any of the “evidence” against you.
+            <p>In order to leave Guantánamo, you must face the Periodic Review Board (PRB). If you fail the review, you will remain imprisoned indefinitely – without charge or trial. You do not have an automatic right to a lawyer and you cannot see
+              any of the “evidence” against you.
             </p>
             <p><strong>
                 Do you think you can pass the test and be released from Guantánamo?
@@ -462,9 +487,9 @@ button.quizStart {
           <p class="question">Do you like American TV?</p>
           <div class="row">
             <div class="col-md">
-              <button class="q1 q1a qbutton trapdoor">No, I don’t watch TV.</button>
-              <button class="q1 q1b qbutton trapdoor">No, I prefer to watch TV from my own country.</button>
-              <button class="q1 q1c qbutton proceed">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
+              <button class="q1 q1-a qbutton trapdoor">No, I don’t watch TV.</button>
+              <button class="q1 q1-b qbutton trapdoor">No, I prefer to watch TV from my own country.</button>
+              <button class="q1 q1-c qbutton proceed">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
             </div>
           </div>
         </div>
@@ -474,8 +499,15 @@ button.quizStart {
         <div class="container">
           <div class="row">
             <div class="col-md">
-              <h2>Uh oh: You've failed your review</h2>
+              <h2>Uh oh: You've failed your review!</h2>
               <p class="reason">Not watching TV and specifically American TV shows can lead to you being labelled as having an “insufficiently changed mindset” and failing the review.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
             </div>
           </div>
         </div>
@@ -486,9 +518,42 @@ button.quizStart {
           <p class="question">If you are released, you get no choice in what country you are sent to and you may not be allowed to return to your home country. If you had a preference, would you rather be sent to:</p>
           <div class="row">
             <div class="col-md">
-              <button class="q2 q2a qbutton followup">Albania</button>
-              <button class="q2 q2b qbutton followup">Belgium</button>
-              <button class="q2 q2c qbutton followup">Bermuda</button>
+              <button class="q2 q2-a qbutton albania followup">Albania</button>
+              <button class="q2 q2-b qbutton belgium followup">Belgium</button>
+              <button class="q2 q2-c qbutton georgia followup">Georgia</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide5 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">If you are sent to <span class="qCountryChoice">[COUNTRY CHOICE]</span>, how will you support yourself?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q2a q2a-a qbutton trapdoor">I don’t know – I don’t speak <span class="qCountryLang">[LANGUAGE]</span> or know anyone in <span class="qCountryChoice">[COUNTRY CHOICE]</span>. But I’ll work hard, learn the language and
+                find a job.</button>
+              <button class="q2a q2a-b qbutton proceed">My family will support me until I find work</button>
+              <button class="q2a q2a-c qbutton followup">I have friends in <span class="qCountryChoice">[COUNTRY]</span> who can help me find work.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide6 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Guantánamo detainees are expected to give lengthy descriptions of exactly what job they will do when they leave Guantánamo – even though they don’t know what country they are going to and have been out of the
+                workforce for years. Your next PRB will be in three years – better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
             </div>
           </div>
         </div>
@@ -496,33 +561,282 @@ button.quizStart {
 
       <div class="slide7 slide qslide" style="display: none;">
         <div class="container">
-          <p class="question">Do you like American TV?</p>
+          <p class="question">How do you know that your contacts in <span class="qCountryChoice">[COUNTRY CHOICE]</span> are trustworthy? How do we know you won’t end up involved in terrorism again?</p>
           <div class="row">
             <div class="col-md">
-              <button class="q2 q2a qbutton trapdoor">No, I don’t watch TV.</button>
-              <button class="q2 q2b qbutton trapdoor">No, I prefer to watch TV from my own country.</button>
-              <button class="q2 q2c qbutton proceed">Yes, when I get out, I’m going straight to Blockbuster to rent my favourite series.</button>
+              <button class="q2ac q2ac-a qbutton trapdoor">I am innocent and was never involved in terrorism</button>
+              <button class="q2ac q2ac-b qbutton proceed">My contacts are reputable business people</button>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="slide8 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry: you aren’t allowed to challenge the evidence against you at a PRB – doing can lead to you being labelled as “lacking candor” and failing the review. This often means the only way to leave Guantánamo is to
+                falsely confess to crimes you did not commit. You can try again at your next PRB in three years – better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="slide9 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">If you are sent to <span class="qCountryChoice">[COUNTRY CHOICE]</span>, your family may not be able to join you. You haven’t seen your family for 17 years, are you okay with never seeing them again?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q2b q2b-a qbutton proceed">No, that will break my heart.</button>
+              <button class="q2b q2b-b qbutton proceed">It’s not ideal, but if that’s what it takes to leave Guantánamo then yes</button>
+              <button class="q2b q2b-b qbutton proceed">Yes, I don’t like my family anyway</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide10 slide qslide" style="display: none;">
         <div class="container">
           <p class="question">Your third cousin twice removed who you haven’t seen in over 20 years once expressed anti-American sentiment on Facebook. What do you think about that?</p>
           <div class="row">
             <div class="col-md">
-              <button class="q3 q3a qbutton">What’s Facebook?</button>
-              <button class="q3 q3b qbutton">I don’t know him and don’t agree with him.</button>
-              <button class="q3 q3c q-correct qbutton">It’s common to have anti-American feelings in my country.</button>
+              <button class="q3 q3-a qbutton">What’s Facebook?</button>
+              <button class="q3 q3-b qbutton">I don’t know him and don’t agree with him.</button>
+              <button class="q3 q3-c qbutton trapdoor">It’s common to have anti-American feelings in my country.</button>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="slide11 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry! Because it would be risky for the US to return you to a country with high levels of anti-American sentiment, this can lead to you failing the review. Your next PRB hearing is in three years. Better luck next
+                time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div class="slide11 slide slideWin darkslide" style="display: none;">
+      <div class="slide12 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">Can you tell us a little bit about your views of the national dialogue in your country and how you see that affecting the future of the country over all?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q4 q4-a qbutton">I am worried that the current leader will be deposed by rebel factions who have been building support and arms </button>
+              <button class="q4 q4-b qbutton">I think my country is moving in a positive direction as evidenced by the UN support and development conferences </button>
+              <button class="q4 q4-c qbutton trapdoor">What’s a ‘national dialogue’? </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide13 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry! If you refuse to discuss the complex political situation in your country, how can the Board determine if you have renounced extremism? Better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide14 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">The Board asks “Are you willing to apologise for your role in the War on Terror?”. You were never involved in War on Terror. Do you:</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q5 q5-a qbutton cutscene">Tell them what they want to hear and apologise</button>
+              <button class="q5 q5-b qbutton trapdoor">Protest your innocence</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide15 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry: you aren’t allowed to challenge the evidence against you at a PRB – doing can lead to you being labelled as “non-compliant” and failing the review. This often means the only way to leave Guantanamo is to
+                falsely confess to crimes you did not commit. You can try again at your next PRB in three years – better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide16 slide qslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Ah, so you admit that you were involved in War on Terror? We will pass that information on to the Department of Justice. </h2>
+              <button class="cutsceneButton1">Next question</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide17 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">Do you think that it is fair that the US detains terrorist suspects at Guantánamo Bay?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q6 q6-a qbutton">Yes – it is fair that I have been tortured and illegally detained without charge or trial for 17 years</button>
+              <button class="q6 q6-b qbutton trapdoor">No – I have been tortured and detained for 17 years but I didn’t do anything wrong</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide18 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry, complaining about ill-treatment at Guantánamo can lead to you being labelled non-compliant and failing your PRB. You can try again at your next PRB in three years – better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide19 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">When you are contacted by an extremist, what will you do?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q7 q7-a qbutton trapdoor">I wouldn’t be contacted by an extremist – I’m not involved in extremism.</button>
+              <button class="q7 q7-b qbutton">Immediately contact the US authorities and report him</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide20 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry: you aren’t allowed to challenge the evidence against you at a PRB – doing can lead to you being labelled as “lacking candor” and failing the review. This often means the only way to leave Guantánamo is to
+                falsely confess to crimes you did not commit. You can try again at your next PRB in three years – better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide21 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">You were involved in hunger strikes during your time at Guantánamo. How do we know you aren’t a troublemaker?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q8 q8-a qbutton trapdoor">I wasn’t making trouble – I was exercising my right to peacefully protest</button>
+              <button class="q8 q8-b qbutton">I’m sorry for any trouble I might have caused</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide22 slide qslide darkslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh: You've failed your review!</h2>
+              <p class="reason">Sorry – complaining about your treatment or justifying peaceful protest can see you labelled as “non-compliant” and failing the review. You can try again at your next PRB in three years – better luck next time!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <p class="petitionCTA"><strong>PRB hearings are a rigged process – detainees at Guantanamo should either be charged and receive fair trails or be released. Will you join our movement to close Guantanamo?</strong></p>
+              <button class="buttonQuiz goToPetition">Sign the petition</button>
+              <button class="buttonQuiz quizRestart">Retake the quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide23 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">Are you willing to promise you won’t take part in any further hunger strikes?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q9 q9-a qbutton cutscene">Yes, I’m sorry and I will not take part in any further hunger strikes.</button>
+              <button class="q9 q9-b qbutton">No, I cannot promise that I won’t need to peacefully protest in the future.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide24 slide qslide" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h2>Uh oh – changing your behaviour, even at the request of the Board, isn’t always going to lead to freedom.</h2>
+              <p class="reason">With no evidence, the Board can rule that your behaviour change was “an attempt to obtain transfer eligibility rather than due to a genuine change in mindset”, and can actually be used against you.</p>
+              <button class="cutsceneButton2">Next question</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide25 slide qslide" style="display: none;">
+        <div class="container">
+          <p class="question">What advice do you give to fellow detainees facing a PRB?</p>
+          <div class="row">
+            <div class="col-md">
+              <button class="q10 q10-a qbutton">Tell them what they want to hear – they don’t care about the truth</button>
+              <button class="q10 q10-b qbutton">Tell the truth and hope for the best</button>
+              <button class="q10 q10-c qbutton">It’s a rigged game – you’ve got no chance whatever you say</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide26 slide slideWin darkslide" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-md">
@@ -535,7 +849,7 @@ button.quizStart {
           <div class="row">
             <div class="col-md">
               <button class="showPetitionSlide">Yes, I'll add my name!</button>
-              <button class="answer outline">No thanks</button>
+              <button class="goToShare outline">No thanks</button>
             </div>
           </div>
         </div>
@@ -544,7 +858,7 @@ button.quizStart {
 
 
 
-      <div class="slide12 slide darkslide" style="display: none;">
+      <div class="slide27 slide darkslide" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-md">
@@ -931,7 +1245,7 @@ button.quizStart {
         </div>
       </div>
 
-      <div class="slide13 slide darkslide" style="display: none;">
+      <div class="slide28 slide darkslide" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-md">
@@ -953,7 +1267,7 @@ button.quizStart {
       </div>
 
 
-      <div class="slide14 slide darkslide" style="display: none;">
+      <div class="slide29 slide darkslide" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-md">
@@ -1396,7 +1710,7 @@ button.quizStart {
     });
 
     jQuery('.answer_skip').click(function(e) {
-      nextSlide('.slide13');
+      nextSlide('.slide28');
     });
 
     jQuery('.twitter_share').click(function(e) {
@@ -1417,7 +1731,7 @@ button.quizStart {
       var space = encodeURIComponent(" ");
       // var shareimage = encodeURIComponent("https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png");
       window.open("https://twitter.com/intent/tweet?text=" + twfirstname + tweet + twansweren + tweet2 + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
-      nextSlide('.slide13');
+      nextSlide('.slide28');
       // initSlider();
     });
 
@@ -1428,13 +1742,13 @@ button.quizStart {
     });
 
     jQuery('.twitter_share').click(function(e) {
-      nextSlide('.slide13');
+      nextSlide('.slide28');
       // initSlider();
     });
 
     jQuery('#slide3_skip').click(function(e) {
       e.preventDefault();
-      nextSlide('.slide13');
+      nextSlide('.slide28');
       // initSlider();
     });
 
@@ -1644,8 +1958,18 @@ button.quizStart {
     // var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
 
     $(".quizStart").click(function() {
-      $(".quizProg").css('width', 'calc((100% / 12) * 1)');
+      $(".quizProg").css('width', 'calc((100% / 16) * 1)');
       nextSlide('.slide1');
+    });
+
+    $(".quizRestart").click(function() {
+      $(".quizProg").css('width', 'calc((100% / 16) * 1)');
+      $(".qslide").hide();
+      nextSlide('.slide1');
+    });
+
+    $(".goToPetition").click(function() {
+      nextSlide('.slide26');
     });
 
 
@@ -1654,208 +1978,365 @@ button.quizStart {
         $(".quizProg").css('width', '100%');
         nextSlide('.slide2');
       } else {
-        $(".quizProg").css('width', 'calc((100% / 24) * 2)');
+        $(".quizProg").css('width', 'calc((100% / 16) * 2)');
         nextSlide('.slide3');
       }
     });
 
-
     $(".q2").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q2 = 1;
-      } else {
-        q2 = 0;
+      if ($(this).hasClass("georgia")) {
+        $(".qCountryChoice").text("Georgia");
+        $(".qCountryLang").text("Georgian");
+      } else if ($(this).hasClass("albania")) {
+        $(".qCountryChoice").text("Albania");
+        $(".qCountryLang").text("Albanian");
+      } else if ($(this).hasClass("belgium")) {
+        $(".qCountryChoice").text("Belgium");
+        $(".qCountryLang").text("Flemish");
       }
-
-      q2t = $(this).text();
-      $('.q2tp').text(q2t);
-
-      if ($(".q2tp").text() == $(".q2tpm").text()) {
-        $(".q2tpl").hide();
-        $(".q2tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q2tpl").css('color', '#e35e14');
-        $(".q2tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-      $(".quizProg").css('width', 'calc((100% / 24) * 3)');
-      nextSlide('.slide2');
-    });
-
-    $(".q3").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q3 = 1;
-      } else {
-        q3 = 0;
-      }
-
-      q3t = $(this).text();
-      $('.q3tp').text(q3t);
-
-      if ($(".q3tp").text() == $(".q3tpm").text()) {
-        $(".q3tpl").hide();
-        $(".q3tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q3tpl").css('color', '#e35e14');
-        $(".q3tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-      nextSlide('.slide3');
-    });
-
-    $(".q4").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q4 = 1;
-      } else {
-        q4 = 0;
-      }
-
-      q4t = $(this).text();
-      $('.q4tp').text(q4t);
-
-      if ($(".q4tp").text() == $(".q4tpm").text()) {
-        $(".q4tpl").hide();
-        $(".q4tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q4tpl").css('color', '#e35e14');
-        $(".q4tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
+      $(".quizProg").css('width', 'calc((100% / 16) * 3)');
       nextSlide('.slide4');
     });
 
+    $(".q2a").click(function() {
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide5');
+      } else if ($(this).hasClass("followup")) {
+        $(".quizProg").css('width', 'calc((100% / 16) * 4)');
+        nextSlide('.slide6');
+      } else if ($(this).hasClass("proceed")) {
+        $(".quizProg").css('width', 'calc((100% / 16) * 5)');
+        nextSlide('.slide8');
+      }
+    });
+
+    $(".q2ac").click(function() {
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide7');
+      } else if ($(this).hasClass("proceed")) {
+        $(".quizProg").css('width', 'calc((100% / 16) * 5)');
+        nextSlide('.slide8');
+      }
+    });
+
+    $(".q2b").click(function() {
+      if ($(this).hasClass("proceed")) {
+        $(".quizProg").css('width', 'calc((100% / 16) * 6)');
+        nextSlide('.slide9');
+      }
+    });
+
+    $(".q3").click(function() {
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide10');
+      } else {
+        $(".quizProg").css('width', 'calc((100% / 16) * 7)');
+        nextSlide('.slide11');
+      }
+    });
+
+    $(".q4").click(function() {
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide12');
+      } else {
+        $(".quizProg").css('width', 'calc((100% / 16) * 8)');
+        nextSlide('.slide13');
+      }
+    });
+
     $(".q5").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q5 = 1;
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide14');
       } else {
-        q5 = 0;
+        $(".quizProg").css('width', 'calc((100% / 16) * 9)');
+        nextSlide('.slide15');
       }
+    });
 
-      q5t = $(this).text();
-      $('.q5tp').text(q5t);
+    $(".cutsceneButton1").click(function() {
 
-      if ($(".q5tp").text() == $(".q5tpm").text()) {
-        $(".q5tpl").hide();
-        $(".q5tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q5tpl").css('color', '#e35e14');
-        $(".q5tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
+      $(".quizProg").css('width', 'calc((100% / 16) * 10)');
+      nextSlide('.slide16');
 
-      nextSlide('.slide5');
     });
 
     $(".q6").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q6 = 1;
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide17');
       } else {
-        q6 = 0;
+        $(".quizProg").css('width', 'calc((100% / 16) * 11)');
+        nextSlide('.slide18');
       }
-
-      q6t = $(this).text();
-      $('.q6tp').text(q6t);
-
-      if ($(".q6tp").text() == $(".q6tpm").text()) {
-        $(".q6tpl").hide();
-        $(".q6tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q6tpl").css('color', '#e35e14');
-        $(".q6tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-      nextSlide('.slide6');
     });
 
     $(".q7").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q7 = 1;
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide19');
       } else {
-        q7 = 0;
+        $(".quizProg").css('width', 'calc((100% / 16) * 12)');
+        nextSlide('.slide20');
       }
-
-      q7t = $(this).text();
-      $('.q7tp').text(q7t);
-
-      if ($(".q7tp").text() == $(".q7tpm").text()) {
-        $(".q7tpl").hide();
-        $(".q7tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q7tpl").css('color', '#e35e14');
-        $(".q7tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-      nextSlide('.slide7');
     });
 
     $(".q8").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q8 = 1;
+      if ($(this).hasClass("trapdoor")) {
+        $(".quizProg").css('width', '100%');
+        nextSlide('.slide21');
       } else {
-        q8 = 0;
+        $(".quizProg").css('width', 'calc((100% / 16) * 13)');
+        nextSlide('.slide22');
       }
-
-      q8t = $(this).text();
-      $('.q8tp').text(q8t);
-
-      if ($(".q8tp").text() == $(".q8tpm").text()) {
-        $(".q8tpl").hide();
-        $(".q8tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q8tpl").css('color', '#e35e14');
-        $(".q8tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-      nextSlide('.slide8');
     });
 
     $(".q9").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q9 = 1;
+      if ($(this).hasClass("cutscene")) {
+        $(".quizProg").css('width', 'calc((100% / 16) * 14)');
+        nextSlide('.slide23');
       } else {
-        q9 = 0;
+        $(".quizProg").css('width', 'calc((100% / 16) * 15)');
+        nextSlide('.slide24');
       }
-
-      q9t = $(this).text();
-      $('.q9tp').text(q9t);
-
-      if ($(".q9tp").text() == $(".q9tpm").text()) {
-        $(".q9tpl").hide();
-        $(".q9tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q9tpl").css('color', '#e35e14');
-        $(".q9tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-      nextSlide('.slide9');
     });
 
+    $(".cutsceneButton2").click(function() {
+
+      $(".quizProg").css('width', 'calc((100% / 16) * 15)');
+      nextSlide('.slide24');
+
+    });
 
     $(".q10").click(function() {
-      if ($(this).hasClass("q-correct")) {
-        q10 = 1;
-      } else {
-        q10 = 0;
-      }
-
-      q10t = $(this).text();
-      $('.q10tp').text(q10t);
-
-      if ($(".q10tp").text() == $(".q10tpm").text()) {
-        $(".q10tpl").hide();
-        $(".q10tpp").prepend("<span class='qmark qtick'>✓ </span>");
-      } else {
-        $(".q10tpl").css('color', '#e35e14');
-        $(".q10tpp").prepend("<span class='qmark qcross'>x </span>");
-      }
-
-
-      var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
-      $("#scorePrint").text(answer);
-      nextSlide('.slide10');
-
+      $(".quizProg").css('width', 'calc((100% / 16) * 16)');
+      nextSlide('.slide25');
     });
 
+
+
     $(".showPetitionSlide").click(function() {
-      nextSlide('.slide11');
+      nextSlide('.slide26');
+    });
+
+    $(".goToShare").click(function() {
+      nextSlide('.slide27');
+    });
+
+
+
+
+    // $(".q3").click(function() {
+    //   if ($(this).hasClass("trapdoor")) {
+    //     $(".quizProg").css('width', '100%');
+    //     nextSlide('.slide7');
+    //   } else if ($(this).hasClass("proceed")) {
+    //     $(".quizProg").css('width', 'calc((100% / 24) * 5)');
+    //     nextSlide('.slide8');
+    //   }
+    // });
+    //
+    //
+    // $(".q2").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q2 = 1;
+    //   } else {
+    //     q2 = 0;
+    //   }
+    //
+    //   q2t = $(this).text();
+    //   $('.q2tp').text(q2t);
+    //
+    //   if ($(".q2tp").text() == $(".q2tpm").text()) {
+    //     $(".q2tpl").hide();
+    //     $(".q2tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q2tpl").css('color', '#e35e14');
+    //     $(".q2tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //   $(".quizProg").css('width', 'calc((100% / 24) * 3)');
+    //   nextSlide('.slide2');
+    // });
+    //
+    // $(".q3").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q3 = 1;
+    //   } else {
+    //     q3 = 0;
+    //   }
+    //
+    //   q3t = $(this).text();
+    //   $('.q3tp').text(q3t);
+    //
+    //   if ($(".q3tp").text() == $(".q3tpm").text()) {
+    //     $(".q3tpl").hide();
+    //     $(".q3tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q3tpl").css('color', '#e35e14');
+    //     $(".q3tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide3');
+    // });
+    //
+    // $(".q4").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q4 = 1;
+    //   } else {
+    //     q4 = 0;
+    //   }
+    //
+    //   q4t = $(this).text();
+    //   $('.q4tp').text(q4t);
+    //
+    //   if ($(".q4tp").text() == $(".q4tpm").text()) {
+    //     $(".q4tpl").hide();
+    //     $(".q4tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q4tpl").css('color', '#e35e14');
+    //     $(".q4tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide4');
+    // });
+    //
+    // $(".q5").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q5 = 1;
+    //   } else {
+    //     q5 = 0;
+    //   }
+    //
+    //   q5t = $(this).text();
+    //   $('.q5tp').text(q5t);
+    //
+    //   if ($(".q5tp").text() == $(".q5tpm").text()) {
+    //     $(".q5tpl").hide();
+    //     $(".q5tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q5tpl").css('color', '#e35e14');
+    //     $(".q5tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide5');
+    // });
+    //
+    // $(".q6").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q6 = 1;
+    //   } else {
+    //     q6 = 0;
+    //   }
+    //
+    //   q6t = $(this).text();
+    //   $('.q6tp').text(q6t);
+    //
+    //   if ($(".q6tp").text() == $(".q6tpm").text()) {
+    //     $(".q6tpl").hide();
+    //     $(".q6tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q6tpl").css('color', '#e35e14');
+    //     $(".q6tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide6');
+    // });
+    //
+    // $(".q7").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q7 = 1;
+    //   } else {
+    //     q7 = 0;
+    //   }
+    //
+    //   q7t = $(this).text();
+    //   $('.q7tp').text(q7t);
+    //
+    //   if ($(".q7tp").text() == $(".q7tpm").text()) {
+    //     $(".q7tpl").hide();
+    //     $(".q7tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q7tpl").css('color', '#e35e14');
+    //     $(".q7tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide7');
+    // });
+    //
+    // $(".q8").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q8 = 1;
+    //   } else {
+    //     q8 = 0;
+    //   }
+    //
+    //   q8t = $(this).text();
+    //   $('.q8tp').text(q8t);
+    //
+    //   if ($(".q8tp").text() == $(".q8tpm").text()) {
+    //     $(".q8tpl").hide();
+    //     $(".q8tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q8tpl").css('color', '#e35e14');
+    //     $(".q8tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide8');
+    // });
+    //
+    // $(".q9").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q9 = 1;
+    //   } else {
+    //     q9 = 0;
+    //   }
+    //
+    //   q9t = $(this).text();
+    //   $('.q9tp').text(q9t);
+    //
+    //   if ($(".q9tp").text() == $(".q9tpm").text()) {
+    //     $(".q9tpl").hide();
+    //     $(".q9tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q9tpl").css('color', '#e35e14');
+    //     $(".q9tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //   nextSlide('.slide9');
+    // });
+    //
+    //
+    // $(".q10").click(function() {
+    //   if ($(this).hasClass("q-correct")) {
+    //     q10 = 1;
+    //   } else {
+    //     q10 = 0;
+    //   }
+    //
+    //   q10t = $(this).text();
+    //   $('.q10tp').text(q10t);
+    //
+    //   if ($(".q10tp").text() == $(".q10tpm").text()) {
+    //     $(".q10tpl").hide();
+    //     $(".q10tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    //   } else {
+    //     $(".q10tpl").css('color', '#e35e14');
+    //     $(".q10tpp").prepend("<span class='qmark qcross'>x </span>");
+    //   }
+    //
+    //
+    //   var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+    //   $("#scorePrint").text(answer);
+    //   nextSlide('.slide10');
+    //
+    // });
+
+    $(".showPetitionSlide").click(function() {
+      nextSlide('.slide26');
     });
 
     $(".answer").click(function() {
