@@ -253,10 +253,10 @@
     text-decoration: none !important;
   }
 
-  .col-md-10,
+  /* .col-md-10,
   .col-md-2 {
     padding: 5px 10px 5px 10px;
-  }
+  } */
 
   .bsd-contribForm-gdpr-modal-content p {
     margin: 0;
@@ -425,6 +425,45 @@ p.reason {
     padding-bottom: 1rem;
 }
 
+.cutsceneButton1, .cutsceneButton2 {
+    margin: 0 auto 1rem auto;
+    min-width: 300px;
+    font-weight: bold;
+    display: block;
+}
+
+button.goToShare {
+    background: none;
+    font-size: 1rem;
+    margin: 0 auto 1rem auto;
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    border: 0;
+}
+
+button.showPetitionSlide {
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+button.facebook_share, .button.facebook_share {
+    width: 100%;
+}
+
+button.solid.button.twitter_share {
+    width: 100%;
+}
+
+button.outline.button.answer_skip {
+    margin: 0;
+    width: 100%;
+}
+
+.slide28 h3, .slide29 h2, .slide29 h3 {
+    text-align: center;
+}
+
 </style>
 
 <title></title>
@@ -461,9 +500,9 @@ p.reason {
       <div class="slide1 slide slide">
         <div class="container">
           <div class="prompt">
-            <p class="standfirst">For the past seventeen years, you have been held at Guantánamo Bay detention camp. You were sold for a bounty and tortured in a CIA-run black site before your rendition to Guantánamo. You have never been charged
-              with a crime.
-            </p>
+            <p class="standfirst">For the past seventeen years, you have been held at Guantánamo Bay detention camp.</p>
+            <p class="standfirst">You were sold for a bounty and tortured in a CIA-run black site before your rendition to Guantánamo.</p>
+            <p class="standfirst">You have never been charged with a crime.</p>
             <p>In order to leave Guantánamo, you must face the Periodic Review Board (PRB). If you fail the review, you will remain imprisoned indefinitely – without charge or trial. You do not have an automatic right to a lawyer and you cannot see
               any of the “evidence” against you.
             </p>
@@ -520,7 +559,7 @@ p.reason {
             <div class="col-md">
               <button class="q2 q2-a qbutton albania followup">Albania</button>
               <button class="q2 q2-b qbutton belgium followup">Belgium</button>
-              <button class="q2 q2-c qbutton georgia followup">Georgia</button>
+              <button class="q2 q2-c qbutton elsalvador followup">El Salvador</button>
             </div>
           </div>
         </div>
@@ -816,7 +855,7 @@ p.reason {
           <div class="row">
             <div class="col-md">
               <h2>Uh oh – changing your behaviour, even at the request of the Board, isn’t always going to lead to freedom.</h2>
-              <p class="reason">With no evidence, the Board can rule that your behaviour change was “an attempt to obtain transfer eligibility rather than due to a genuine change in mindset”, and can actually be used against you.</p>
+              <p>With no evidence, the Board can rule that your behaviour change was “an attempt to obtain transfer eligibility rather than due to a genuine change in mindset”, and can actually be used against you.</p>
               <button class="cutsceneButton2">Next question</button>
             </div>
           </div>
@@ -1984,9 +2023,9 @@ p.reason {
     });
 
     $(".q2").click(function() {
-      if ($(this).hasClass("georgia")) {
-        $(".qCountryChoice").text("Georgia");
-        $(".qCountryLang").text("Georgian");
+      if ($(this).hasClass("elsalvador")) {
+        $(".qCountryChoice").text("El Salvador");
+        $(".qCountryLang").text("Spanish");
       } else if ($(this).hasClass("albania")) {
         $(".qCountryChoice").text("Albania");
         $(".qCountryLang").text("Albanian");
