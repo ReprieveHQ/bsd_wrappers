@@ -453,7 +453,7 @@ button.outline.button.answer_skip {
     width: 100%;
 }
 
-.slide28 h3, .slide29 h2, .slide29 h3 {
+.slide29 h3, .slide29 h2, .slide29 h3 {
     text-align: center;
 }
 
@@ -473,16 +473,16 @@ button.outline.button.answer_skip {
     font-size: 18px;
 }
 
-.slide27 h2 span {
+.slide28 h2 span {
     color: #e35e14;
     display: block;
 }
 
-.slide27 h2 {
+.slide28 h2 {
     font-size: 2.5rem;
 }
 
-.slide29 {
+.slide30 {
     text-align: center;
 }
 
@@ -502,7 +502,7 @@ button.outline.button.answer_skip {
     width: 100%;
 }
 
-.slide28 {
+.slide29 {
     text-align: center;
 }
 
@@ -718,7 +718,7 @@ button.outline.button.answer_skip {
           <p class="question">Can you tell us about your views on changes to trade tarrifs in your country and how that could affect the political situation?</p>
           <div class="row">
             <div class="col-md">
-              <button class="q4 q4-a qbutton">I'm in favour of the tarrifs and supportive of the current leadership<./button>
+              <button class="q4 q4-a qbutton">I'm in favour of the tarrifs and supportive of the current leadership.</button>
               <button class="q4 q4-b qbutton">I'm opposed to the tarrifs and think my country is headed in the wrong direction.</button>
               <button class="q4 q4-c qbutton trapdoor">What were the changes in trade tariffs in my country? I have not been there for over 17 years so I can’t say for sure. </button>
             </div>
@@ -853,8 +853,8 @@ button.outline.button.answer_skip {
           <p class="question">You were involved in hunger strikes during your time at Guantánamo. How do we know you aren’t a troublemaker?</p>
           <div class="row">
             <div class="col-md">
-              <button class="q8 q8-a qbutton trapdoor">I wasn’t making trouble – I was exercising my right to peacefully protest</button>
-              <button class="q8 q8-b qbutton">I’m sorry for any trouble I might have caused</button>
+              <button class="q8 q8-a qbutton trapdoor">I wasn’t making trouble – I was exercising my right to peacefully protest.</button>
+              <button class="q8 q8-b qbutton">I’m sorry for any trouble I might have caused.</button>
             </div>
           </div>
         </div>
@@ -1752,7 +1752,7 @@ button.outline.button.answer_skip {
       var $form = $(this),
         url = $form.attr("action");
       var posting = $.post(url, $form.serialize());
-      nextSlide('.slide27');
+      nextSlide('.slide28');
 
 
     });
@@ -1830,7 +1830,7 @@ button.outline.button.answer_skip {
     });
 
     jQuery('.answer_skip').click(function(e) {
-      nextSlide('.slide28');
+      nextSlide('.slide29');
     });
 
     jQuery('.twitter_share').click(function(e) {
@@ -1851,7 +1851,7 @@ button.outline.button.answer_skip {
       var space = encodeURIComponent(" ");
       // var shareimage = encodeURIComponent("https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png");
       window.open("https://twitter.com/intent/tweet?text=" + twfirstname + tweet + twansweren + tweet2 + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
-      nextSlide('.slide28');
+        nextSlide('.slide29');
       // initSlider();
     });
 
@@ -1862,13 +1862,13 @@ button.outline.button.answer_skip {
     });
 
     jQuery('.twitter_share').click(function(e) {
-      nextSlide('.slide28');
+      nextSlide('.slide29');
       // initSlider();
     });
 
     jQuery('#slide3_skip').click(function(e) {
       e.preventDefault();
-      nextSlide('.slide28');
+  nextSlide('.slide29');
       // initSlider();
     });
 
@@ -2089,7 +2089,7 @@ button.outline.button.answer_skip {
     });
 
     $(".goToPetition").click(function() {
-      nextSlide('.slide26');
+      nextSlide('.slide27');
     });
 
 
@@ -2220,7 +2220,7 @@ button.outline.button.answer_skip {
         $(".quizProg").css('width', 'calc((100% / 16) * 14)');
         nextSlide('.slide24');
       } else {
-        $(".quizProg").css('width', 'calc((100% / 16) * 15)');
+        $(".quizProg").css('width', 'calc((100% / 16) * 100)');
         nextSlide('.slide23');
       }
     });
@@ -2513,7 +2513,7 @@ button.outline.button.answer_skip {
         title,
         description);
 
-      nextSlide('.slide13');
+      nextSlide('.slide29');
       // initSlider();
 
       return false;
