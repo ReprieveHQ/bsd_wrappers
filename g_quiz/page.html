@@ -1397,10 +1397,19 @@ button.outline.button.answer_skip {
                   government and its allies, and continue to represent our clients in Guantánamo. We can do it – but we need your help.</p>
                 <p><strong>Can you donate and make a difference?</strong></p>
               </div>
+              <div class="ukdonate">
               <a href="https://act.reprieve.org.uk/page/contribute/gtmo19?default_amt=15" class="solid button small" target="_blank">Donate &pound;15</a>
               <a href="https://act.reprieve.org.uk/page/contribute/gtmo19?default_amt=25" class="solid button small" target="_blank">Donate &pound;25</a>
               <a href="https://act.reprieve.org.uk/page/contribute/gtmo19?default_amt=50" class="solid button small" target="_blank">Donate &pound;50</a>
               <a href="https://act.reprieve.org.uk/page/contribute/gtmo19" class="outline button small" target="_blank">Other amount</a>
+            </div>
+
+            <div class="usdonate" style="display: none;">
+            <a href="https://secure.reprieve.org/page/contribute/gtmo19us?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
+            <a href="https://secure.reprieve.org/page/contribute/gtmo19us?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
+            <a href="https://secure.reprieve.org/page/contribute/gtmo19us?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
+            <a href="https://secure.reprieve.org/page/contribute/gtmo19us" class="outline button small" target="_blank">Other amount</a>
+          </div>
             </div>
           </div>
         </div>
@@ -1522,6 +1531,45 @@ button.outline.button.answer_skip {
     // Petition counter
 
     jQuery(document).ready(function($) {
+
+      // Set country from parameter
+
+    // Construct URL object using current browser URL
+    var url = new URL(document.location);
+
+    // Get query parameters object
+    var params = url.searchParams;
+
+    // Get value of country
+    var countryurl = params.get("country");
+
+    if (countryurl === null) {
+      $("#country").val("GB");
+    } else if (countryurl === "US") {
+      $("#country").val(countryurl);
+      $(".usdonate").show();
+      $(".ukdonate").hide();
+    } else {
+      $("#country").val(countryurl);
+    }
+
+    // US Donate
+
+    var optionSelected = $("#country option:selected").val();
+
+    $("#country").on("change", function(e) {
+      console.log("CHANGE IS A-COMING!");
+      var optionSelected = $("#country option:selected").val();
+      if (optionSelected === "US") {
+        $(".usdonate").show();
+        $(".ukdonate").hide();
+      } else {
+        $(".usdonate").hide();
+        $(".ukdonate").show();
+      }
+    });
+
+
 
       function count_signups(signup_form_id) {
 
