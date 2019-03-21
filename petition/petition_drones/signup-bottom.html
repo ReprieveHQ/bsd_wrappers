@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-md">
         <!-- TODO: Edit text above share buttons below. Place to edit Twitter and Facebook text itself is further down. -->
-        <h2>Thank you <span class="first_name"></span> for signing the petition</h2>
+        <h2>Thank you <span class="first_name"></span></h2>
         <h4>Can you help us by sharing the petition?</h4>
         <button class="solid button facebook_share" onclick="return submitAndShare();">Share on Facebook</button> <button class="solid button twitter_share">Share on Twitter</a>
           <button class="button outline" id="slide2_skip">Skip</button>
@@ -54,18 +54,18 @@
           <div class="donate-tab-main clearfix">
             <div class="donate-tab-givenow donate-tab-body picked-body">
               <p>Give an individual donation now to fund our most urgent cases.</p>
-              <a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/dec18-sl?source=eg1018gnpet&amp;default_amt=10">£10
-              </a><a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/dec18-sl?source=eg1018gnpet&amp;default_amt=25">£25
-              </a><a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/dec18-sl?source=eg1018gnpet&amp;default_amt=37">£37
-              </a><a class="button outline small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/dec18-sl?source=eg1018gnpet">Other
+              <a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/drones19?source=0319dronesgnpet&amp;default_amt=10">£10
+              </a><a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/drones19?source=0319dronesgnpet&amp;default_amt=25">£25
+              </a><a class="button solid small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/drones19?source=0319dronesgnpet&amp;default_amt=37">£37
+              </a><a class="button outline small donateButton donateNButton" target="_blank" href="https://act.reprieve.org.uk/page/contribute/drones19?source=0319dronesgnpet">Other
               </a>
             </div>
             <div class="donate-tab-givemonthly donate-tab-body">
               <p>Giving monthly helps us fund long-term projects and cases.</p>
-              <a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet&amp;amount=5">£5
-              </a><a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet&amp;amount=10">£10
-              </a><a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet&amp;amount=15">£15
-              </a><a class="button outline small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=eg1018gmpet">Other
+              <a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate5/?ref=0319dronesgmpet&amp;amount=5">£5
+              </a><a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate5/?ref=0319dronesgmpet&amp;amount=10">£10
+              </a><a class="button solid small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate5/?ref=0319dronesgmpet&amp;amount=15">£15
+              </a><a class="button outline small donateButton donateMButton" target="_blank" href="https://secure.edirectdebit.com/Reprieve/Donate5/?ref=0319dronesgmpet">Other
               </a>
             </div>
 
@@ -73,13 +73,13 @@
         </div>
 
         <div class="usdonate" style="display: none;">
-          <a href="https://secure.reprieve.org/page/contribute/egypt_donate?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
+          <a href="https://secure.reprieve.org/page/contribute/drones19?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
           <!--
-      --><a href="https://secure.reprieve.org/page/contribute/egypt_donate?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
+      --><a href="https://secure.reprieve.org/page/contribute/drones19?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
           <!--
-      --><a href="https://secure.reprieve.org/page/contribute/egypt_donate?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
+      --><a href="https://secure.reprieve.org/page/contribute/drones19?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
           <!--
-      --><a href="https://secure.reprieve.org/page/contribute/egypt_donate" class="outline button small" target="_blank">Other amount</a>
+      --><a href="https://secure.reprieve.org/page/contribute/drones19" class="outline button small" target="_blank">Other amount</a>
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@
 
         var signupstotal = signupsnum;
 
-        var target = 20000;
+        var target = 30000;
 
         var percentageComplete = (signupstotal / target) * 100;
 
@@ -258,7 +258,7 @@
 
         $('.amount').text(signups);
 
-        $('.goal').text("20,000");
+        $('.goal').text("30,000");
 
         $(".goal-progress").addClass('js-percent');
 
@@ -357,10 +357,10 @@
 
 
   jQuery('.twitter_share').click(function(e) {
-    var currentUrl = encodeURIComponent("https://act.reprieve.org.uk/page/s/egypt?source=eg1018twp1");
+    var currentUrl = encodeURIComponent("https://act.reprieve.org.uk/page/s/drones-uk-complicity?source=0319dronestwp1");
     // <!-- TODO: Insert Tweet text below! -->
     var tweet = encodeURIComponent(
-      "The UK is enabling President Trump's illegal drone strikes which are killing innocent people – including children. Call on @theresa_may to end UK complicity now! #DeathByData");
+      "The UK is cooperating with President Trump's illegal drone strikes which are killing innocent people – including children. Call on the UK to end their complicity now!");
     var space = encodeURIComponent(" ");
     window.open("https://twitter.com/intent/tweet?text=" + tweet + space + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
     nextSlide('.slide2');
@@ -553,7 +553,7 @@
 
     // <!-- TODO: Insert Facebook Title and Description below -->
 
-    var title = "The UK is enabling President Trump's illegal drone strikes: Join " + firstname + " and sign the petition now!";
+    var title = "The UK is cooperating with President Trump's illegal drone strikes: Join " + firstname + " and sign the petition now!";
     var description = "Countless innocent people, including children, have died as a result of Trump's drone strikes";
 
     shareOverrideOGMeta(window.location.href,
