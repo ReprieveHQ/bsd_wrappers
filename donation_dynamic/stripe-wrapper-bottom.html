@@ -293,11 +293,15 @@
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/donatenow-p?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate5?amount=" + matchedAmount;
+
+    var paypalOriginal = $(".donatePaypalO").attr("href");
+    var edirectOriginal = $(".donateDebitO").attr("href");
+    var paypalLink = paypalOriginal + "?default_amt=" + matchedAmount;
+    var edirectLink = edirectOriginal + "?amount=" + matchedAmount;
 
     $(".donatePaypal").attr("href", paypalLink);
     $(".donateDebit").attr("href", edirectLink);
+
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
@@ -325,8 +329,10 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/donatenow-p?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate5?amount=" + matchedAmount;
+    var paypalOriginal = $(".donatePaypalO").attr("href");
+    var edirectOriginal = $(".donateDebitO").attr("href");
+    var paypalLink = paypalOriginal + "?default_amt=" + matchedAmount;
+    var edirectLink = edirectOriginal + "?amount=" + matchedAmount;
 
     $(".donatePaypal").attr("href", paypalLink);
     $(".donateDebit").attr("href", edirectLink);
