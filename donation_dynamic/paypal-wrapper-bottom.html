@@ -4,11 +4,11 @@
   <p id='optin_warning'>Don't want to hear from us? If you're already on our mailing list, selecting this option may unsubscribe you from our alerts.</p>
 </fieldset>
 
-<div id="donate-options" class="clearfix row">
+<!-- <div id="donate-options" class="clearfix row">
   <div class="col-md-4"><a class="btn donateOp donateCard">Donate by Card</a></div>
-  <div class="col-md-4"><a class="btn donateOp donatePaypal" href="https://act.reprieve.org.uk/page/contribute/donatenow-p">Donate by PayPal</a></div>
-  <div class="col-md-4"><a class="btn donateOp donateDebit" href="https://secure.edirectdebit.com/Reprieve/Donate5">Donate by Direct Debit</a></div>
-</div>
+  <div class="col-md-4"><a class="btn donateOp donatePaypal">Donate by PayPal</a></div>
+  <div class="col-md-4"><a class="btn donateOp donateDebit">Donate by Direct Debit</a></div>
+</div> -->
 
 </div>
 </div>
@@ -56,7 +56,7 @@
         <li class="menu-item"><a href="https://reprieve.org.uk/about/">About</a></li>
         <li class="menu-item"><a href="https://secure.reprieve.org/page/s/join-our-mailing-list">Join us</a></li>
         <li class="menu-item"><a href="https://act.reprieve.org.uk/page/contribute/make-a-donation">Donate now</a></li>
-        <li class="menu-item"><a href="https://secure.edirectdebit.com/Reprieve/Donate5/">Donate monthly</a></li>
+        <li class="menu-item"><a href="https://secure.edirectdebit.com/Reprieve/Donate4/">Donate monthly</a></li>
         <li class="menu-item"><a href="https://reprieve.org.uk/contact/">Contact</a></li>
       </ul>
     </div>
@@ -67,6 +67,21 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
+  $(document).ready(function() {
+    $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
+  });
+
+  $(".menu-wrapper").click(function() {
+    $('.hamburger-menu').toggleClass('animate');
+    $(".mobilemenu-wrapper").toggleClass("menu-active");
+  });
+
+  // $(".donateCard").click(function() {
+  //   $(".donation-block, #processbutton").show();
+  //   $("#donate-options").hide();
+  // });
+
+
   // Functions
 
   function precise_round(num, decimals) {
@@ -77,33 +92,16 @@
     ) / t).toFixed(decimals);
   }
 
-  // Essential
-
-  $(document).ready(function() {
-    $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
-  });
-
-  $(".menu-wrapper").click(function() {
-    $('.hamburger-menu').toggleClass('animate');
-    $(".mobilemenu-wrapper").toggleClass("menu-active");
-  });
-
-  $(".donateCard").click(function() {
-    $(".donation-block, #processbutton").show();
-    $("#donate-options").hide();
-  });
-
-  // GDPR Pop-up fixes
+  //Organise and order
 
   $(".bsd-contribForm-gdpr-modal-content h3, .bsd-contribForm-gdpr-modal-content p").wrapAll("<div class='col-md-10'>");
   $(".bsd-contribForm-gdpr-modal-content div:nth-of-type(2), .bsd-contribForm-gdpr-modal-content div:nth-of-type(3)").wrap("<div class='col-md-2'>");
   $(".bsd-contribForm-gdpr-modal-content").addClass("row");
   $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(2)").prepend(" ");
-  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("href", "http://www.reprieve.org.uk/privacy/");
-  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("target", "_blank");
+  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("href","http://www.reprieve.org.uk/privacy/");
+  $(".bsd-contribForm-gdpr-modal-content a:nth-of-type(1)").attr("target","_blank");
   $(".bsd-contribForm-gdpr-modal-content p:nth-of-type(3)").remove();
 
-  // Organise and order
 
   $("#contribution").find("input").addClass("form-control");
   $("#contribution").find("select").addClass("form-control");
@@ -115,7 +113,7 @@
   $(".bsd-contribForm-oneCol").addClass('row');
   $(".bsd-contribForm-aboveContent").addClass('col-md-4');
   $("#contribution").wrap('<div class="donateWrap col-md-8"></div>');
-  $("#donate-options").appendTo(".donateWrap");
+  // $("#donate-options").appendTo(".donateWrap");
   $(".bsd-contribForm-belowContent").appendTo('.donateWrap');
   $(".goalText").prependTo("#amounts");
   $(".goal-progress").prependTo("#contribution");
@@ -132,24 +130,6 @@
   $("#credit_card-creditCardNumberTextBox").attr("placeholder", "Card Number");
   $("#cc_cvv").attr("placeholder", "CVV");
   $("#payment-details").prepend('<h2>Payment Details</h2>');
-
-  $("#payment-card").append("<div class='cc-select-wrap form-group'></div>");
-
-  $(".contribcolumn:eq(0)").find(".cc_type_cd").each(function() {
-    $(this).addClass("form-check-input");
-    $(this).wrap("<div class='form-check cc-select'></div>");
-    $('.cc-select').appendTo(".cc-select-wrap");
-  });
-
-  $("#cc_ax").after('<label class="form-check-label">American Express</label>');
-  $("#cc_ds").after('<label class="form-check-label">Discover</label>');
-  $("#cc_mc").after('<label class="form-check-label">Mastercard</label>');
-  $("#cc_vs").after('<label class="form-check-label">Visa</label>');
-
-  $('#cc_number').wrap("<div class='form-group cc-group'></div>");
-  $('.cc-group').appendTo("#payment-card");
-  $('#cc_number').attr("placeholder", "Card Number");
-
 
   // Amounts
 
@@ -198,49 +178,57 @@
   $("#contribution #amt_other_wrap label span").text("£");
   $("#amt_other_text").attr('placeholder', 'Other');
 
+
+
+  // $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
+  // $("#amounts").append($(".fullgift-wrap"))
+  // $("#full-gift-container").remove();
+  // $('.fullgift-wrap').attr('id', 'full-gift-container');
+
   $(".amountWraps").addClass("col-6 col-lg-3");
   $(".amountWraps").wrapAll("<div class='amountRow'></div>");
 
   $("#amt_preset_1_wrap, #amt_preset_2_wrap, #amt_preset_3_wrap, #amt_preset_4_wrap").wrapAll("<div class='row'></div>");
   $("#amt_preset_5_wrap, #amt_preset_6_wrap, #amt_preset_7_wrap, #amt_other_wrap").wrapAll("<div class='row'></div>");
 
-
-  // Full Gift
-
-  $('#full-gift-container  tr:nth-child(1) td').wrapInner("<div class='fullgift-wrap form-check form-check-inline'>");
-  $("#amounts").append($(".fullgift-wrap"))
-  $("#full-gift-container").remove();
-  $('.fullgift-wrap').attr('id', 'full-gift-container');
-  $("#full-gift-checkbox").removeClass("form-control");
-  $("#full-gift-checkbox").addClass("form-check-input");
-  $("label[for='full-gift-checkbox']").addClass("form-check-label");
-  $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
-
-  $('#full-gift-checkbox').change(function() {
-    if ($(this).is(":checked")) {
-      fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
-      fullgiftAmountD = fullgiftAmount.toFixed(2);
-      giftaidAmount = fullgiftAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(fullgiftAmountD);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    } else {
-      giftaidAmount = giftaidableAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(giftaidableAmount);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    }
-  });
+  // $("#full-gift-checkbox").removeClass("form-control");
+  // $("#full-gift-checkbox").addClass("form-check-input");
+  // $("label[for='full-gift-checkbox']").addClass("form-check-label");
+  // $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
 
   // Your Details
 
   $('#firstname').attr("placeholder", "First Name");
+
   $('#lastname').attr("placeholder", "Last Name");
+
   $('#addr1').attr("placeholder", "Address 1");
+
   $('#addr2').attr("placeholder", "Address 2");
+
   $('#city').attr("placeholder", "City");
+
   $('#zip').attr("placeholder", "Postcode");
+
   $('#email').attr("placeholder", "Email");
+
+  $("#payment-card").append("<div class='cc-select-wrap form-group'></div>")
+
+  $(".contribcolumn:eq(0)").find(".cc_type_cd").each(function() {
+    $(this).addClass("form-check-input");
+    $(this).wrap("<div class='form-check cc-select'></div>");
+    $('.cc-select').appendTo(".cc-select-wrap");
+    $("#paypal_notice").appendTo(".cc-select-wrap");
+  });
+
+  // $("#cc_ax").after('<label class="form-check-label">American Express</label>');
+  $("#cc_pp").after('<label class="form-check-label">Paypal</label>');
+  $("#cc_mc").after('<label class="form-check-label">Mastercard</label>');
+  $("#cc_vs").after('<label class="form-check-label">Visa</label>');
+
+  $('#cc_number').wrap("<div class='form-group cc-group'></div>");
+  $('.cc-group').appendTo("#payment-card");
+  $('#cc_number').attr("placeholder", "Card Number");
 
   $("#your-details").prepend("<h2>Your Details</h2>")
   $("#email").appendTo("#your-details");
@@ -250,9 +238,6 @@
   $("#firstname, #lastname").wrap("<div class='form-group form-6'></div>");
   $("#city, #zip").wrap("<div class='form-group form-4'></div>");
   $("#state_cd").wrap("<div class='form-group form-2'></div>");
-
-// Opt-in
-
   $("input#signup_optin").wrap("<div class='form-group signup_optin_wrap clearfix'></div>");
   $("label[for=signup_optin]").appendTo(".signup_optin_wrap");
   $(".optinradio_fieldset").appendTo(".signup_optin_wrap");
@@ -260,23 +245,6 @@
   $("input#signup_optin").addClass("form-check-input");
   $("label[for=signup_optin]").text("I'd like to receive updates about our news, campaigns and appeals by email");
   $(".signup_optin_wrap").appendTo("#your-details");
-
-  jQuery("#optin_1").change(function() {
-    if (jQuery(this).is(":checked")) {
-      jQuery('#signup_optin').prop('checked', true);
-      $("#optin_warning").hide();
-    }
-  });
-
-
-  jQuery("#optin_0").change(function() {
-    if (jQuery(this).is(":checked")) {
-      jQuery('#signup_optin').prop('checked', false);
-      $("#optin_warning").show();
-    }
-  });
-
-  // Gift Aid
 
   $(".giftaid_confirm_checkbox").each(function() {
     var GiftAid = $(".giftaid_confirm_checkbox").attr('id');
@@ -293,35 +261,58 @@
     $('.gift-aid-label').attr('for', GiftAid);
   });
 
-// Click functions
+  jQuery("#optin_1").change(function() {
+    if (jQuery(this).is(":checked")) {
+      jQuery('#signup_optin').prop('checked', true);
+      $("#optin_warning").hide();
+    }
+  });
+
+
+  jQuery("#optin_0").change(function() {
+    if (jQuery(this).is(":checked")) {
+      jQuery('#signup_optin').prop('checked', false);
+      $("#optin_warning").show();
+    }
+  });
+
+$(".cc-select").click(function() {
+
+if ($('#cc_pp').is(":checked")) {
+  $(".cc-group, #payment-card-details").hide();
+} else {
+  $(".cc-group, #payment-card-details").show();
+}
+
+});
 
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/donatenow-p?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate5?amount=" + matchedAmount;
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
+    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
 
-    $(".donatePaypal").attr("href", paypalLink);
-    $(".donateDebit").attr("href", edirectLink);
+    $(".donatePaypal").attr("href",paypalLink);
+    $(".donateDebit").attr("href",edirectLink);
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
 
-    if ($('#full-gift-checkbox').is(":checked")) {
-      giftaidableAmount = $(this).find("input").val();
-      fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
-      fullgiftAmountD = fullgiftAmount.toFixed(2);
-      giftaidAmount = fullgiftAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(fullgiftAmountD);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    } else {
+    // if ($('#full-gift-checkbox').is(":checked")) {
+    //   giftaidableAmount = $(this).find("input").val();
+    //   fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
+    //   fullgiftAmountD = fullgiftAmount.toFixed(2);
+    //   giftaidAmount = fullgiftAmount * 1.25;
+    //   giftaidAmountD = giftaidAmount.toFixed(2);
+    //   $("#giftaid-amount").text(fullgiftAmountD);
+    //   $("#giftaid-amount-total").text(giftaidAmountD);
+    // } else {
       giftaidableAmount = $(this).find("input").val();
       giftaidAmount = giftaidableAmount * 1.25;
       giftaidAmountD = giftaidAmount.toFixed(2);
       $("#giftaid-amount").text(giftaidableAmount);
       $("#giftaid-amount-total").text(giftaidAmountD);
-    }
+    // }
 
 
   });
@@ -330,36 +321,34 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/donatenow-p?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate5?amount=" + matchedAmount;
-
-    $(".donatePaypal").attr("href", paypalLink);
-    $(".donateDebit").attr("href", edirectLink);
+    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
+    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
-
-    if ($('#full-gift-checkbox').is(":checked")) {
-      giftaidableAmount = this.value;
-      fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
-      fullgiftAmountD = fullgiftAmount.toFixed(2);
-      giftaidAmount = fullgiftAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(fullgiftAmountD);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    } else {
-      giftaidableAmount = this.value;
-      giftaidAmount = giftaidableAmount * 1.25;
-      giftaidAmountD = giftaidAmount.toFixed(2);
-      $("#giftaid-amount").text(giftaidableAmount);
-      $("#giftaid-amount-total").text(giftaidAmountD);
-    }
-
-
+    giftaidableAmount = this.value;
+    giftaidableAmount = giftaidableAmount.replace(/[^\d.-]/g, "");
+    giftaidAmount = giftaidableAmount * 1.25;
+    giftaidAmountD = giftaidAmount.toFixed(2);
+    $("#giftaid-amount").text(giftaidableAmount);
+    $("#giftaid-amount-total").text(giftaidAmountD);
   });
-
-
-// Change colour of buttons on select
+  //
+  // $('#full-gift-checkbox').change(function() {
+  //   if ($(this).is(":checked")) {
+  //     fullgiftAmount = giftaidableAmount * 1.038 + 0.1;
+  //     fullgiftAmountD = fullgiftAmount.toFixed(2);
+  //     giftaidAmount = fullgiftAmount * 1.25;
+  //     giftaidAmountD = giftaidAmount.toFixed(2);
+  //     $("#giftaid-amount").text(fullgiftAmountD);
+  //     $("#giftaid-amount-total").text(giftaidAmountD);
+  //   } else {
+  //     giftaidAmount = giftaidableAmount * 1.25;
+  //     giftaidAmountD = giftaidAmount.toFixed(2);
+  //     $("#giftaid-amount").text(giftaidableAmount);
+  //     $("#giftaid-amount-total").text(giftaidAmountD);
+  //   }
+  // });
 
   $('.amountWraps').click(function() {
 
@@ -380,12 +369,8 @@
     $('#amt_other_wrap').find('label').addClass("labelSelect");
   });
 
-  // Final fixes
-
   $("#contribution table").hide();
   $("#processbutton").appendTo("#contribution");
-
-  // Error fixes
 
   $('.contriberrorbanner').prependTo('.donateWrap');
   $('#contribution .error').appendTo('.contriberrorbanner');
@@ -408,24 +393,22 @@
     }, animationLength);
   });
 
-  // Full Gift: Calculate Grand Total for pre-determined Amounts.
-
+  // Calculate Grand Total for pre-determined Amounts.
   var inputs = document.querySelectorAll(".amountNum input[type='radio']");
 
-  Array.prototype.forEach.call(inputs, function(el) {
-    el.addEventListener('click', function() {
-      var value = parseInt(this.value, 10);
-      var URL = "https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
-      jQuery.get(URL, function(data) {
-        var fee = data.fee;
-        var total = fee + value;
-        total = total.toFixed(2);
-        jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
-        jQuery("#processbutton").val("Donate £" + total);
-        jQuery("#giftaid-amount").innerText = (total);
-      });
-    });
-  });
+  // inputs.forEach(el =>
+  //   el.addEventListener('click', function() {
+  //     var value = parseInt(this.value, 10);
+  //     var URL = `https://act.reprieve.org.uk/ctl/lara/contribution/full-gift/v1/display-fee?contribution=${value}&max=2500.00`;
+  //     jQuery.get(URL, function(data) {
+  //       var fee = data.fee;
+  //       var total = fee + value;
+  //       total = total.toFixed(2);
+  //       jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be £" + total);
+  //       jQuery("#processbutton").val("Donate £" + total);
+  //       jQuery("#giftaid-amount").innerText = (total);
+  //     })
+  //   }));
 </script>
 </body>
 <style>
