@@ -84,9 +84,14 @@
   });
 
   $(".donateCard").click(function() {
-    $(".donation-block, #processbutton").show();
-    $("#donate-options").hide();
+    $(".donation-block, #processbutton").fadeIn();
+    $("#donate-options").fadeOut();
   });
+
+  if ($('.goal-progress').length > 0) {
+    $('#contribution').css('border-top',0);
+  }
+
 
   // GDPR Pop-up fixes
 
@@ -246,7 +251,7 @@
   $("#city, #zip").wrap("<div class='form-group form-4'></div>");
   $("#state_cd").wrap("<div class='form-group form-2'></div>");
 
-// Opt-in
+  // Opt-in
 
   $("input#signup_optin").wrap("<div class='form-group signup_optin_wrap clearfix'></div>");
   $("label[for=signup_optin]").appendTo(".signup_optin_wrap");
@@ -288,16 +293,37 @@
     $('.gift-aid-label').attr('for', GiftAid);
   });
 
-// Click functions
+  // Click functions
 
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
 
+    var href = window.location.href;
+
+    if (href.includes("&utm_source=")) {
+      href = href.replace('&utm_source=', '&fix=');
+    }
+
+    var split1 = href.split("?");
+    var split2 = href.split("source=");
+
+    var cleanUrl
+    var cleanSource = "";
+
+    if (split1[1] != null) {
+      cleanUrl = split1[0];
+    }
+
+    if (split2[1] != null) {
+      cleanSource = "source=" + split2[1] + "&";
+    }
+
     var paypalOriginal = $(".donatePaypalO").attr("href");
     var edirectOriginal = $(".donateDebitO").attr("href");
-    var paypalLink = paypalOriginal + "?default_amt=" + matchedAmount;
-    var edirectLink = edirectOriginal + "?amount=" + matchedAmount;
+    var paypalLink = paypalOriginal + "?" + cleanSource + "default_amt=" + matchedAmount;
+    var edirectLink = edirectOriginal + "?" + cleanSource + "amount=" + matchedAmount;
+
 
     $(".donatePaypal").attr("href", paypalLink);
     $(".donateDebit").attr("href", edirectLink);
@@ -329,10 +355,32 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
+
+    var href = window.location.href;
+
+    if (href.includes("&utm_source=")) {
+      href = href.replace('&utm_source=', '&fix=');
+    }
+
+    var split1 = href.split("?");
+    var split2 = href.split("source=");
+
+    var cleanUrl
+    var cleanSource = "";
+
+    if (split1[1] != null) {
+      cleanUrl = split1[0];
+    }
+
+    if (split2[1] != null) {
+      cleanSource = "source=" + split2[1] + "&";
+    }
+
     var paypalOriginal = $(".donatePaypalO").attr("href");
     var edirectOriginal = $(".donateDebitO").attr("href");
-    var paypalLink = paypalOriginal + "?default_amt=" + matchedAmount;
-    var edirectLink = edirectOriginal + "?amount=" + matchedAmount;
+
+    var paypalLink = paypalOriginal + "?" + cleanSource + "default_amt=" + matchedAmount;
+    var edirectLink = edirectOriginal + "?" + cleanSource + "amount=" + matchedAmount;
 
     $(".donatePaypal").attr("href", paypalLink);
     $(".donateDebit").attr("href", edirectLink);
@@ -360,7 +408,7 @@
   });
 
 
-// Change colour of buttons on select
+  // Change colour of buttons on select
 
   $('.amountWraps').click(function() {
 
