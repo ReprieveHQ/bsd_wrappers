@@ -305,17 +305,23 @@
 
     .fixed-background {
       position: fixed;
-      top: 0;
-      z-index: -1;
       width: 100%;
       height: 100%;
       background-size: cover;
     }
 
-    .fixed-background {
-      background-color: black;
-      background-image: url("https://act.reprieve.org.uk/page/-/GTMO-PRB-Cover");
-    }
+      .fixed-background:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+        opacity: 1;
+      }
 
     /* Amounts */
     #contribution .amountWraps label {
@@ -429,9 +435,6 @@
     .content-wrap {
       margin: 0;
       color: white;
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
       min-height: calc(100vh - 60px);
     }
 

@@ -692,12 +692,23 @@
 
     .fixed-background {
       position: fixed;
-      top: 0;
-      z-index: -1;
       width: 100%;
       height: 100%;
       background-size: cover;
     }
+
+      .fixed-background:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
+        opacity: 1;
+      }
 
     /* Amounts */
 
@@ -815,15 +826,7 @@
     .content-wrap {
       margin: 0;
       color: white;
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-
-
 
     body {
       color: #3c3b39;
@@ -1295,6 +1298,29 @@ border-top: 16px solid #e35e14;
 div#BSD-quick_donate_info {
     display: none !important;
 }
+
+.cc-hide {
+  display:none;
+}
+
+.cc-select label {
+    text-transform: initial !important;
+}
+
+div#payment-card-details {
+    display: none;
+}
+
+div#paypal_notice {
+    display: block !important;
+    margin-bottom: 1rem;
+}
+
+
+p.cc-url {
+    font-size: 0.8rem;
+}
+
   </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9602547-1"></script>
