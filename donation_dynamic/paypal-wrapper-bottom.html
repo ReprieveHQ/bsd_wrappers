@@ -125,7 +125,7 @@
   // Payment Details
 
   $("#payment-details").append('<div id="payment-card" class="clearfix"></div>');
-  $("#payment-details").append('<div id="payment-card-details" class="clearfix"></div>');
+  $("#payment-details").append('<div id="payment-card-details" class="clearfix cc-hide"></div>');
   $('#credit_card-creditCardTypeSelector').appendTo('#payment-card');
   $('.creditCardTypeSelector-creditCardTextBox, .creditCardTypeSelector-creditCardList').addClass('clearfix form-group');
   $('#cc_cvv, #cc_expir_month, #cc_expir_year').appendTo('#payment-card-details');
@@ -136,7 +136,7 @@
   $("#paypal_notice").prependTo("#payment-details");
   $("#payment-details").prepend('<h2>Donate by PayPal</h2>');
   $("#payment-details").append("<p class='cc-url'>If you'd like to make a donation by debit/credit card, <a href='https://act.reprieve.org.uk/page/contribute/donatenow-sl?source=paypalRedirect' target='_blank'>please click here</a>.</p>");
-
+  $(".donation-block-wrap").append("<p class='pp-tick-warning'>Uh oh – you haven't ticked the Donate by Paypal box! Please scroll up, tick the box and try again.");
 
   // Amounts
 
@@ -230,15 +230,22 @@
 
   });
 
+
+
   // $("#cc_ax").after('<label class="form-check-label">American Express</label>');
   $("#cc_pp").after("<label class='form-check-label'>Yes, I'd like to pay by Paypal</label>");
 
 
 
   $('#cc_number').wrap("<div class='form-group cc-group cc-hide'></div>");
+
+  $(".cc-hide").find("input, select").each(function() {
+    $(this).remove();
+  });
+
   $('.cc-group').appendTo("#payment-card");
   $('#cc_number').attr("placeholder", "Card Number");
-    $('#cc_number, #cc_cvv').removeClass('form-control');
+  $('#cc_number, #cc_cvv').removeClass('form-control');
 
   $("#your-details").prepend("<h2>Your Details</h2>")
   $("#email").appendTo("#your-details");
@@ -287,19 +294,26 @@
   });
 
   $("input#processbutton").click(function() {
-if ( ! $("#cc_pp").is(':checked') ) {
-     event.preventDefault();
-  }
-    });
-
-  $(".cc-select").click(function() {
-
-    if ($('#cc_pp').is(":checked")) {
-      $(".cc-group, #payment-card-details").hide();
-    } else {
-      $(".cc-group, #payment-card-details").show();
+    if (!$("#cc_pp").is(':checked')) {
+      event.preventDefault();
+      $('p.pp-tick-warning').show();
     }
 
+
+  });
+
+
+
+  $("input[required=true]").each(function() {
+    if ($(this).val() === '') {
+      console.log('Validate');
+    } else {
+      console.log('Invalid');
+    }
+  });
+
+  $("#cc_pp").click(function() {
+    $('p.pp-tick-warning').hide();
   });
 
   $(".amountNum").click(function() {
