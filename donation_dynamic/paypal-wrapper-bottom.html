@@ -135,7 +135,7 @@
   $("#cc_cvv").attr("placeholder", "CVV");
   $("#paypal_notice").prependTo("#payment-details");
   $("#payment-details").prepend('<h2>Donate by PayPal</h2>');
-  $("#payment-details").append("<p class='cc-url'>If you'd like to make a donation by debit/credit card, <a href='https://act.reprieve.org.uk/page/contribute/donatenow-sl?source=paypalRedirect' target='_blank'>please click here</a>.</p>");
+  $(".cc-url").appendTo("#payment-details");
   $(".donation-block-wrap").append("<p class='pp-tick-warning'>Uh oh – you haven't ticked the Donate by Paypal box! Please scroll up, tick the box and try again.");
 
   // Amounts
@@ -285,7 +285,6 @@
     }
   });
 
-
   jQuery("#optin_0").change(function() {
     if (jQuery(this).is(":checked")) {
       jQuery('#signup_optin').prop('checked', false);
@@ -298,11 +297,7 @@
       event.preventDefault();
       $('p.pp-tick-warning').show();
     }
-
-
   });
-
-
 
   $("input[required=true]").each(function() {
     if ($(this).val() === '') {
@@ -319,11 +314,8 @@
   $(".amountNum").click(function() {
     var matchedAmount = $(this).find("input").val();
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
 
-    $(".donatePaypal").attr("href", paypalLink);
-    $(".donateDebit").attr("href", edirectLink);
+
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
@@ -351,8 +343,7 @@
     var matchedAmount = this.value;
     matchedAmount = matchedAmount.replace(/[^\d.-]/g, "");
     var matchedAmountDoubled = matchedAmount * 2;
-    var paypalLink = "https://act.reprieve.org.uk/page/contribute/egypt-1018?default_amt=" + matchedAmount;
-    var edirectLink = "https://secure.edirectdebit.com/Reprieve/Donate4?amount=" + matchedAmount;
+
     $("#matched-you,#matched-us").text(matchedAmount);
     $("#matched-calc").text(matchedAmountDoubled);
     $("#giftaid-pre").show();
