@@ -1,0 +1,729 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+  .gift-aid .form-check {
+    margin-bottom: 0.5rem;
+}
+.field-group.opt-in-group .form-check {
+    margin: 0 0 0.5rem 0;
+}
+.opt-in-group input[type=radio] {
+    margin: 0 0 0 -1.125rem !important;
+}
+
+label.optinTitle {
+    font-weight: bold;
+}
+
+.field-group.opt-in-group p {
+    font-size: 0.75rem;
+}
+legend.selectAmount-legend {
+    display: none;
+}
+
+.selectAmount-list li label {
+    background-color: #e35e14 !important;
+}
+
+.selectAmount fieldset {
+    margin: 0;
+}
+
+.selectAmount-list li {
+    margin: 0 1rem 1rem 0 !important;
+}
+
+.selectAmount-list li label {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    font-size: 1.25rem !important;
+    max-width: 100% !important;
+}
+
+ul#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_DirectDebitAmounts_RadioButtonListAmount {}
+
+.selectAmount-list {
+    max-width: 100%;
+}
+
+div#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_DirectDebitAmounts_pnlAmountsDropdown {
+    margin: 0;
+}
+  .dd-acknowledgement{
+    display:none !important;
+}
+
+table.dd-progress {
+    display: none;
+}
+
+.dd-form h2 {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    font-size: 1.25rem;
+}
+
+.dd-form div.fieldset .field {
+    margin: 0 0 1rem 0;
+}
+
+.dd-form div.fieldset input[type=radio] {
+  margin: 0 0 0 -1.25rem;
+  font-size: 16px;
+}
+
+.dd-form p {
+    margin: 0 0 1rem 0;
+}
+
+.dd-form div.fieldset hr {
+    margin: 0 0 1rem 0;
+}
+
+.dd-form div.fieldset h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem;
+}
+
+.dd-form p:empty {
+    display: none;
+}
+
+.dd-form {
+    border: 0;
+}
+
+.dd-form div.fieldset .field label {
+    width: auto;
+    text-align: left;
+    padding: 0;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.dd-form div.fieldset .field input[type=text] {
+    width: 100%;
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: none;
+    margin: 0;
+}
+
+
+  body {
+      font-size: 1rem;
+      line-height: 1.5;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  body {
+    min-width: unset;
+}
+
+.dd-form {
+    min-width: unset;
+}
+
+.dd-form div.fieldset .field label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+
+.dd-form div.fieldset .field input, .dd-form div.fieldset .field select {
+    margin: 0;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: none;
+}
+
+.radio {
+    margin: 0 0 1rem 0!important;
+}
+
+.dd-form-wrapper {
+    font-size: initial;
+}
+
+.dd-form #manual-address-btn-wrapper div {
+    margin: 0 0 1rem 0;
+}
+
+/* Date */
+
+.dd-form div.fieldset .field.date {
+    margin-right: -15px;
+    margin-left: -15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.columns .column {
+    width: initial !important;
+    left: inherit !important;
+    float: none !important;
+}
+
+.dd-form div.fieldset .udf {
+    display: none;
+}
+
+.field-group.data-protection.highlight {
+    display: none;
+}
+
+/* Menu */
+.menuBar {
+  z-index: 999;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.menuBar:after,
+.menuBar:before {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.clean-logo img {
+  height: 40px;
+}
+
+.menuBar .row {
+  align-items: center;
+}
+
+.menu-wrapper1 {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  float: right;
+  vertical-align: top;
+}
+
+.hamburger-menu1,
+.hamburger-menu1:after,
+.hamburger-menu1:before {
+  width: 35px;
+  height: 5px;
+}
+
+.hamburger-menu1 {
+  position: relative;
+  transform: translateY(15px);
+  background: white;
+  transition: all 0ms 300ms;
+}
+
+.hamburger-menu1.animate {
+  background: rgba(255, 255, 255, 0);
+}
+
+.hamburger-menu1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  background: white;
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hamburger-menu1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: white;
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hamburger-menu1.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hamburger-menu1.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobilemenu-wrapper {
+  z-index: 999;
+  background: #3c3b39;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 33px;
+  transform: translate(300px, 0);
+  transition: transform 0.5s linear;
+}
+
+.mobilemenu-trigger:before,
+.mobilemenu-trigger:after {
+  clear: both;
+  display: table;
+  content: "";
+}
+
+.mobilemenu-trigger {
+  margin-bottom: 1rem;
+}
+
+ul#menu-mobile-menu {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+#mobilemenu li.menu-item {
+  margin-bottom: 0.5rem;
+  line-height: normal;
+}
+
+nav#mobilemenu ul li a {
+  font-size: 30px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  color: white;
+  /* margin-bottom: 1rem; */
+}
+
+nav#mobilemenu ul li a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.mobilemenu-wrapper.menu-active {
+  transform: translate(0, 0);
+}
+
+.mobilemenu-wrapper #hamburger-1.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobilemenu-wrapper #hamburger-1.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobilemenu-wrapper #hamburger-1.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+  -ms-transform: translateY(-9px) rotate(-45deg);
+  -o-transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+span.menuLabel {
+  color: white;
+  float: right;
+  line-height: 35px;
+  padding: 0 0.5rem;
+  font-size: 14px;
+}
+
+/* Main */
+body {
+  background: black;
+}
+
+.dd-progress.mobile-progress {
+    display: none;
+}
+
+.header {
+  background: transparent;
+  color: white;
+}
+
+.dd-form-wrapper {
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(142, 142, 142, 0.5);
+  padding: 2rem;
+  border: 0;
+  margin: 0;
+  font-size: 1rem;
+      border-top: 10px solid #e35e14;
+}
+
+.fixed-background {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-color: black;
+    background-image: url("https://reprieve.org.uk/wp-content/uploads/2018/10/Donate-background.png");
+  opacity: 1;
+}
+
+/* Typography */
+h1 {
+  font-family: HelveticaNeueLTStd-BlkCn, Helvetica, sans-serif;
+}
+
+a, a:focus, a:hover {
+  color: #e35e14;
+}
+
+.dd-form-wrapper .dd-form H2 {
+  font-family: HelveticaNeueLTStd-BlkCn, Helvetica, sans-serif;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  background: none;
+  max-width: none;
+}
+
+#footer {
+  position: static;
+}
+
+#footer {
+  z-index: 999;
+  background-color: #3c3b39;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "effra", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-weight: 500;
+  -moz-font-feature-settings: "kern=1";
+  -webkit-font-feature-settings: "kern"1;
+  text-rendering: optimizeLegibility;
+  color: #cbc3b7;
+  padding: 1rem 0;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #cbc3b7;
+}
+
+.footer a:hover {
+  color: #cbc3b7;
+}
+
+.fnav_sub_primary {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.fnav_sub_primary,
+.fnav_sub_secondary {
+  float: left;
+}
+
+.fnav_sub_primary li {
+  float: left;
+  display: block;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  #footer {
+    position: static;
+    bottom: 0;
+    max-width: none;
+    margin-top: 2rem;
+  }
+
+  .fnav_sub_secondary {
+    float: right;
+  }
+
+  .fnav_sub_primary li {
+    margin-bottom: 0;
+    width: auto;
+  }
+}
+
+/* Buttons */
+.dd-form .submit input {
+  background: #e35e14;
+  width: 100%;
+  padding: 1rem;
+  line-height: normal;
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* Gift Aid */
+
+p.giftaidDec {
+    font-size: 0.75rem;
+    padding-right: 130px;
+    background-image: url(/images/gift-aid-bg.jpg);
+    background-position: right 0;
+    background-repeat: no-repeat;
+}
+
+label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_1] {
+    font-weight: normal;
+}
+
+.dd-form div.fieldset .field-group.gift-aid {
+    padding: 0;
+    background: none;
+}
+
+/* Amount Btns */
+
+.amount-btn {
+    background: #e35e14;
+    padding: 1rem 2rem;
+    margin: 0 1rem 1rem 0;
+    width: calc(33% - 1rem);
+    border-radius: 5px;
+    text-align: center;
+    color: white !important;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+a.amount-btn.btn-3, a.amount-btn.btn-6 {
+    margin-right: 0;
+}
+
+.labelSelect {
+    background: #3c3b39;
+}
+
+/* Summary fixes */
+
+div#amount-container {
+    display: none;
+}
+
+.fieldset.personal-summary.closed, .dd-form div.fieldset.closed {
+    display: block !important;
+    height: auto !important;
+}
+
+.has-js .step4 .dd-form h2 {
+    background: none !important;
+    background-image: none !important;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.dd-form h2.summary-title span.icon, .dd-form h2.confirmation-title span.icon {
+    display: none !important;
+}
+
+.dd-form h2.summary-title .button, .dd-form h2.summary-title input, .dd-form h2.confirmation-title .button, .dd-form h2.confirmation-title input {
+    top: 0;
+}
+
+.dd-form h2 .button {
+    color: #e35e14;
+}
+
+.dd-form .submit input.edit {
+    line-height: normal;
+    height: auto;
+    background: #3c3b39;
+}
+
+.dd-form .submit input.edit {
+}
+
+input#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_SummaryControl1_SubmitButton {
+    margin-bottom: 1rem;
+}
+
+p.giftaidDec {
+    min-height: 41px;
+}
+
+.has-js .step1 .dd-form h2.closed, .has-js .step2 .dd-form h2.closed, .has-js .step3 .dd-form h2.closed, .has-js .step4 .dd-form h2.closed, .has-js .step5 .dd-form h2.closed {
+    background: none;
+}
+
+.dd-form div.fieldset .required > label:before {
+    display: none;
+}
+/*EXPANDER*/
+
+    #expand {
+      font-weight: bold;
+    }
+
+    #expand-minus,
+    #expand-plus {
+      color: #e35e14;
+    }
+
+    #expand-minus {
+      display: none;
+    }
+
+    #expand-plus {
+      display: inline-block;
+    }
+
+    #expand-box {
+      display: none;
+    }
+
+    .toggle-expand {
+      display: block !important;
+    }
+
+    #expand-minus.toggle-expand {
+    display: inline-block !important;
+}
+    .toggle-collapse {
+      display: none !important;
+    }
+
+.dd-form div.fieldset .udf {
+    display: block;
+    margin: 0;
+    background: none;
+    padding: 0;
+}
+.dd-form div.udf .field label {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var $optOutCheckbox = $('#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_PersonalDetailsSection_CheckBoxDataProtectionConfirmation1');
+    $("#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_PersonalDetailsSection_CheckBoxDataProtectionConfirmation1").prop('checked', true);
+    $(
+      '<div class="field-group opt-in-group"><label class="optinTitle">We would love to keep you updated on our news, activities, appeals and campaigns. Would you be happy for us to contact you by email?</label><div class="form-check"><input type="radio" class="form-check-input" id="opt-in" name="opt-in" value="yes"><label class="form-check-label">Yes</label></div><div class="form-check"><input class="form-check-input" type="radio" id="opt-out" name="opt-in" value="no"><label class="form-check-label">No</label></div><p>Read our <a href="http://www.reprieve.org.uk/privacy/" target="_blank" style="text-decoration: underline;">privacy policy</a> for more information</p></div>'
+    ).insertBefore('.step2 .udf');
+
+    $('input[name=opt-in]').on('change', function() {
+      var $this = $(this);
+      if (this.checked) {
+        //the box should be ticked if users are opting out
+        var checked = $this.attr('id') === 'opt-out';
+        $optOutCheckbox.prop('checked', checked);
+        $('.opt-in-error').remove();
+      }
+    });
+  });
+
+
+
+  $(function() {
+
+    // Layout
+
+    $("form").addClass("container");
+    $(".header").parent().addClass("row");
+    $(".header").addClass("col-md-5");
+    $(".center-col").addClass("row");
+    $(".columns").addClass("col-md-7");
+    $('.menuBar').prependTo("body");
+    $('.footer').appendTo("body");
+    $('body').prepend("<div class='fixed-background'></div>");
+    $('.dd-form').prepend(
+      '<div id="amount-container"> <h2>Enter your monthly donation amount</h2> <div id="amount-btn-container"> <a data-role="button" class="amount-btn btn-1" data-value="5.00">£5</a> <a data-role="button" class="amount-btn btn-2" data-value="10.00">£10</a> <a data-role="button" class="amount-btn btn-3" data-value="20.00">£20</a> <a data-role="button" class="amount-btn btn-4" data-value="50.00">£50</a> <a data-role="button" class="amount-btn btn-5" data-value="100.00">£100</a> <a data-role="button" class="amount-btn btn-6" data-value="Other">Other</a></div></div>'
+    );
+    $('.amount-btn').click(function() {
+      $('.amount-btn').removeClass("labelSelect");
+      $('#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_DirectDebitAmounts_DropDownAmount').val($(this).attr("data-value")).trigger('change');
+    });
+    $('input#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_SubmitButton').val("Next");
+
+    // Expander
+
+    $('#expand').on('click', function(e) {
+      $('#expand-box').toggleClass("toggle-expand");
+      $('#expand-minus').toggleClass("toggle-expand");
+      $('#expand-plus').toggleClass("toggle-collapse");
+      e.preventDefault();
+    });
+
+
+
+    //Move the direct debit box up top
+    $('.dd-form .direct-debit:eq(0)').before($('.donation:eq(0)'));
+    $('.dd-form .direct-debit:eq(0)').addClass('first-direct-debit');
+    $('.dd-form .step-title1').html("1. You can donate any amount to become a Member, it just needs to be regular. Choose an amount to give each month:");
+    $('.dd-form .step-title2').html("2. Personal details:");
+    $('.dd-form .step-title3').html("3. Bank details:");
+    $(".direct-debit:eq(0) input[type='checkbox']").addClass('optin-checkbox');
+    $(".optin-checkbox").prop('checked', true);
+
+    $('.direct-debit').hide();
+    //Hide frequency selector
+    $('#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_DropDownPaymentFrequency_LabelForDropDownList').parent().hide();
+    //Add legal text to bottom of form
+    $('.payment-details-form').after(
+      "<p class='pre-submit-opt-in'>By clicking Next you confirm you are the account holder of a personal bank or building society account, that you’re the sole required signatory on the account and that you wish to set up a Direct Debit.</p>"
+    );
+
+    $(".field.text,.field.select").addClass('form-group');
+    $(".field.text label, .field.select label").addClass('control-label');
+    $(".field.text input, .field.select input, .field.select select, .field.text select").addClass('form-control');
+
+    //Date
+    $(".date select").wrap("<div class='col-4'></div>");
+    $(".date label").wrap("<div class='col-12'></div>");
+    $(".date").addClass("row");
+
+    $('label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_0], label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_1')
+      .wrap('<div class="form-check"></div>')
+    $('label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_0], label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_1')
+      .addClass('form-check-label')
+    $('label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_0]').parent().prepend($(
+      'input#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_0'));
+    $('label[for=ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_1]').parent().prepend($(
+      'input#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_1'));
+    $('input#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_1, input#ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder234_FormControl1_DonationSection_RadioButtonListGiftAid_0').addClass(
+      'form-check-input');
+    $('.gift-aid p:nth-of-type(1)').addClass("giftaidDec");
+    $('.giftaidDec').appendTo($('.gift-aid'));
+
+  });
+</script>
