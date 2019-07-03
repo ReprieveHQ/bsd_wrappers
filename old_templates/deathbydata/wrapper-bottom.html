@@ -1,0 +1,337 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="https://storage.googleapis.com/fa-assets/jquery.scrollTo.min.js"></script>
+ <script src="/page/-/scripts/optin.js"></sc
+ <script type="text/javascript" src="/page/-/scripts/jquery-1.11.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '795874123918493',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+( function($) {
+//Creating the answers array
+var answers = [];
+var correctanswerscount = 0;
+var totalquestioncount = 0;
+
+//Doucment ready function where events gets binded in
+$( document ).ready(function() {
+
+initialiseButtonClicks();
+//Function which calls the name and email and passes to the donation page
+getName();
+
+$(".bsd-signup-61").on("submit", function(e){
+ // validateform();
+ $("#emailerror").remove();
+ $("#nameerror").remove();
+ if (!validateEmail($("#email").val())) {
+   $("#bsd-field-email").append(("<div id='emailerror' class='error'>Please enter email</div>"));
+   e.stopImmediatePropagation();
+   return false;
+ }
+ else if($("#firstname").val()==''){
+ $("#bsd-field-firstname").append(("<div id='nameerror' class='error'>Please enter firstname</div>"));
+   e.stopImmediatePropagation();
+   return false;
+ }
+});
+});
+
+
+
+// Initialising button click
+function initialiseButtonClicks(){
+$('.js-button').on('click', function(e) {
+ e.stopPropagation();
+ e.preventDefault();
+// Check whether it is the first question and scroll to the question
+ checkfirstquestion(this);
+// Lock the editable option
+ lockselectedanswer(this);
+// Populate the correct answer
+ calculatecorrectanswer(this);
+// Show the correct answer
+ showcorrectanswer(this);
+// Store the answer
+ storeanswer(this);
+// Scroll to the answer
+ scrollToanswer(this);
+});
+
+$('.js-next-button').on('click', function(e) {
+// Show the next question
+showNextQuestion(this);
+// Scroll to the next question
+scrollToNextQuestion(this);
+});
+
+$('.js-score-button').on('click', function(e) {
+// Get the score and display it
+ showscore(this);
+});
+
+$('.js-petition-button').on('click', function(e) {
+// Get the score and display it
+ showpetition(this);
+});
+
+function showDonate(obj){
+  $(window).scrollTo($("div.js-donate-container"), 800);
+}
+
+$('.donate-push').on('click', function(e) {
+ showDonate(this);
+});
+
+$("#facebookShareLink").on("click",function(){
+var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A//act.reprieve.org.uk/page/s/deathbydata", "pop", "width=600, height=400, scrollbars=no");
+return false;
+var fbtext = "I got "+correctanswerscount+" out of "+totalquestioncount+". Take the quiz";
+FB.ui({
+ method: 'feed',
+ link: 'https://www.facebook.com/sharer/sharer.php?u=https%3A//act.reprieve.org.uk/page/s/deathbydata',
+ caption: fbtext,
+}, function(response){});
+ $(window).scrollTo($("div.js-donate-container"), 800);
+});
+
+$("#twitterShareLink").on("click",function(){
+ var tweettext = "Could you be a target on @realdonaldtrump's %23DeathByData Kill List? Take the quiz to find out. http://act.reprieve.org.uk/deathbydata";
+ var tweetpopup = window.open("https://twitter.com/intent/tweet?text="+tweettext, "pop", "width=600, height=400, scrollbars=no");
+ return false;
+ $(window).scrollTo($("div.js-donate-container"), 800);
+});
+
+
+
+$('.js-start-quiz-button').on('click', function(e) {
+$(".js-signup-container").addClass("js-hide");
+$(".js-first-question").removeClass("js-hide");
+$(window).scrollTo($('.js-question-container'), 800);
+});
+
+$(".js-signup-container").find('br').remove();
+$("#signup").addClass("col-md-6");
+
+
+
+// $(".intro-block input").focus(function(){
+// 	if($(this).val().length === 0 && !$(this).hasClass("active")){
+// 		$(this).addClass("active");
+// 		$(this).parent().addClass("no-before");
+// 	}
+// });
+//
+// $(".intro-block input").focusout(function() {
+// 	if($(this).val().length === 0 && $(this).hasClass("active")){
+//     	$(this).removeClass("active");
+//     	$(this).parent().removeClass("no-before");
+// 	}
+// });
+}
+
+//Creates a overlay on top of the answered question
+function lockselectedanswer(obj){
+$(obj).find("input").prop("checked", true);
+$(obj).parents('.js-answer-wrapper').append("<div class='overlay'></div>");
+}
+
+function calculatecorrectanswer(obj){
+//Defining the message
+var message = '';
+var addclass= '';
+
+//Adding the total count
+totalquestioncount = totalquestioncount + 1 ;
+
+//If the selected answer is correct
+if($(obj).hasClass("js-correct-answer")){
+$(obj).css({"background": "#FF7775"});
+correctanswerscount = correctanswerscount + 1 ;
+message = '<p class="icon-answer-bad"><span>x</span>&nbsp;<span>Unlucky! That is a risk factor for the Kill List</span></p>';
+addclass = 'js-right';
+}
+// else highlight the correct answer as green and show the selected as red
+else{
+$(obj).parent().find('.js-correct-answer').css({"background": "#FF7775"});
+$(obj).css({"background": "#88F078"});
+$(obj).addClass("js-wrong-answer");
+message = '<p class="icon-answer-good"><span>✓</span>&nbsp;<span>Lucky! That is a risk factor for the Kill List</span></p>';
+addclass = 'js-wrong';
+}
+
+var ansmessage = $(obj).parents('.js-answer-wrapper').nextAll("div.js-show-answer:first").find('p.js-ans-message');
+$(ansmessage).html(message);
+$(ansmessage).addClass(addclass);
+}
+
+// loops through html and removes the next div with class js-show-answer:first and shows it to the user.
+//This will be the answer to the question user had just answered.
+function showcorrectanswer(obj){
+var answerDiv = $(obj).parents('.js-answer-wrapper').nextAll("div.js-show-answer:first");
+if(answerDiv.length){
+$(answerDiv).removeClass("js-hide-answer");
+}
+}
+
+//Scrolls to the answer when the question is been answered
+function scrollToanswer(obj){
+var answerDiv = $(obj).parents('.js-answer-wrapper').nextAll("div.js-show-answer:first");
+if(answerDiv.length){
+$(window).scrollTo($(answerDiv), 800);
+}
+}
+
+// Shows the next Question to the user once user had answered the previous question
+function showNextQuestion(obj){
+var nextSlide = $(obj).parents('.js-question-container').nextAll("div.js-question-container:first");
+if(nextSlide.length){
+$(nextSlide).removeClass("js-hide");
+// $(window).scrollTo($(nextSlide), 5000);
+}
+}
+
+//Stores the answer's User posted into an array
+function storeanswer(obj){
+var questionvalue = $(obj).data('question');
+var answervalue = $(obj).data('ans');
+answers.push({
+key: questionvalue,
+ value: answervalue
+});
+var myval = JSON.stringify(answers);
+}
+
+function scrollToNextQuestion(obj){
+var nextSlide = $(obj).parents('.js-question-container').nextAll("div.js-question-container:first");
+if(nextSlide.length){
+$(window).scrollTo($(nextSlide), 800);
+}
+}
+
+function showscore(obj){
+var nextSlide = $(obj).parents('.js-question-container').nextAll("div.js-question-container:first");
+var scoreslide = $(obj).parents('.js-question-container').nextAll("div.js-final-score-container:first");
+//If there are no more questions then show the answer and social share links
+if(!nextSlide.length){
+//Adding the score also to the JSON File
+answers.push({
+ key: 'correctanswers',
+ value: correctanswerscount
+});
+
+console.log(answers);
+//Update the BSD form with the results
+$('textarea[name=custom-1576]').val(JSON.stringify(answers));
+console.log(JSON.stringify(answers));
+$("#myscore").html(correctanswerscount);
+$("#totalscore").html(totalquestioncount);
+
+var resultmessage = 'Luckily, you would be safe.';
+resultdes = 'If you lived in Pakistan and Yemen, answering yes to any one of these questions could put you on the "Kill List" and would be at risk of being killed by the US Government.';
+
+if(correctanswerscount >= 1){
+ resultmessage = 'Unfortunately, you would not be safe.';
+ resultdes = 'If you lived in Pakistan and Yemen, answering yes to any one of these questions could put you on the "Kill List" or leave you at risk of being killed in a US drone strike.';
+}
+$("#resultmessage").html(resultmessage);
+$("#resultdes").html(resultdes);
+
+$(scoreslide).removeClass("js-hide");
+$(window).scrollTo($(scoreslide), 800);
+}
+}
+function showpetition(obj){
+  $("div.js-signup-container").removeClass("js-hide");
+  $(window).scrollTo($("div.js-signup-container"), 800);
+}
+
+function checkfirstquestion(obj){
+var firstSlide = $(obj).parents('.js-question-container').hasClass("js-first-question");
+if(firstSlide){
+$(window).scrollTo($('.js-question-container'), 800);
+}
+}
+
+// function startquiz(obj){
+// 	// if ($('.js-intro-container input').val() != "") {
+// 	// 	var firstname = $('.js-intro-container input').val();
+// 	// 	$("#firstname").val(firstname);
+// 	// 	$("#fname").html(firstname);
+//     var firstSlide = $(obj).parents('.js-intro-container').nextAll("div.js-question-container.js-first-question");
+// 		if(firstSlide){
+// 			$(firstSlide).removeClass("js-hide");
+// 			$(window).scrollTo($('.js-question-container'), 800);
+// 		}
+//   // } else {
+//   //   // error, please enter first name
+//   //   $('.missing-firstname').show();
+//   // }
+//
+// }
+
+function getName(){
+if (window.BSDTracker && BSDTracker.signup) {
+var email = BSDTracker.signup.get('email');
+var fname = BSDTracker.signup.get('firstname');
+updateDonateLink(email , fname);
+}
+}
+
+function updateDonateLink(email , fname){
+$('#donate-btn').attr('href','https://reprieve.bsd.net/page/contribute/Guantanamo-Anniversary-Donate?email='+email+"&firstname="+fname);
+}
+
+//Validate email in Javascript
+function validateEmail(email) {
+var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+return re.test(email);
+}
+
+// function validateform(){
+// 	$("#emailerror").remove();
+// 	$("#nameerror").remove();
+//  	if (!validateEmail($("#email").val())) {
+// 		$("#bsd-field-email").append(("<div id='emailerror' class='emailerror'>Please fill email</div>"));
+// 		e.preventDefault();
+// 	}
+//  	else if($("#firstname").val()==''){
+// 			$("#bsd-field-firstname").append(("<div id='nameerror' class='error'>Please fill firstname</div>"));
+//  		e.preventDefault();
+//  	}
+// }
+
+} ) ( jQuery );
+<!-- START Google Analytics --><script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-9602547-1', 'auto', {'allowLinker': true, 'siteSpeedSampleRate': 20});
+    ga('require', 'linker');
+    //See https://github.com/bluestatedigital/bsd-google-analytics-integration#configuration for configuration options
+    var ga_integration_config={};
+    </script><script src="//s.bsd.net/bsdaction/default/page/-/js/analytics/ga_integration-min.js"></script><script>
+    ga('send', 'pageview');
+    </script><!-- END Google Analytics -->
+</script>
+</body>
+</html>

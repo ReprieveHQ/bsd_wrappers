@@ -1,0 +1,82 @@
+<p><a href="http://www.reprieve.org.uk/privacy/">Privacy</a> – <a href="https://www.reprieve.org.uk/terms-of-use/">Terms of Use</a> – <a href="https://www.reprieve.org.uk/cookies-policy">Cookies</a> – <a href="https://www.reprieve.org.uk/acceptable-use/">Acceptable Use</a></p>
+</div></div></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js">
+	</script>
+<script type="text/javascript">
+
+
+	$(document).ready(function() {
+
+	function count_signups(signup_form_id){
+
+	// This function formats numbers by adding commas
+	function numberFormat(nStr,prefix){
+	   var prefix = prefix || '';
+	   nStr += '';
+	   x = nStr.split('.');
+	   x1 = x[0];
+	   x2 = x.length > 1 ? '.' + x[1] : '';
+	   var rgx = /(\d+)(\d{3})/;
+	   while (rgx.test(x1))
+	       x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	   return prefix + x1 + x2;
+	}
+
+	function load_counter(data){
+	var cumulativeNum = data * 1;
+	cumulativeNum += 0; // accounting for offline action
+
+	//document.getElementById('signup_counter').innerHTML = numberFormat(cumulativeNum);
+
+	var signups = numberFormat(cumulativeNum);
+
+	var signupsnum = signups.replace(",", "");
+
+	var target = 20000;
+
+	var percentageComplete = (signupsnum / target) * 100;
+
+	   $(".totalLevel").css("width", percentageComplete + "%");
+
+	// document.getElementById('counter').innerHTML = signups;
+  //
+	// document.getElementById('totaliserTarget').innerHTML = target;
+
+	$('.amount').text(signups);
+
+	$('.goal').text("20,000");
+
+  $(".goal-progress").addClass('js-percent');
+
+	   var getPercent = percentageComplete;
+	   var getProgressWrapWidth = $('.js-percent .progress-wrap').width();
+	   var progressTotal = percentageComplete + "%";
+	   var animationLength = 2500;
+
+	   // on page load, animate percentage bar to data percentage length
+	   // .stop() used to prevent animation queueing
+	   $('.js-percent .progress-bar').stop().animate({
+	       left: progressTotal
+	   }, animationLength);
+	 var numTruncated = parseFloat(percentageComplete).toFixed(2);
+	   $('.js-percent .percentage-number').text(numTruncated + "%");
+	   $(".goal-progress").removeClass('js-percent');
+
+	}
+
+	bQuery.get("/utils/cons_counter/signup_counter.ajax.php?signup_form_id=109", load_counter);
+	}
+
+
+
+	count_signups();
+
+
+
+	});
+
+
+
+
+
+	</script>
