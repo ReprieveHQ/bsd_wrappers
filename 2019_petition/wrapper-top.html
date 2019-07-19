@@ -896,31 +896,42 @@
     }
 
     #expand-minus {
-      opacity: 0;
-      height: 0;
-      transition: 0.1s all ease;
+display: none;
     }
 
     #expand-plus {
-      opacity: 1;
-      height: auto;
-      transition: 0.1s all ease;
+display: inline-block;
     }
 
     #expand-box {
-      opacity: 0;
-      height: 0;
-      transition: 0.1s all ease;
+      display: none;
     }
 
     .toggle-expand {
-      opacity: 1 !important;
-      height: auto !important;
+      display: block;
     }
 
     .toggle-collapse {
-      opacity: 0 !important;
-      height: 0 !important;
+      display: none;
+    }
+
+    #expand-minus.toggle-expand, #expand-plus.toggle-expand {
+      display: inline-block;
+    }
+
+    #expand-minus.toggle-collapse, #expand-plus.toggle-collapse {
+      display: none;
+    }
+
+    #expand-box>div,
+    #expand-box>div>p {
+  display: none;
+    }
+
+    #expand-box.toggle-expand,
+    #expand-box.toggle-expand>div,
+    #expand-box.toggle-expand>div>p {
+display: block;
     }
 
     /* BLINKER */
@@ -998,19 +1009,7 @@
       z-index: 999;
     }
 
-    #expand-box>div,
-    #expand-box>div>p {
-      opacity: 0;
-      height: 0;
-      transition: 0.1s all ease;
-    }
 
-    #expand-box.toggle-expand,
-    #expand-box.toggle-expand>div,
-    #expand-box.toggle-expand>div>p {
-      opacity: 1 !important;
-      height: auto !important;
-    }
 
     .petition-text p {
       font-size: 1rem;
