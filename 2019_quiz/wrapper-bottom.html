@@ -1,0 +1,458 @@
+<style>
+.bsd-contribForm-gdpr-modal {
+    position: fixed;
+    height: auto;
+    bottom: 0;
+    z-index:  9999999999;
+    overflow:  hidden;
+    top: auto;
+    background: #e35e14;
+    color: white;
+    border: 0;
+    text-align: center;
+    -moz-box-shadow: 0px -10px 50px 0px rgba(0,0,0,0.25);
+    box-shadow: 0 -10px 50px 0px rgba(0,0,0,0.25);
+}
+
+.bsd-contribForm-gdpr-modal-content {
+    margin: 0 auto;
+    background: #e35e14;
+    color: white;
+    border: 0;
+    text-align: left;
+    padding:  0
+    ;
+    width: auto;
+}
+
+@media (min-width: 992px) {
+.bsd-contribForm-gdpr-modal-content {
+    width: 970px;
+}
+}
+
+@media (min-width: 768px) {
+.bsd-contribForm-gdpr-modal-content {
+    width: 750px;
+}
+}
+@media (min-width: 992px) {
+.bsd-contribForm-gdpr-modal-content {
+    width: 970px;
+}
+}
+@media (min-width: 992px) {
+.bsd-contribForm-gdpr-modal-content {
+    width: 970px;
+}
+}
+.bsd-contribForm-gdpr-modal-content h3, .bsd-contribForm-gdpr-modal-content p {
+    color: white;
+    display: inline;
+    text-align:  left;
+    font-size:  16px;
+}
+
+.bsd-contribForm-gdpr-modal-content input.gdpr-button {
+    -webkit-appearance: none;
+    background: #252728;
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    color: white;
+    font-size: 1.25rem;
+    outline: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: auto;
+    display: block;
+    transition: 0.3s all ease;
+    outline: none;
+    text-align:  center;
+    color: white !important;
+    text-decoration:  none;
+    line-height: 0;
+}
+
+
+.bsd-contribForm-gdpr-modal-content h3 {
+    display: none;
+    }
+
+
+
+.bsd-contribForm-gdpr-modal-content div div a {
+    text-decoration: none !important;
+}
+
+.col-md-10, .col-md-2 {
+    padding: 5px 10px 5px 10px;
+    float:  left;
+}
+
+.bsd-contribForm-gdpr-modal-content .col-md-2:nth-of-type(2) {
+    display:  none;
+}
+
+.bsd-contribForm-gdpr-modal-content a {
+    color: white;
+}
+
+.reverse-tabs .donate-tab-gm {
+  margin-left: auto;
+}
+.reverse-tabs .donate-tab-gn {
+  margin-left: 0;
+}
+</style>
+
+<footer id="footer" class="footer">
+  <div class="container clearfix">
+    <ul class="fnav_sub_primary clearfix">
+      <li class="fnav_sub_primary_block first">
+        <a href="http://www.reprieve.org.uk" rel="external" class="fnav_sub_element">Reprieve</a>
+      </li>
+      <li class="fnav_sub_primary_block">
+        <a href="http://www.reprieve.org/" rel="external" class="fnav_sub_element">Reprieve US</a>
+      </li>
+      <li class="fnav_sub_primary_block">
+        <a href="http://www.reprieve.org.uk/accessibility/" rel="external" class="fnav_sub_element">Accessibility</a>
+      </li>
+      <li class="fnav_sub_primary_block">
+        <a href="http://www.reprieve.org.uk/privacy/" rel="external" class="fnav_sub_element">Privacy</a>
+      </li>
+      <li class="fnav_sub_primary_block">
+        <a href="https://www.reprieve.org.uk/terms-of-use/" rel="external" class="fnav_sub_element">Terms of use</a>
+      </li>
+      <li class="fnav_sub_primary_block">
+        <a href="https://www.reprieve.org.uk/cookies-policy/" rel="external" class="fnav_sub_element">Cookies</a>
+      </li>
+      <li class="fnav_sub_primary_block">
+        <a href="https://www.reprieve.org.uk/acceptable-use//" rel="external" class="fnav_sub_element">Acceptable Use</a>
+      </li>
+    </ul>
+    <div class="fnav_sub_secondary clearfix">
+      <p class="fnav_sub_element">© 2019 Reprieve. Registered charity (No. 1114900).</p>
+    </div>
+  </div>
+</footer>
+<div class="mobilemenu-wrapper">
+  <div class="mobilemenu-trigger">
+    <div class="menu-wrapper">
+      <div class="hamburger-menu"></div>
+    </div>
+  </div>
+  <nav id="mobilemenu">
+    <div class="menu">
+      <ul id="menu-mobile-menu">
+        <li class="menu-item"><a href="https://reprieve.org.uk/">Home</a></li>
+        <li class="menu-item"><a href="https://reprieve.org.uk/about/">About</a></li>
+        <li class="menu-item"><a href="https://act.reprieve.org.uk/page/s/join">Join us</a></li>
+        <li class="menu-item"><a href="https://act.reprieve.org.uk/page/contribute/make-a-donation">Donate now</a></li>
+        <li class="menu-item"><a href="https://secure.edirectdebit.com/Reprieve/Donate5/">Donate monthly</a></li>
+        <li class="menu-item"><a href="https://reprieve.org.uk/contact/">Contact</a></li>
+      </ul>
+    </div>
+
+  </nav>
+</div>
+
+<script>
+// Organise
+$("#form-wrap").prependTo("#signup");
+$("#signup .fieldset").appendTo("#form-wrap");
+$("#signup").appendTo("#right");
+$(".optinradio_fieldset").insertBefore("#bsd-field-email_opt_in");
+//
+//   // Placeholder
+$("span.required").remove();
+$("label").each(function() {
+  var label = $(this);
+  var placeholder = label.text();
+  label.closest(".fieldset").find("input[type=text], input[type=email], textarea").attr("placeholder", placeholder).val("").focus().blur();
+});
+
+
+// GDPR
+$(".bsd-contribForm-gdpr-modal-content h3, .bsd-contribForm-gdpr-modal-content p").wrapAll("<div class='col-md-10'>");
+$(".bsd-contribForm-gdpr-modal-content div:nth-of-type(2), .bsd-contribForm-gdpr-modal-content div:nth-of-type(3)").wrap("<div class='col-md-2'>");
+$(".bsd-contribForm-gdpr-modal-content").addClass("container");
+$(".bsd-contribForm-gdpr-modal-content p:nth-of-type(3)").remove();
+
+// MENU
+$(".menu-wrapper").click(function() {
+  $('.hamburger-menu').toggleClass('animate');
+  $(".mobilemenu-wrapper").toggleClass("menu-active");
+});
+
+
+// Expander
+$('#expand').click(function() {
+  $('#expand-box').toggleClass("toggle-expand");
+  $('#expand-minus').toggleClass("toggle-expand");
+  $('#expand-plus').toggleClass("toggle-collapse");
+});
+
+// Donate picker
+
+$(".donate-tab-gm").click(function() {
+  $(".donate-tab-gn").removeClass("picked-tab");
+  $(".donate-tab-gm").addClass("picked-tab");
+  $(".donate-tab-givenow").removeClass("picked-body");
+  $(".donate-tab-givemonthly").addClass("picked-body");
+});
+
+$(".donate-tab-gn").click(function() {
+  $(".donate-tab-gm").removeClass("picked-tab");
+  $(".donate-tab-gn").addClass("picked-tab");
+  $(".donate-tab-givemonthly").removeClass("picked-body");
+  $(".donate-tab-givenow").addClass("picked-body");
+});
+
+// Optin
+
+jQuery("#optin_1").change(function() {
+  if (jQuery(this).is(":checked")) {
+    jQuery('#email_opt_in').prop('checked', true);
+    $("#optin_warning").hide();
+  }
+});
+
+
+jQuery("#optin_0").change(function() {
+  if (jQuery(this).is(":checked")) {
+    jQuery('#email_opt_in').prop('checked', false);
+    $("#optin_warning").show();
+  }
+});
+
+
+// Data
+
+var voteName = "Supporter";
+
+$("#firstname").change(function() {
+  voteName = $(this).val();
+  $('.first_name').text(voteName)
+});
+
+
+$("#signup").submit(function(event) {
+  event.preventDefault();
+  var $form = $(this),
+    url = $form.attr("action");
+  var posting = $.post(url, $form.serialize());
+  nextSlide('.slide1');
+});
+
+
+// Useful functions
+
+var getPathFromUrl = function getPathFromUrl(url) {
+  return url.split("?")[0];
+};
+
+
+var numberWithCommas = function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+var nextSlide = function nextSlide(el) {
+  var marginHeight = jQuery('.top_margin').height();
+  var nextSlide = jQuery(el).closest('.slide').next();
+  // if (el === '.slide1') {
+  //   jQuery('.first_name').html(userInfo.firstname);
+  // }
+  nextSlide.show();
+  jQuery.scrollTo(nextSlide, 1000, {});
+};
+
+
+(function(l) {
+  'use strict';
+  l(['jquery'], function($) {
+    var k = $.scrollTo = function(a, b, c) {
+      return $(window).scrollTo(a, b, c);
+    };
+    k.defaults = {
+      axis: 'xy',
+      duration: 0,
+      limit: true
+    };
+
+    function isWin(a) {
+      return !a.nodeName || $.inArray(a.nodeName.toLowerCase(), ['iframe', '#document', 'html', 'body']) !== -1;
+    }
+    $.fn.scrollTo = function(f, g, h) {
+      if (typeof g === 'object') {
+        h = g;
+        g = 0;
+      }
+      if (typeof h === 'function') {
+        h = {
+          onAfter: h
+        };
+      }
+      if (f === 'max') {
+        f = 9e9;
+      }
+      h = $.extend({}, k.defaults, h);
+      g = g || h.duration;
+      var j = h.queue && h.axis.length > 1;
+      if (j) {
+        g /= 2;
+      }
+      h.offset = both(h.offset);
+      h.over = both(h.over);
+      return this.each(function() {
+        if (f === null) return;
+        var d = isWin(this),
+          elem = d ? this.contentWindow || window : this,
+          $elem = $(elem),
+          targ = f,
+          attr = {},
+          toff;
+        switch (typeof targ) {
+          case 'number':
+          case 'string':
+            if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
+              targ = both(targ);
+              break;
+            }
+            targ = d ? $(targ) : $(targ, elem);
+            if (!targ.length) return;
+          case 'object':
+            if (targ.is || targ.style) {
+              toff = (targ = $(targ)).offset();
+            }
+        }
+        var e = $.isFunction(h.offset) && h.offset(elem, targ) || h.offset;
+        $.each(h.axis.split(''), function(i, a) {
+          var b = a === 'x' ? 'Left' : 'Top',
+            pos = b.toLowerCase(),
+            key = 'scroll' + b,
+            prev = $elem[key](),
+            max = k.max(elem, a);
+          if (toff) {
+            attr[key] = toff[pos] + (d ? 0 : prev - $elem.offset()[pos]);
+            if (h.margin) {
+              attr[key] -= parseInt(targ.css('margin' + b), 10) || 0;
+              attr[key] -= parseInt(targ.css('border' + b + 'Width'), 10) || 0;
+            }
+            attr[key] += e[pos] || 0;
+            if (h.over[pos]) {
+              attr[key] += targ[a === 'x' ? 'width' : 'height']() * h.over[pos];
+            }
+          } else {
+            var c = targ[pos];
+            attr[key] = c.slice && c.slice(-1) === '%' ? parseFloat(c) / 100 * max : c;
+          }
+          if (h.limit && /^\d+$/.test(attr[key])) {
+            attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
+          }
+          if (!i && h.axis.length > 1) {
+            if (prev === attr[key]) {
+              attr = {};
+            } else if (j) {
+              animate(h.onAfterFirst);
+              attr = {};
+            }
+          }
+        });
+        animate(h.onAfter);
+
+        function animate(a) {
+          var b = $.extend({}, h, {
+            queue: true,
+            duration: g,
+            complete: a && function() {
+              a.call(elem, targ, h);
+            }
+          });
+          $elem.animate(attr, b);
+        }
+      });
+    };
+    k.max = function(a, b) {
+      var c = b === 'x' ? 'Width' : 'Height',
+        scroll = 'scroll' + c;
+      if (!isWin(a)) return a[scroll] - $(a)[c.toLowerCase()]();
+      var d = 'client' + c,
+        doc = a.ownerDocument || a.document,
+        html = doc.documentElement,
+        body = doc.body;
+      return Math.max(html[scroll], body[scroll]) - Math.min(html[d], body[d]);
+    };
+
+    function both(a) {
+      return $.isFunction(a) || $.isPlainObject(a) ? a : {
+        top: a,
+        left: a
+      };
+    }
+    $.Tween.propHooks.scrollLeft = $.Tween.propHooks.scrollTop = {
+      get: function get(t) {
+        return $(t.elem)[t.prop]();
+      },
+      set: function set(t) {
+        var a = this.get(t);
+        if (t.options.interrupt && t._last && t._last !== a) {
+          return $(t.elem).stop();
+        }
+        var b = Math.round(t.now);
+        if (a !== b) {
+          $(t.elem)[t.prop](b);
+          t._last = this.get(t);
+        }
+      }
+    };
+    return k;
+  });
+})(typeof define === 'function' && define.amd ? define : function(a, b) {
+  'use strict';
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = b(require('jquery'));
+  } else {
+    b(jQuery);
+  }
+});
+
+// Cookies
+
+var getCookie = function(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+};
+
+var changeDonateTabPositions = function() {
+  $('.donate-tab-container').addClass('reverse-tabs');
+  $('.donate-tab-gn.donate-tab').after( $('.donate-tab-gm.donate-tab') );
+};
+
+$(function(){
+  var showCashSectionIfAlreadyDD = function() {
+    if (getCookie("guid")) {
+      var guid = getCookie("guid");
+      jQuery.getJSON("https://act.reprieve.org.uk/page/graph/loe/" + guid, function(graph) {
+        if (typeof graph["group_regular_donors"] !== "undefined" && graph["group_regular_donors"] !== false){
+          // is a dd giver
+          changeDonateTabPositions();
+          $('.donate-tab-gn.donate-tab').click();
+        }
+      });
+    }
+  }();
+});
+
+</script>
+</body>
+</html>
