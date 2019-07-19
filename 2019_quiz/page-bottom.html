@@ -8,22 +8,72 @@
 </div>
 </div>
 
-<div class="slide13 slide darkslide shareslide" style="display: none;">
+<div class="slide10 slide darkslide shareslide" style="display: none;">
+
+
+
   <div class="container">
     <div class="row">
       <div class="col-md">
-        <!-- TODO: Edit text above share buttons below. Place to edit Twitter and Facebook text itself is further down. -->
-        <h2>Thank you, <span class="first_name">supporter</span> for signing the petition</h2>
-        <h4>Can you help us by sharing the petition?</h4>
-        <button class="solid button facebook_share" onclick="return submitAndShare();">Share on Facebook</button> <button class="solid button twitter_share">Share on Twitter
-        </button><button class="button outline" id="slide2_skip">Skip</button>
+        <h2>You got <span id="scorePrint">0</span> out of 7 correct.</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <button class="outline button answer_reveal">Your answer breakdown</button>
+          </div>
+        </div>
+        <div class="answer_reveal_wrap">
+          <div class="row">
+
+            <div class="col-md">
+              <p class="q1tpp qtpp">Q1. <span class="q1tpm">1999</span> <span class="q1tpl">(You said <span class="q1tp"></span>)</span>
+              </p>
+              <p class="qdec">Insert explaination here</p>
+              <p class="q2tpp qtpp">Q2. <span class="q2tpm">2019</span> <span class="q2tpl">(You said <span class="q2tp"></span>)</span>
+              </p>
+            <p class="qdec">Insert explaination here</p>
+              <p class="q3tpp qtpp">Q3. <span class="q3tpm">2019</span> <span class="q3tpl">(You said <span class="q3tp"></span>)</span>
+              </p>
+            <p class="qdec">Insert explaination here</p>
+              <p class="q4tpp qtpp">Q4. <span class="q4tpm">1999</span> <span class="q4tpl">(You said <span class="q4tp"></span>)</span>
+              </p>
+    <p class="qdec">Insert explaination here</p>
+
+            </div>
+            <div class="col-md">
+              <p class="q5tpp qtpp">Q5. <span class="q5tpm">2019</span> <span class="q5tpl">(You said <span class="q5tp"></span>)</span>
+              </p>
+            <p class="qdec">Insert explaination here</p>
+              <p class="q6tpp qtpp">Q6. <span class="q6tpm">2019</span> <span class="q6tpl">(You said <span class="q6tp"></span>)</span>
+              </p>
+            <p class="qdec">Insert explaination here</p>
+              <p class="q7tpp qtpp">Q7. <span class="q7tpm">1999</span> <span class="q7tpl">(You said <span class="q7tp"></span>)</span>
+              </p>
+          <p class="qdec">Insert explaination here</p>
+            </div>
+          </div>
+        </div>
+        <h3>Can you share with your friends so they can take part?</h3>
+        <div class="row">
+          <div class="col-md-5">
+            <button class="solid button facebook_share" onclick="return submitAndShare();">Share on Facebook</button>
+          </div>
+          <div class="col-md-5">
+            <button class="solid button twitter_share">Share on Twitter</button>
+          </div>
+          <div class="col-md-2">
+            <button class="outline button answer_skip">Skip</button>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
+
 </div>
 
 
-<div class="slide14 slide darkslide donateslide" style="display: none;">
+<div class="slide11 slide darkslide donateslide" style="display: none;">
   <div class="container">
     <div class="row">
       <div class="col-md">
@@ -185,38 +235,245 @@
 
   });
 
-  // SHARING
+  // Quiz
+  var q1 = 0;
+  var q2 = 0;
+  var q3 = 0;
+  var q4 = 0;
+  var q5 = 0;
+  var q6 = 0;
+  var q7 = 0;
 
-  jQuery('.twitter_share').click(function(e) {
-    var currentUrl = encodeURIComponent(getPathFromUrl(window.location.href));
-    // <!-- TODO: Insert Tweet text below! -->
-    var tweet = encodeURIComponent(
-      "UK Torture - the government is rewriting our country’s torture rules in secret. I'm calling for an open and transparent process to put an end to UK torture complicity. Add your name now! #EndUKTorture");
-    var space = encodeURIComponent(" ");
-    window.open("https://twitter.com/intent/tweet?text=" + tweet + space + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
-    nextSlide('.slide2');
-    // initSlider();
+  var q1t = 0;
+  var q2t = 0;
+  var q3t = 0;
+  var q4t = 0;
+  var q5t = 0;
+  var q6t = 0;
+  var q7t = 0;
+
+  var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7;
+
+  $(".q1").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q1 = 1;
+    } else {
+      q1 = 0;
+    }
+    q1t = $(this).text();
+    $('.q1tp').text(q1t);
+
+    if ($(".q1tp").text() == $(".q1tpm").text()) {
+      $(".q1tpl").hide();
+      $(".q1tpp").prepend("<span class='qmark qtick'>✓ </span>");
+
+
+    } else {
+      $(".q1tpl").css('color', '#e35e14');
+      $(".q1tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
+    nextSlide('.slide1');
   });
 
-  jQuery('#slide2_skip').click(function() {
+
+  $(".q2").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q2 = 1;
+    } else {
+      q2 = 0;
+    }
+
+    q2t = $(this).text();
+    $('.q2tp').text(q2t);
+
+    if ($(".q2tp").text() == $(".q2tpm").text()) {
+      $(".q2tpl").hide();
+      $(".q2tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    } else {
+      $(".q2tpl").css('color', '#e35e14');
+      $(".q2tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
     nextSlide('.slide2');
+  });
+
+  $(".q3").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q3 = 1;
+    } else {
+      q3 = 0;
+    }
+
+    q3t = $(this).text();
+    $('.q3tp').text(q3t);
+
+    if ($(".q3tp").text() == $(".q3tpm").text()) {
+      $(".q3tpl").hide();
+      $(".q3tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    } else {
+      $(".q3tpl").css('color', '#e35e14');
+      $(".q3tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
+    nextSlide('.slide3');
+  });
+
+  $(".q4").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q4 = 1;
+    } else {
+      q4 = 0;
+    }
+
+    q4t = $(this).text();
+    $('.q4tp').text(q4t);
+
+    if ($(".q4tp").text() == $(".q4tpm").text()) {
+      $(".q4tpl").hide();
+      $(".q4tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    } else {
+      $(".q4tpl").css('color', '#e35e14');
+      $(".q4tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
+    nextSlide('.slide4');
+  });
+
+  $(".q5").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q5 = 1;
+    } else {
+      q5 = 0;
+    }
+
+    q5t = $(this).text();
+    $('.q5tp').text(q5t);
+
+    if ($(".q5tp").text() == $(".q5tpm").text()) {
+      $(".q5tpl").hide();
+      $(".q5tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    } else {
+      $(".q5tpl").css('color', '#e35e14');
+      $(".q5tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
+    nextSlide('.slide5');
+  });
+
+  $(".q6").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q6 = 1;
+    } else {
+      q6 = 0;
+    }
+
+    q6t = $(this).text();
+    $('.q6tp').text(q6t);
+
+    if ($(".q6tp").text() == $(".q6tpm").text()) {
+      $(".q6tpl").hide();
+      $(".q6tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    } else {
+      $(".q6tpl").css('color', '#e35e14');
+      $(".q6tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
+    nextSlide('.slide6');
+  });
+
+
+  $(".q7").click(function() {
+    if ($(this).hasClass("q-correct")) {
+      q7 = 1;
+    } else {
+      q7 = 0;
+    }
+
+    q7t = $(this).text();
+    $('.q7tp').text(q7t);
+
+    if ($(".q7tp").text() == $(".q7tpm").text()) {
+      $(".q7tpl").hide();
+      $(".q7tpp").prepend("<span class='qmark qtick'>✓ </span>");
+    } else {
+      $(".q7tpl").css('color', '#e35e14');
+      $(".q7tpp").prepend("<span class='qmark qcross'>x </span>");
+    }
+
+
+    var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7;
+    $("#scorePrint").text(answer);
+    nextSlide('.slide7');
+
+  });
+
+  $(".showPetitionSlide").click(function() {
+    nextSlide('.slide8');
+  });
+
+  $(".answer").click(function() {
+    nextSlide('.slide9');
+  });
+
+  $("#signup").submit(function(event) {
+    event.preventDefault();
+    var $form = $(this),
+      url = $form.attr("action");
+    var posting = $.post(url, $form.serialize());
+    nextSlide('.slide9');
+  });
+
+  jQuery('.answer_reveal').click(function(e) {
+    jQuery('.answer_reveal_wrap').toggle();
+  });
+
+  jQuery('.answer_skip').click(function(e) {
+    nextSlide('.slide10');
+  });
+
+  jQuery('.twitter_share').click(function(e) {
+
+    var twfirstname = encodeURIComponent("I");
+
+    // if ($('#firstname').val()) {
+    //   twfirstname = $('#firstname').val();
+    // }
+
+    var twanswer = $('#scorePrint').text();
+
+
+    var currentUrl = encodeURIComponent("https://act.reprieve.org.uk/page/content/name-the-countries?source=cq2018tw1&utm_source=twitter&utm_medium=post&utm_campaign=countries_quiz&utm_content=1");
+    var tweet = encodeURIComponent(" named ");
+    var tweet2 = encodeURIComponent(" out of these 10 countries correctly. Do you think you can do better? Take the quiz now! ");
+    var twansweren = encodeURIComponent(twanswer);
+    var space = encodeURIComponent(" ");
+    // var shareimage = encodeURIComponent("https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png");
+    window.open("https://twitter.com/intent/tweet?text=" + twfirstname + tweet + twansweren + tweet2 + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
+    nextSlide('.slide10');
+    // initSlider();
   });
 
   function submitAndShare() {
 
-    var firstname = $("#firstname").val();
+    var fbfirstname = "I"
 
-    // <!-- TODO: Insert Facebook Title and Description below -->
+    if ($('#firstname').val()) {
+      fbfirstname = $('#firstname').val();
+    }
 
-    var title = 'The UK government is secretly rewriting the rules on torture: Join ' + firstname + ' and sign petition now!';
-    var description = 'We are calling for an open and transparent process to put an end to UK torture complicity.';
+    var fbanswer = $('#scorePrint').text();
+
+    var title = fbfirstname + " could name " + fbanswer + " out of these 10 countries!"
+    var description = 'Do you think you can do better? Take the quiz now!';
+
 
     shareOverrideOGMeta(window.location.href,
       title,
       description);
 
-    nextSlide('.slide2');
-
+    nextSlide('.slide10');
+    // initSlider();
 
     return false;
 
@@ -232,9 +489,7 @@
             'og:url': overrideLink,
             'og:title': overrideTitle,
             'og:description': overrideDescription,
-            // <!-- TODO: Insert Facebook image link below -->
-            'og:image': 'https://FACEBOOKIMAGE.png'
-
+            'og:image': 'https://act.reprieve.org.uk/page/-/CountriesQuizShareQuestionMarks.png'
           }
         })
       },
@@ -246,7 +501,7 @@
   function shareOriginal() {
     FB.ui({
         method: 'share',
-        href: window.location.href
+        href: 'https://act.reprieve.org.uk/page/content/name-the-countries?source=cq2018fb1&utm_source=facebook&utm_medium=post&utm_campaign=countries_quiz&utm_content=1'
       },
       function(response) {
         // Action after response

@@ -84,7 +84,7 @@
     text-decoration: none !important;
 }
 
-.col-md-10, .col-md-2 {
+.bsd-contribForm-gdpr-modal-content .col-md-10, .bsd-contribForm-gdpr-modal-content .col-md-2 {
     padding: 5px 10px 5px 10px;
     float:  left;
 }
@@ -233,15 +233,6 @@ var voteName = "Supporter";
 $("#firstname").change(function() {
   voteName = $(this).val();
   $('.first_name').text(voteName)
-});
-
-
-$("#signup").submit(function(event) {
-  event.preventDefault();
-  var $form = $(this),
-    url = $form.attr("action");
-  var posting = $.post(url, $form.serialize());
-  nextSlide('.slide1');
 });
 
 

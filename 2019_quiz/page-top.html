@@ -39,10 +39,11 @@
 
   .qbutton {
     width: 100%;
+    margin: 0 0 1rem 0;
   }
 
   .qslide {
-    text-align: left;
+    text-align: center;
   }
 
   .qslide .col-md {
@@ -111,25 +112,188 @@
     font-family: 'HelveticaNeueLTStd-BlkCn', Helvetica, sans-serif;
     line-height: 1;
   }
+
+  .facebook_share,
+  .twitter_share,
+  .answer_skip {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+
+  .answerslide {
+    text-align: center;
+  }
+
+  .shareslide {
+    text-align: center;
+  }
+
+  .donateslide {
+    text-align: center;
+  }
+
+  #slider {
+    background: #000;
+    border-radius: 20px;
+    border: 1px solid #000;
+    margin: 0 auto 50px;
+    width: 100%;
+    height: 16px;
+  }
+
+  @media screen and (min-width: 767px) {
+  #slider {
+      margin-bottom: 10px;
+      height: 20px;
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-width: 1099px) {
+  #slider {
+      margin-bottom: 30px;
+      height: 24px;
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+  #slider {
+      margin-bottom: 50px;
+      height: 32px;
+      width: 100%;
+    }
+  }
+
+  #slider .ui-slider-range {
+    background: #3a3a3a;
+    border-radius: 20px 0 0 20px;
+  }
+
+  #custom-handle {
+    width: 3em;
+    height: 3em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 1.6em;
+    position: relative;
+    border-radius: 50%;
+    width: 1.75em;
+    height: 1.75em;
+  }
+
+  @media screen and (min-width: 767px) {
+  #custom-handle {
+      width: 1.75em;
+      height: 1.75em;
+    }
+  }
+
+  @media screen and (min-width: 1099px) {
+  #custom-handle {
+      width: 2em;
+      height: 2em;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+  #custom-handle {
+      width: 3em;
+      height: 3em;
+    }
+  }
+
+  #custom-handle:focus {
+    border: 0;
+    outline: 0;
+  }
+
+  #custom-handle .value {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -140%);
+    transform: translate(-50%, -140%);
+    background: #3a3a3a;
+    color: #fff;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    padding: 6px 12px;
+  }
+
+  @media screen and (min-width: 767px) {
+  #custom-handle .value {
+      padding: 7px 15px;
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1099px) {
+  #custom-handle .value {
+      padding: 10px 20px;
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+  #custom-handle .value {
+      padding: 12px 30px;
+      font-size: 32px;
+    }
+  }
+
+  #custom-handle .value:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(29, 39, 46, 0);
+    border-top-color: #3a3a3a;
+    border-width: 7px;
+    margin-left: -7px;
+  }
+
+  @media screen and (min-width: 767px) {
+  #custom-handle .value:after {
+      border-width: 7px;
+      margin-left: -7px;
+    }
+  }
+
+  @media screen and (min-width: 1099px) {
+  #custom-handle .value:after {
+      border-width: 10px;
+      margin-left: -10px;
+    }
+  }
 </style>
 <div class="slide1 slide darkslide qslide">
   <div class="container">
+
     <div class="row">
       <div class="col-md">
-        <div class="topIntro">
-          Take a look at this map. Can you name the country?
-        </div>
+        <!-- <div class="topIntro">
+          Intro text if necessary
+        </div> -->
+        <h2 class="quizQH">In what year did Cyprus abolish the death penalty?</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/China.png" class="countryMap"></div>
-      <div class="col-md">
-        <button class="q1 q1a qbutton">Canada</button>
-        <button class="q1 q1b q-correct qbutton">China</button>
-        <button class="q1 q1c qbutton">Brazil</button>
+      <div class="col-md left-quiz-col">
+        <button class="q1 q1a q-correct qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q1 q1b qbutton">2019</button>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -143,20 +307,22 @@
     <div class="row">
       <div class="col-md">
         <div class="quizProgress">
-          2 / 10
+          2 / 7
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Egypt.png" class="countryMap"></div>
-      <div class="col-md">
-
-        <button class="q2 q2a qbutton">South Africa</button>
-        <button class="q2 q2b qbutton">Argentina</button>
-        <button class="q2 q2c q-correct qbutton">Egypt</button>
-
+        <h2 class="quizQH">In what year did the USA carry out its 1500th execution since the return of the death penalty in 1976?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md left-quiz-col">
+        <button class="q2 q2a qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q2 q2b q-correct qbutton">2019</button>
       </div>
     </div>
   </div>
@@ -171,20 +337,22 @@
 
       <div class="col-md">
         <div class="quizProgress">
-          3 / 10
+          3 / 7
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Singapore.png" class="countryMap"></div>
-      <div class="col-md">
-
-        <button class="q3 q3a q-correct qbutton">Singapore</button>
-        <button class="q3 q3b qbutton">Iceland</button>
-        <button class="q3 q3c qbutton">Japan</button>
-
+        <h2 class="quizQH">In what year did Brunei introduce the death penalty for gay sex and adultery?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md left-quiz-col">
+        <button class="q3 q3a qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q3 q3b q-correct qbutton">2019</button>
       </div>
     </div>
 
@@ -200,20 +368,23 @@
 
       <div class="col-md">
         <div class="quizProgress">
-          4 / 10
+          4 / 7
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/USA.png" class="countryMap"></div>
-      <div class="col-md">
+        <h2 class="quizQH">In which year did the USA execute 10 people who were children at the time of their offence?</h2>
+      </div>
+    </div>
 
-        <button class="q4 q4a qbutton">Kazakhstan</button>
-        <button class="q4 q4b q-correct  qbutton">USA</button>
-        <button class="q4 q4c qbutton">Mongolia</button>
-
+    <div class="row">
+      <div class="col-md left-quiz-col">
+        <button class="q4 q4a q-correct qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q4 q4b qbutton">2019</button>
       </div>
     </div>
 
@@ -229,20 +400,23 @@
 
       <div class="col-md">
         <div class="quizProgress">
-          5 / 10
+          5 / 7
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Saudi%20Arabia.png" class="countryMap"></div>
-      <div class="col-md">
+        <h2 class="quizQH"> In what year did Saudi Arabia execute more people, 1999 or 2019?</h2>
+      </div>
+    </div>
 
-        <button class="q5 q5a q-correct qbutton">Saudi Arabia</button>
-        <button class="q5 q5b qbutton">India</button>
-        <button class="q5 q5c qbutton">Chile</button>
-
+    <div class="row">
+      <div class="col-md left-quiz-col">
+        <button class="q5 q5a qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q5 q5b q-correct qbutton">2019</button>
       </div>
     </div>
 
@@ -258,20 +432,23 @@
 
       <div class="col-md">
         <div class="quizProgress">
-          6 / 10
+          6 / 7
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Iran.png" class="countryMap"></div>
-      <div class="col-md">
+        <h2 class="quizQH"> In what year did New Hampshire abolish the death penalty?</h2>
+      </div>
+    </div>
 
-        <button class="q6 q6a q-correct qbutton">Iran</button>
-        <button class="q6 q6b qbutton">Italy</button>
-        <button class="q6 q6c qbutton">Morocco</button>
-
+    <div class="row">
+      <div class="col-md left-quiz-col">
+        <button class="q6 q6a qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q6 q6b q-correct qbutton">2019</button>
       </div>
     </div>
 
@@ -287,114 +464,37 @@
 
       <div class="col-md">
         <div class="quizProgress">
-          7 / 10
+          7 / 7
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Somalia.png" class="countryMap"></div>
+        <h2 class="quizQH">How many executions have been carried out in the US between 1999-2019?</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- <div class="col-md left-quiz-col">
+        <button class="q7 q7a qbutton">1999</button>
+      </div>
+      <div class="col-md right-quiz-col">
+        <button class="q7 q7b q-correct qbutton">2019</button>
+      </div> -->
+
       <div class="col-md">
-
-        <button class="q7 q7a qbutton">Norway</button>
-        <button class="q7 q7b qbutton">South Korea</button>
-        <button class="q7 q7c q-correct qbutton">Somalia</button>
-
+        <div id="slider" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                <div id="custom-handle" class="ui-slider-handle ui-corner-all ui-state-default" tabindex="0" style="left: 0%;"><div class="value">0</div></div>
+              <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min" style="width: 0%;"></div></div>
       </div>
     </div>
 
   </div>
 </div>
 
-<div class="slide8 slide darkslide qslide" style="display: none;">
 
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-md">
-        <div class="quizProgress">
-          8 / 10
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Iraq.png" class="countryMap"></div>
-      <div class="col-md">
-
-        <button class="q8 q8a q-correct qbutton">Iraq</button>
-        <button class="q8 q8b qbutton">Peru</button>
-        <button class="q8 q8c qbutton">Ireland</button>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="slide9 slide darkslide qslide" style="display: none;">
-
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-md">
-        <div class="quizProgress">
-          9 / 10
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Pakistan.png" class="countryMap"></div>
-      <div class="col-md">
-
-        <button class="q9 q9a qbutton">Vietnam</button>
-        <button class="q9 q9b q-correct qbutton">Pakistan</button>
-        <button class="q9 q9c qbutton">France</button>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="slide10 slide darkslide qslide" style="display: none;">
-
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-md">
-        <div class="quizProgress">
-          10 / 10
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md">
-        <img src="https://act.reprieve.org.uk/page/-/Jordan.png" class="countryMap"></div>
-      <div class="col-md">
-
-        <button class="q10 q10a q-correct qbutton">Jordan</button>
-        <button class="q10 q10b qbutton">Venezuela</button>
-        <button class="q10 q10c qbutton">Germany</button>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="slide11 slide darkslide answerslide" style="display: none;">
+<div class="slide8 slide darkslide answerslide" style="display: none;">
 
 
   <div class="container">
@@ -402,8 +502,6 @@
       <div class="col-md">
         <div class="topIntro">
           <h2>Well done! While we calculate your results, can you take a minute to stand up for human rights?</h2>
-          <p>The 10 countries featured in this quiz are the top 10 countries for executions worldwide.</p>
-          <p>Some execute peaceful protesters, people suffering from mental illness, and even children.</p>
           <p>The movement to end the death penalty needs you - can you add your name?</p>
         </div>
       </div>
@@ -417,7 +515,7 @@
   </div>
 </div>
 
-<div class="slide12 slide darkslide formslide" style="display: none;">
+<div class="slide9 slide darkslide formslide" style="display: none;">
   <div class="container">
     <div class="row">
       <div class="col-md" id="left">
