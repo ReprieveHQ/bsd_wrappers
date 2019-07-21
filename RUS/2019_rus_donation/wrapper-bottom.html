@@ -10,7 +10,7 @@
 <footer id="footer" class="footer">
   <div class="container clearfix">
     <div class="fnav_sub_primary clearfix">
-      <p class="fnav_sub_element">© 2018 Reprieve US. Reprieve US, PO Box 3627, New York, NY 10163. Reprieve US is a 501(c)(3) charitable organization with the EIN 72-1514282.</p>
+      <p class="fnav_sub_element">© 2019 Reprieve US. Reprieve US, PO Box 3627, New York, NY 10163. Reprieve US is a 501(c)(3) charitable organization with the EIN 72-1514282.</p>
     </div>
   </div>
 </footer>
@@ -38,7 +38,7 @@
 <script>
   $(document).ready(function() {
     if ($("#donateThanksContainer").length > 0) {
-        $('.optinradio_fieldset').hide();
+      $('.optinradio_fieldset').hide();
     };
 
     $('.amountWraps input[type=radio]:checked').parent().addClass('labelSelect');
@@ -170,18 +170,18 @@
   $("#full-gift-checkbox").prependTo("label[for='full-gift-checkbox']");
 
   // Recurring
-$("#recurring_acknowledge" ).parent().parent().parent().parent().addClass("recurringTable");
-$('.recurringTable  tr:nth-child(3) td').wrapInner("<div id='recurring-container'>");
-$('.recurringTable  tr:nth-child(2) td div').addClass("recurring-text");
-$("#recurring-container").prepend($(".recurring-text"));
-$("#recurring-container").prepend("<h2>Make it monthly?</h2>");
-$("#recurring-container").addClass("recurringTable");
-$("#recurring-container").prependTo("#recurring-wrap");
-$("#recurring_acknowledge").addClass("form-check-input");
-$('label[for="recurring_acknowledge"]').addClass("form-check-label");
-$('label[for="recurring_acknowledge"]').wrapInner("<span></span>");
-$('label[for="recurring_acknowledge"]').wrap("<div class='recurring-check-wrap form-check form-check-inline'></div>");
-$("#recurring_acknowledge").prependTo('.recurring-check-wrap');
+  $("#recurring_acknowledge").parent().parent().parent().parent().addClass("recurringTable");
+  $('.recurringTable  tr:nth-child(3) td').wrapInner("<div id='recurring-container'>");
+  $('.recurringTable  tr:nth-child(2) td div').addClass("recurring-text");
+  $("#recurring-container").prepend($(".recurring-text"));
+  $("#recurring-container").prepend("<h2>Make it monthly?</h2>");
+  $("#recurring-container").addClass("recurringTable");
+  $("#recurring-container").prependTo("#recurring-wrap");
+  $("#recurring_acknowledge").addClass("form-check-input");
+  $('label[for="recurring_acknowledge"]').addClass("form-check-label");
+  $('label[for="recurring_acknowledge"]').wrapInner("<span></span>");
+  $('label[for="recurring_acknowledge"]').wrap("<div class='recurring-check-wrap form-check form-check-inline'></div>");
+  $("#recurring_acknowledge").prependTo('.recurring-check-wrap');
 
 
   // Your Details
@@ -301,42 +301,26 @@ $("#recurring_acknowledge").prependTo('.recurring-check-wrap');
   $('.contriberrorbanner').prependTo('.donateWrap');
   $('#contribution .error').appendTo('.contriberrorbanner');
 
-  // Progress Bar
 
-  bQuery.get('https://secure.reprieve.org/page/contribute_c/dec18/text', function(data) {
-    $('#goalText').html(data);
-    amountNoCommas = $("#goalText").find(".amount").text().replace(",", "");
-    goalNoCommas = $("#goalText").find(".goal").text().replace(",", "");
-    console.log(goalNoCommas, amountNoCommas);
-    var goalPercent = Math.round((amountNoCommas / goalNoCommas) * 100);
-    $(".percentage-number").text(goalPercent + "%");
-    $(".pound").text("$");
-    var progressTotal = goalPercent + "%";
-    console.log(progressTotal);
-    var animationLength = 2500;
-    $('.progress-bar').stop().animate({
-      left: progressTotal
-    }, animationLength);
-  });
 
   // Calculate Grand Total for pre-determined Amounts.
 
 
   var inputs = document.querySelectorAll(".amountNum input[type='radio']");
 
-Array.prototype.forEach.call(inputs, function (el) {
-  el.addEventListener('click', function () {
-    var value = parseInt(this.value, 10);
-    var URL = "https://secure.reprieve.org/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
-    jQuery.get(URL, function (data) {
-      var fee = data.fee;
-      var total = fee + value;
-      total = total.toFixed(2);
-      jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be $" + total);
-      jQuery("#processbutton").val("Donate $" + total);
+  Array.prototype.forEach.call(inputs, function(el) {
+    el.addEventListener('click', function() {
+      var value = parseInt(this.value, 10);
+      var URL = "https://secure.reprieve.org/ctl/lara/contribution/full-gift/v1/display-fee?contribution=" + value + "&max=2500.00";
+      jQuery.get(URL, function(data) {
+        var fee = data.fee;
+        var total = fee + value;
+        total = total.toFixed(2);
+        jQuery("#full-gift-label")[0].innerText = ("I'd like to help cover the transaction fees on my donation. My grand total will be $" + total);
+        jQuery("#processbutton").val("Donate $" + total);
+      });
     });
   });
-});
 </script>
 </body>
 <style>
@@ -426,8 +410,8 @@ Array.prototype.forEach.call(inputs, function (el) {
     text-decoration: none !important;
   }
 
-  .col-md-10,
-  .col-md-2 {
+  .bsd-contribForm-gdpr-modal-content .col-md-10,
+  .bsd-contribForm-gdpr-modal-content .col-md-2 {
     padding: 5px 10px 5px 10px;
   }
 
