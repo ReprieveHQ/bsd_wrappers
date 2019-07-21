@@ -37,7 +37,7 @@
 
         <!-- TODO: Change URLs below to URL of relevant donation page. PLEASE rememember to create a source code. -->
 
-        <div class="donate-tab-container">
+        <div class="donate-tab-container ukdonate">
           <div class="donate-tab-top clearfix">
             <div class="donate-tab-gm donate-tab picked-tab">
               <h2>Give Monthly</h2>
@@ -49,10 +49,10 @@
           <div class="donate-tab-main clearfix">
             <div class="donate-tab-givemonthly donate-tab-body picked-body">
               <p>Giving monthly helps us fund long-term projects and cases.</p>
-              <a class="button solid small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=joinemaildmslide&amount=5">£5</button>
-                <a class="button solid small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=joinemaildmslide&amount=10">£10</button>
-                  <a class="button solid small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=joinemaildmslide&amount=15">£15</button>
-                    <a class="button outline small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/Donate4/?ref=joinemaildmslide">Other</button>
+              <a class="button solid small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/donate5/?ref=joinemaildmslide&amount=5">£5</button>
+                <a class="button solid small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/donate5/?ref=joinemaildmslide&amount=10">£10</button>
+                  <a class="button solid small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/donate5/?ref=joinemaildmslide&amount=15">£15</button>
+                    <a class="button outline small donateButton donateMButton" href="https://secure.edirectdebit.com/Reprieve/donate5/?ref=joinemaildmslide">Other</button>
             </div>
             <div class="donate-tab-givenow donate-tab-body">
               <p>Give an individual donation now to fund our most urgent cases.</p>
@@ -63,7 +63,15 @@
             </div>
           </div>
         </div>
-
+        <div class="usdonate" style="display: none;">
+          <a href="https://secure.reprieve.org/page/contribute/donate-now?default_amt=10" class="solid button small" target="_blank">Donate $10</a>
+          <!--
+      --><a href="https://secure.reprieve.org/page/contribute/donate-now?default_amt=25" class="solid button small" target="_blank">Donate $25</a>
+          <!--
+      --><a href="https://secure.reprieve.org/page/contribute/donate-now?default_amt=50" class="solid button small" target="_blank">Donate $50</a>
+          <!--
+      --><a href="https://secure.reprieve.org/page/contribute/donate-now" class="outline button small" target="_blank">Other amount</a>
+        </div>
       </div>
     </div>
   </div>
@@ -105,7 +113,6 @@
     var optionSelected = $("#country option:selected").val();
 
     $("#country").on("change", function(e) {
-      console.log("CHANGE IS A-COMING!");
       var optionSelected = $("#country option:selected").val();
       if (optionSelected === "US") {
         $(".usdonate").show();
@@ -136,7 +143,7 @@
 
         console.log(cumulativeNum)
 
-        cumulativeNum += 17369; // accounting for offline action
+        cumulativeNum += 0; // accounting for offline action
 
         console.log(cumulativeNum)
 
@@ -146,7 +153,7 @@
 
         var signupstotal = signupsnum;
 
-        var target = 40000;
+        var target = 50000;
 
         var percentageComplete = (signupstotal / target) * 100;
 
@@ -154,7 +161,7 @@
 
         $('.amount').text(signups);
 
-        $('.goal').text("40,000");
+        $('.goal').text("50,000");
 
         $(".goal-progress").addClass('js-percent');
 
